@@ -46,10 +46,10 @@ diff_test()
 				printf "${COLOR_OK}O${DEFAULT}"
 			fi
 		fi
-		if [ -e ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ]
-		then
-			rm -f ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k
-		fi
+		#if [ -e ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ]
+		#then
+		#	rm -f ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k
+		#fi
 		let "k += 1"
 	done
 	return $retvalue
