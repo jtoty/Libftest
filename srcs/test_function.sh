@@ -109,5 +109,5 @@ test_function()
 		fi
 		let	"i += 1"
 	done
-	printf "\n${COLOR_TOTAL}Total : ${success}/${total}${DEFAULT}\n\n"
+	printf "\n${COLOR_TOTAL}Total : ${success}/${total}${DEFAULT}\n"
 }

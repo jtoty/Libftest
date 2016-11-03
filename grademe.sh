@@ -209,4 +209,8 @@ if [ -e ${PATH_TEST}/libft.h ]
 then
 	rm ${PATH_TEST}/libft.h
 fi
+if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] | [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
+then
+	printf "\n"
+fi
 printf "A deepthought file has been generated in ${COLOR_DEEPTHOUGHT_PATH}${PATH_DEEPTHOUGHT}\n\n${DEFAULT}"
