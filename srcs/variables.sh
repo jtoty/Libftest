@@ -85,29 +85,29 @@ mandatory_func_activation=('0' '0' '0' '0' '0' \
 #                 Bonus functions                 #
 ###################################################
 
-bonus_func=('ft_lstadd.c' 'ft_lstdel.c' 'ft_lstdelone.c' \
+Bonus_func=('ft_lstadd.c' 'ft_lstdel.c' 'ft_lstdelone.c' \
 'ft_lstiter.c' 'ft_lstmap.c' 'ft_lstnew.c')
 
-bonus_func_activation=('0' '0' '0' '0' '0' '0')
+Bonus_func_activation=('0' '0' '0' '0' '0' '0')
 
-bonus_func_forbidden=('0' '0' '0' '0' '0' '0')
+Bonus_func_forbidden=('0' '0' '0' '0' '0' '0')
 
 
 ###################################################
 #              Additional functions               #
 ###################################################
 
-additional_func=('ft_isblank.c' 'ft_iscntrl.c' 'ft_isgraph.c' 'ft_islower.c' \
+Additional_func=('ft_isblank.c' 'ft_iscntrl.c' 'ft_isgraph.c' 'ft_islower.c' \
 'ft_isspace.c' 'ft_isupper.c' 'ft_isxdigit.c' 'ft_str_is_alpha.c' 'ft_str_is_lowercase.c' \
 'ft_str_is_numeric.c' 'ft_str_is_printable.c' 'ft_str_is_uppercase.c' 'ft_strcapitalize.c' \
 'ft_strlcpy.c' 'ft_strlowcase.c' 'ft_strupcase.c')
 
-additional_func_activation=('0' '0' '0' '0' \
+Additional_func_activation=('0' '0' '0' '0' \
 '0' '0' '0' '0' '0' \
 '0' '0' '0' '0' \
 '0' '0' '0')
 
-additional_func_forbidden=('7' '7' '7' '7' \
+Additional_func_forbidden=('7' '7' '7' '7' \
 '7' '7' '7' '7' '7' \
 '7' '7' '7' '7' \
 '7' '7' '7')
@@ -116,7 +116,7 @@ additional_func_forbidden=('7' '7' '7' '7' \
 #                 Other variables                 #
 ###################################################
 
-tab_all_part=('Part1_func' 'Part2_func' 'additional_func')
+tab_all_part=('Part1_func' 'Part2_func' 'Additional_func')
 
 num_sys_func=('1' '2' '4')
 system_func=('void' 'malloc' 'free' 'printf' 'write')
