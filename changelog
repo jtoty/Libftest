@@ -1,0 +1,13 @@
+~~~~~~~~~~~~~~~~~~~~~~[1.0.0] - 2016/11/02~~~~~~~~~~~~~~~~~~~~~~
+
+#Added
+- Checking if Makefile file exists
+- Checking Makefile's rules
+- Checking compilation's flags in Makefile
+- Checking if author file exists
+- Checking content of author file
+- Tests for all functions of the mandatory part
+- Checking for forbidden functions
+- Checking for norme errors
+- Checking for updates at launch
+- Script options (see README.md for more details)
