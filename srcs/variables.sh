@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###################################################
-#               Mandatory functions               #
+#                 Part1 functions                 #
 ###################################################
 
 Part1_func_forbidden=('7' '7' '7' '7' '4' \
@@ -25,6 +25,10 @@ Part1_func=('ft_memset.c' 'ft_bzero.c' 'ft_memcpy.c' 'ft_memccpy.c' 'ft_memmove.
 'ft_atoi.c' 'ft_isalpha.c' 'ft_isdigit.c' 'ft_isalnum.c' 'ft_isascii.c' \
 'ft_isprint.c' 'ft_toupper.c' 'ft_tolower.c')
 
+###################################################
+#                 Part2 functions                 #
+###################################################
+
 Part2_func_forbidden=('6' '5' '6' '5' '7' \
 '7' '7' '6' '6' '7' \
 '7' '6' '6' '6' '6' \
@@ -42,6 +46,10 @@ Part2_func=('ft_memalloc.c' 'ft_memdel.c' 'ft_strnew.c' 'ft_strdel.c' 'ft_strclr
 'ft_strnequ.c' 'ft_strsub.c' 'ft_strjoin.c' 'ft_strtrim.c' 'ft_strsplit.c' \
 'ft_itoa.c' 'ft_putchar.c' 'ft_putstr.c' 'ft_putendl.c' 'ft_putnbr.c' \
 'ft_putchar_fd.c' 'ft_putstr_fd.c' 'ft_putendl_fd.c' 'ft_putnbr_fd.c')
+
+###################################################
+#               Mandatory functions               #
+###################################################
 
 mandatory_func_forbidden=('7' '7' '7' '7' '7' \
 '7' '7' '6' '6' '7' '7' \
@@ -108,7 +116,7 @@ additional_func_forbidden=('7' '7' '7' '7' \
 #                 Other variables                 #
 ###################################################
 
-tab_all_part=('mandatory_func' 'additional_func')
+tab_all_part=('Part1_func' 'Part2_func' 'additional_func')
 
 num_sys_func=('1' '2' '4')
 system_func=('void' 'malloc' 'free' 'printf' 'write')
@@ -130,11 +138,17 @@ OPT_NO_FORBIDDEN=0
 OPT_NO_NORMINETTE=0
 OPT_NO_UPDATE=0
 OPT_NO_MANDATORY=0
+OPT_NO_PART1=0
+OPT_NO_PART2=0
 OPT_NO_BONUS=0
 OPT_NO_ADDITIONAL=0
 ACTIVATE_MANDATORY=0
+ACTIVATE_PART1=0
+ACTIVATE_PART2=0
 ACTIVATE_BONUS=0
 ACTIVATE_ADDITIONAL=0
 CHECK_IN_MANDATORY=1
+CHECK_IN_PART1=1
+CHECK_IN_PART2=1
 CHECK_IN_BONUS=1
 CHECK_IN_ADDITIONAL=1
