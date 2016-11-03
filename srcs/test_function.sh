@@ -30,8 +30,7 @@ check_turned_in_file()
 
 test_function()
 {
-	printf "\n${COLOR_PART}$(echo ${part} | cut -d _ -f 1 | sed 's/\(.\)/\U\1/') functions\n\n"
-
+	printf "\n${COLOR_PART}$(echo ${part} | cut -d _ -f 1) functions\n\n"
 	printf "${COLOR_TITLE}"
 	printf "FUNCTION"
 	printf "\033[${NORME_COL}GNORME"
