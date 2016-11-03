@@ -157,6 +157,17 @@ init_deepthought()
 
 clear
 init_deepthought
+
+if [ -e ${PATH_LIBFT}/Makefile ]
+then
+	MAKEFILE_VAR="Makefile"
+elif [ -e ${PATH_LIBFT}/makefile ]
+then
+	MAKEFILE_VAR="makefile"
+else
+	MAKEFILE_VAR="missing_makefile"
+fi
+
 if [ ${OPT_NO_SEARCH} -eq 0 ]
 then
 	func_check_file

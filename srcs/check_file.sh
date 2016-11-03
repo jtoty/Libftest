@@ -3,14 +3,9 @@
 check_makefile()
 {
 	printf "Makefile"
-	if [ -e ${PATH_LIBFT}/Makefile ] || [ -e ${PATH_LIBFT}/makefile ]
+	#if [ -e ${PATH_LIBFT}/Makefile ] || [ -e ${PATH_LIBFT}/makefile ]
+	if [ -e ${PATH_LIBFT}/${MAKEFILE_VAR} ]
 	then 
-		if [ -e ${PATH_LIBFT}/Makefile ]
-		then
-			MAKEFILE_VAR="Makefile"
-		else
-			MAKEFILE_VAR="makefile"
-		fi
 		printf "\033[15G-Wall"
 		printf "\033[25G-Wextra"
 		printf "\033[35G-Werror\n"
