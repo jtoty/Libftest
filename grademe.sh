@@ -68,9 +68,9 @@ done
 source ${PATH_TEST}/srcs/colors.sh
 source ${PATH_TEST}/srcs/check_cheat.sh
 source ${PATH_TEST}/srcs/check_compilation.sh
-source ${PATH_TEST}/srcs/check_file2.sh
+source ${PATH_TEST}/srcs/check_file.sh
 source ${PATH_TEST}/srcs/check_norme.sh
-source ${PATH_TEST}/srcs/compil_lib2.sh
+source ${PATH_TEST}/srcs/compil_lib.sh
 source ${PATH_TEST}/srcs/diff_test.sh
 source ${PATH_TEST}/srcs/test_function.sh
 source ${PATH_TEST}/srcs/check_update.sh
