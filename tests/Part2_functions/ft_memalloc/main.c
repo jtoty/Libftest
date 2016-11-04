@@ -21,5 +21,11 @@ int		main(int argc, const char *argv[])
 			i++;
 		}
 	}
+	else if (atoi(argv[1]) == 2)
+	{
+		str = ft_memalloc(0);
+		if (!str)
+			write(1, "NULL", 4);
+	}
 	return (0);
 }
