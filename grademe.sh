@@ -112,7 +112,7 @@ do
 		p=0
 		tab_part=$(echo ${part}[*])
 		nb_func=$(echo ${!tab_part} | wc -w)
-		if [ ${part} != "additional_func" ]
+		if [ ${part} != "Additional_func" ]
 		then
 			while (( p < ${nb_func} ))
 			do
