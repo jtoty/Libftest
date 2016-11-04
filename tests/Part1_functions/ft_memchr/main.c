@@ -58,5 +58,11 @@ int		main(int argc, const char *argv[])
 		else
 			ft_print_result(str);
 	}
+	else if (atoi(argv[1]) == 6)
+	{
+		int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
+
+		printf("%s", ft_memchr(tab, -1, 7));
+	}
 	return (0);
 }
