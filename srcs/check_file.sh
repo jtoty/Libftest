@@ -67,6 +67,36 @@ check_auteur()
 	printf "\n"
 }
 
+check_header()
+{
+	text="= libft.h"
+	printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
+	printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
+	printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+	printf "$> norminette libft.h | grep -E '(Error|Warning)'\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+	printf "Header file"
+	if [ -e ${PATH_LIBFT}/libft.h ]
+	then
+		printf "\033[15GNorme\n"
+		printf "${COLOR_OK}found${DEFAULT}"
+		if norminette ${PATH_LIBFT}/libft.h 2>&1 | grep -q command
+		then
+			printf "${COLOR_WARNING}not found${DEFAULT}"
+			printf "norminette : command not found\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+		elif norminette ${PATH_LIBFT}/libft.h | grep -qE '(Error|Warning)'
+		then
+			printf "${COLOR_FAIL}\033[15Gcheck failed${DEFAULT}\n"
+			norminette ${PATH_LIBFT}/libft.h | grep -E '(Error|Warning)' >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "Norme check failed\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+		else
+			printf "${COLOR_OK}ok${DEFAULT}\n"
+		fi
+	else
+		printf "${COLOR_FAIL}\nnot found${DEFAULT}\n"
+	fi
+	printf "\n"
+}
+
 func_check_file()
 {
 	text="CHECKING FILES"
@@ -77,4 +107,5 @@ func_check_file()
 	printf "\n\n${DEFAULT}"
 	check_makefile
 	check_auteur
+	check_header
 }
