@@ -31,7 +31,7 @@ Part1_func=('ft_memset.c' 'ft_bzero.c' 'ft_memcpy.c' 'ft_memccpy.c' 'ft_memmove.
 
 Part2_func_forbidden=('6' '5' '6' '5' '7' \
 '7' '7' '6' '6' '7' \
-'7' '6' '6' '6' '6' \
+'7' '6' '6' '6' '4' \
 '6' '3' '3' '3' '3' \
 '3' '3' '3' '3')
 
