@@ -2,6 +2,9 @@
 
 #Added
 - Additional test for ft_isascii
+- Checking if libft.h exists
+- Checking for norme erros in libft.h
+- Tests for ft_split, ft_memchr.
 
 #Changed
 - Separate mandatory functions in two parts : Part1 and Part2
