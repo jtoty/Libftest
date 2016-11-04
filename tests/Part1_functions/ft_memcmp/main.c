@@ -34,6 +34,6 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 8)
 		ft_print_result(ft_memcmp("abcdefgh", "abcdwxyz", 6));
 	else if (atoi(argv[1]) == 9)
-		ft_print_result(ft_memcmp("abcdefgh", "abcdefgxyz", 0));
+		ft_print_result(ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0));
 	return (0);
 }

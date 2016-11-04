@@ -12,8 +12,19 @@ void	ft_print_result(char const *s)
 	}
 }
 
+void	ft_print_result2(int n)
+{
+	char c;
+
+	if (n >= 10)
+		ft_print_result2(n / 10);
+	c = n % 10 + '0';
+	write (1, &c, 1);
+}
+
 void	iter(unsigned int i, char *c)
 {
+	ft_print_result2(i);
 	c[i] = 'z';
 }
 
