@@ -81,7 +81,7 @@ check_header()
 		printf "${COLOR_OK}found${DEFAULT}"
 		if norminette ${PATH_LIBFT}/libft.h 2>&1 | grep -q command
 		then
-			printf "${COLOR_WARNING}not found${DEFAULT}"
+			printf "${COLOR_WARNING}\033[15Gnot found${DEFAULT}"
 			printf "norminette : command not found\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 		elif norminette ${PATH_LIBFT}/libft.h | grep -qE '(Error|Warning)'
 		then

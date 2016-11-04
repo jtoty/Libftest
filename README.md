@@ -4,6 +4,8 @@ This repository contains script to test your libft project.
 The script will do the following tests :
 - Check if the author file exists
 - Check content of the author file
+- Check if libft.h exists
+- Check norme of libft.h
 - Check if the Makefile file exists
 - Check rules in Makefile
 - Check compilation's flag in Makefile
@@ -59,6 +61,7 @@ bash /path/where/you/cloned/grademe.sh
 | `-u`<br />`--no-update` | Disable checking updates at launch |
 | `-p1`<br />`--no-part1`| Disable part 1 tests |
 | `-p2`<br />`--no-part2`| Disable part 2 tests |
+| `-a`,`--no-additional | Disable additional part tests |
 | `ft_function-name` | Test only this function |
 <!-- `-b`,`--no-bonus`  Disable bonus part tests  -->
 <!-- `-a`,`--no-additional` Disable additional part tests -->
@@ -75,5 +78,5 @@ Any suggestions or bugs reporting ?
 Contact jtoty@student.42.fr
 
 ### Contributors
-jmichaud : https://github.com/MrJe
-achauvea
+- jmichaud : https://github.com/MrJe
+- achauvea
