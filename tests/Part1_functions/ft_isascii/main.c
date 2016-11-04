@@ -80,5 +80,14 @@ int		main(int argc, const char *argv[])
 			i++;
 		}
 	}
+	else if (atoi(argv[1]) == 8)
+	{
+		i = 128;
+		while (i <= 138)
+		{
+			ft_print_result(ft_isascii(i));
+			i++;
+		}
+	}
 	return (0);
 }
