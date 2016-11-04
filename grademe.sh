@@ -47,7 +47,7 @@ do
 					check_part=$(echo CHECK_IN_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
 					if [ ${!check_part} -eq 1 ]
 					then
-						opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
+						#opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
 						p=0
 						activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
 						tab_part=$(echo ${part}[*])
@@ -58,7 +58,13 @@ do
 							if [ "$(echo ${arg} | grep -ow $(echo ${!func_name} | cut -d . -f 1))" != "" ]
 							then
 								(( ${part}_activation[$p]=1 ))
-								(( ${opt_part}=1 ))
+								#(( ${opt_part}=1 ))
+								#####################
+								OPT_NO_PART1=1
+								OPT_NO_PART2=1
+								OPT_NO_BONUS=1
+								OPT_NO_ADDITIONAL=1
+								#############################
 								(( ${activate_part}=1 ))
 								break
 							fi

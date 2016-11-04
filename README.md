@@ -58,7 +58,7 @@ bash /path/where/you/cloned/grademe.sh
 | `-n`<br />`--no-norminette` | Disable norminette |
 | `-u`<br />`--no-update` | Disable checking updates at launch |
 | `-m`<br />`--no-mandatory`| Disable mandatory part tests |
-| `ft_function-name` | Test only this function in its part |
+| `ft_function-name` | Test only this function |
 <!-- `-b`,`--no-bonus`  Disable bonus part tests  -->
 <!-- `-a`,`--no-additional` Disable additional part tests -->
 
