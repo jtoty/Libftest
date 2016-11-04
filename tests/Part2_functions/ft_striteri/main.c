@@ -25,7 +25,7 @@ void	ft_print_result2(int n)
 void	iter(unsigned int i, char *c)
 {
 	ft_print_result2(i);
-	c[i] = 'z';
+	*c = 'z';
 }
 
 int		main(int argc, const char *argv[])
