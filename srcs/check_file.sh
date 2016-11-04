@@ -89,7 +89,7 @@ check_header()
 			norminette ${PATH_LIBFT}/libft.h | grep -E '(Error|Warning)' >> ${PATH_DEEPTHOUGHT}/deepthought
 			printf "Norme check failed\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 		else
-			printf "${COLOR_OK}ok${DEFAULT}\n"
+			printf "${COLOR_OK}\033[G15ok${DEFAULT}\n"
 		fi
 	else
 		printf "${COLOR_FAIL}\nnot found${DEFAULT}\n"
