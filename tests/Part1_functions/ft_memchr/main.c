@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "../../../libft.h"
+#include <stdio.h>
 
 void	ft_print_result(const char *s)
 {
