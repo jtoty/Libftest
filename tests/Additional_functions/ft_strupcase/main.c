@@ -16,10 +16,19 @@ int		main(int argc, const char *argv[])
 	if (argc == 1)
 		return (0);
 	if (atoi(argv[1]) == 1)
-		ft_print_result(ft_strupcase("lorem ipsum dolor sit amet"));
+	{
+		char	str[] ="lorem ipsum dolor sit amet";
+		ft_print_result(ft_strupcase(str));
+	}
 	else if (atoi(argv[1]) == 2)
-		ft_print_result(ft_strupcase(" \n\tlorem 4ipSum DOLOR s\nit aMeT "));
+	{
+		char	str[] =" \n\tlorem 4ipSum DOLOR s\nit aMeT ";
+		ft_print_result(ft_strupcase(str));
+	}
 	else if (atoi(argv[1]) == 3)
-		ft_print_result(ft_strupcase("HeY ! 42mots quArAnte-deux; cinquante+et+un"));
+	{
+		char	str[] ="HeY ! 42mots quArAnte-deux; cinquante+et+un";
+		ft_print_result(ft_strupcase(str));
+	}
 	return (0);
 }

@@ -16,10 +16,19 @@ int		main(int argc, const char *argv[])
 	if (argc == 1)
 		return (0);
 	if (atoi(argv[1]) == 1)
-		ft_print_result(ft_strlowcase("LOREM IPSUM DOLOR SIT AMET"));
+	{
+		char	str[] ="LOREM IPSUM DOLOR SIT AMET";
+		ft_print_result(ft_strlowcase(str));
+	}
 	else if (atoi(argv[1]) == 2)
-		ft_print_result(ft_strlowcase(" \n\tlorem 4ipSum DOLOR s\nit aMeT "));
+	{
+		char	str[] =" \n\tlorem 4ipSum DOLOR s\nit aMeT ";
+		ft_print_result(ft_strlowcase(str));
+	}
 	else if (atoi(argv[1]) == 3)
-		ft_print_result(ft_strlowcase("HeY ! 42mots quArAnte-deux; cinquante+et+un"));
+	{
+		char	str[] ="HeY ! 42mots quArAnte-deux; cinquante+et+un";
+		ft_print_result(ft_strlowcase(str));
+	}
 	return (0);
 }
