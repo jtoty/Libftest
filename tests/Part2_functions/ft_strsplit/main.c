@@ -75,5 +75,19 @@ int		main(int argc, const char *argv[])
 			}
 		}
 	}
+	else if (atoi(argv[1]) == 5)
+	{
+		if (!(tabstr = ft_strsplit("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
+			ft_print_result("NULL");
+		else
+		{
+			while (tabstr[i] != '\0')
+			{
+				ft_print_result(tabstr[i]);
+				write(1, "\n", 1);
+				i++;
+			}
+		}
+	}
 	return (0);
 }
