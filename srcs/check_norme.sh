@@ -2,7 +2,7 @@
 
 check_norme()
 {
-	printf "$> norminette ${1} | grep - E '(Error|Warning)'\n" >>${PATH_DEEPTHOUGHT}/deepthought
+	printf "$> norminette ${1} | grep -E '(Error|Warning)'\n" >>${PATH_DEEPTHOUGHT}/deepthought
  	printf "\033[${NORME_COL}G"
 	if norminette ${PATH_LIBFT}/$1 2>&1 | grep -q command
 	then
