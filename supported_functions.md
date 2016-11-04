@@ -59,6 +59,7 @@
 - ft_strtrim.c
 
 ##Bonus part
+
 Coming next.
 
 ##Addtional part
