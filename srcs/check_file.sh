@@ -49,10 +49,10 @@ check_auteur()
 		fi
 		printf "\033[15GCheck file content\n"
 		printf "${COLOR_OK}found${DEFAULT}"
-		if [ $(wc -l ${PATH_LIBFT}/${AUTHOR_VAR} | cut -d ' ' -f 1) -gt 1 ]
+		if [ $(wc -l ${PATH_LIBFT}/${AUTHOR_VAR} | tr -d ' ' | cut -d 'a' -f 1) -gt 1 ]
 		then
 			printf "\033[15G${COLOR_FAIL}Too many lines in your file\n"
-		elif [ $(wc -c ${PATH_LIBFT}/${AUTHOR_VAR} | cut -d ' ' -f 1) -eq 0 ]
+		elif [ $(wc -c ${PATH_LIBFT}/${AUTHOR_VAR} | tr -d ' ' | cut -d 'a' -f 1) -eq 0 ]
 		then
 			printf "\033[15G${COLOR_FAIL}Empty file\n"
 		elif [ "$(cat -e ${PATH_LIBFT}/${AUTHOR_VAR} | grep '\$')" != "" ]
