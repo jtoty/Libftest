@@ -20,7 +20,7 @@ int		main(int argc, const char *argv[])
 	char	src[] = "lorem ipsum dolor sit amet";
 	char	*dest;
 
-	dest = src + 4;
+	dest = src + 1;
 	if (argc == 1)
 		return (0);
 	if (atoi(argv[1]) == 1)
@@ -38,6 +38,12 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 3)
 	{
 		if (dest != ft_memmove(dest, src, 8))
+			ft_print_result("dest's adress was not returned\n", 30);
+		ft_print_result(dest, 22);
+	}
+	else if (atoi(argv[1]) == 4)
+	{
+		if (dest != ft_memmove(src, dest,8))
 			ft_print_result("dest's adress was not returned\n", 30);
 		ft_print_result(dest, 22);
 	}
