@@ -20,15 +20,15 @@ int		main(int argc, const char *argv[])
 	if (atoi(argv[1]) == 1)
 		ft_print_result(ft_memcmp("salut", "salut", 5));
 	else if (atoi(argv[1]) == 2)
-		ft_print_result(ft_memcmp("test", "testss", 8));
+		ft_print_result(ft_memcmp("t\200", "t\0", 2));
 	else if (atoi(argv[1]) == 3)
-		ft_print_result(ft_memcmp("testss", "test", 8));
+		ft_print_result(ft_memcmp("testss", "test", 5));
 	else if (atoi(argv[1]) == 4)
-		ft_print_result(ft_memcmp("test", "tEst", 5));
+		ft_print_result(ft_memcmp("test", "tEst", 4));
 	else if (atoi(argv[1]) == 5)
-		ft_print_result(ft_memcmp("", "test", 5));
+		ft_print_result(ft_memcmp("", "test", 4));
 	else if (atoi(argv[1]) == 6)
-		ft_print_result(ft_memcmp("test", "", 5));
+		ft_print_result(ft_memcmp("test", "", 4));
 	else if (atoi(argv[1]) == 7)
 		ft_print_result(ft_memcmp("abcdefghij", "abcdefgxyz", 7));
 	else if (atoi(argv[1]) == 8)
