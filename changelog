@@ -4,6 +4,9 @@
 - One test of ft_memcmp
 _ One test of ft_strnew
 
+#Fix
+- Checking content of author file
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/04~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Added
