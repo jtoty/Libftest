@@ -59,7 +59,7 @@ check_auteur()
 		then
 			printf "\033[15G${COLOR_OK}$(cat -e ${PATH_LIBFT}/${AUTHOR_VAR})${DEFAULT}\n"
 		else
-			printf "\033[15G${COLOR_FAIL}'\\\n' missing"
+			printf "\033[15G${COLOR_FAIL}'\\\n' missing${DEFAULT}\n"
 		fi
 	else
 		printf "${COLOR_FAIL}\nnot found${DEFAULT}\n"
