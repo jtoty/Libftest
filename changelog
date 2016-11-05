@@ -2,6 +2,7 @@
 
 #Changed
 - One test of ft_memcmp
+_ One test of ft_strnew
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/04~~~~~~~~~~~~~~~~~~~~~~~~~~
 
