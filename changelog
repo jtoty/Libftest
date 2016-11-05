@@ -1,5 +1,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/05~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#Added
+- Additional test for ft_memmove
+
 #Changed
 - One test of ft_memcmp
 _ One test of ft_strnew
