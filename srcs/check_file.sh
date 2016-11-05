@@ -51,10 +51,10 @@ check_auteur()
 		printf "${COLOR_OK}found${DEFAULT}"
 		if [ $(wc -l ${PATH_LIBFT}/${AUTHOR_VAR} | tr -d ' ' | head -c 1) -gt 1 ]
 		then
-			printf "\033[15G${COLOR_FAIL}Too many lines in your file\n"
+			printf "\033[15G${COLOR_FAIL}Too many lines in your file\n${DEFAULT}"
 		elif [ $(wc -c ${PATH_LIBFT}/${AUTHOR_VAR} | tr -d ' ' | head -c 1) -eq 0 ]
 		then
-			printf "\033[15G${COLOR_FAIL}Empty file\n"
+			printf "\033[15G${COLOR_FAIL}Empty file\n${DEFAULT}"
 		elif [ "$(cat -e ${PATH_LIBFT}/${AUTHOR_VAR} | grep '\$')" != "" ]
 		then
 			printf "\033[15G${COLOR_OK}$(cat -e ${PATH_LIBFT}/${AUTHOR_VAR})${DEFAULT}\n"
