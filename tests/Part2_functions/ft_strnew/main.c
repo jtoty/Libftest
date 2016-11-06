@@ -38,7 +38,10 @@ int		main(int argc, const char *argv[])
 		else
 		{
 			ft_print_result2(malloc_size(str));
-			ft_print_result(str, 17);
+			if (malloc_size(str) == 16)
+				ft_print_result(str, 16);
+			else
+				ft_print_result(str, 17);
 		}
 	}
 	return (0);
