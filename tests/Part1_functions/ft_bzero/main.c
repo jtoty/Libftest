@@ -28,33 +28,5 @@ int		main(int argc, const char *argv[])
 		ft_bzero(mem, 5);
 		ft_print_result(mem, 5);
 	}
-	else if (atoi(argv[1]) == 2)
-	{
-		if (!(mem = malloc(sizeof(*mem) * 10)))
-			return (0);
-		ft_bzero(mem, 10);
-		ft_print_result(mem, 10);
-	}
-	else if (atoi(argv[1]) == 3)
-	{
-		if (!(mem = malloc(sizeof(*mem) * 15)))
-			return (0);
-		ft_bzero(mem, 15);
-		ft_print_result(mem, 15);
-	}
-	else if (atoi(argv[1]) == 4)
-	{
-		if (!(mem = malloc(sizeof(*mem) * 100)))
-			return (0);
-		ft_bzero(mem, 100);
-		ft_print_result(mem, 100);
-	}
-	else if (atoi(argv[1]) == 5)
-	{
-		if (!(mem = malloc(sizeof(*mem) * 1000)))
-			return (0);
-		ft_bzero(mem, 1000);
-		ft_print_result(mem, 1000);
-	}
 	return (0);
 }
