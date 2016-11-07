@@ -37,5 +37,7 @@ int		main(int argc, const char *argv[])
 		ft_print_result(ft_strncmp("zyxbcdefgh", "abcdwxyz", 0));
 	else if (atoi(argv[1]) == 10)
 		ft_print_result(ft_strncmp("abcdefgh", "", 0));
+	else if (atoi(argv[1]) == 11)
+		ft_print_result(ft_strncmp("test\200", "test\0", 6));
 	return (0);
 }
