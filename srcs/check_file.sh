@@ -79,17 +79,22 @@ check_header()
 	then
 		printf "\033[15GNorme\n"
 		printf "${COLOR_OK}found${DEFAULT}"
-		if norminette ${PATH_LIBFT}/libft.h 2>&1 | grep -q command
+		if [ ${OPT_NO_NORMINETTE} -eq 1 ]
 		then
-			printf "${COLOR_WARNING}\033[15Gnot found${DEFAULT}\n"
-			printf "norminette : command not found\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-		elif norminette ${PATH_LIBFT}/libft.h | grep -qE '(Error|Warning)'
-		then
-			printf "${COLOR_FAIL}\033[15Gcheck failed${DEFAULT}\n"
-			norminette ${PATH_LIBFT}/libft.h | grep -E '(Error|Warning)' >> ${PATH_DEEPTHOUGHT}/deepthought
-			printf "Norme check failed\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "${DEFAULT}\033[15Gdisabled\n"
 		else
-			printf "${COLOR_OK}\033[15Gok${DEFAULT}\n"
+			if norminette ${PATH_LIBFT}/libft.h 2>&1 | grep -q command
+			then
+				printf "${COLOR_WARNING}\033[15Gnot found${DEFAULT}\n"
+				printf "norminette : command not found\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+			elif norminette ${PATH_LIBFT}/libft.h | grep -qE '(Error|Warning)'
+			then
+				printf "${COLOR_FAIL}\033[15Gcheck failed${DEFAULT}\n"
+				norminette ${PATH_LIBFT}/libft.h | grep -E '(Error|Warning)' >> ${PATH_DEEPTHOUGHT}/deepthought
+				printf "Norme check failed\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+			else
+				printf "${COLOR_OK}\033[15Gok${DEFAULT}\n"
+			fi
 		fi
 	else
 		printf "${COLOR_FAIL}\nnot found${DEFAULT}\n"
