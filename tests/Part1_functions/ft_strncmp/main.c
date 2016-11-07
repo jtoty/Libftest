@@ -32,7 +32,7 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 7)
 		ft_print_result(ft_strncmp("abcdefghij", "abcdefgxyz", 3));
 	else if (atoi(argv[1]) == 8)
-		ft_print_result(ft_strncmp("abcdefgh", "abcdwxyz", 6));
+		ft_print_result(ft_strncmp("abcdefgh", "abcdwxyz", 4));
 	else if (atoi(argv[1]) == 9)
 		ft_print_result(ft_strncmp("zyxbcdefgh", "abcdwxyz", 0));
 	else if (atoi(argv[1]) == 10)
