@@ -30,6 +30,6 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 6)
 		ft_print_result(ft_strcmp("test", ""));
 	else if (atoi(argv[1]) == 7)
-		ft_print_result(ft_strcmp("te\x22", "te\x23"));
+		ft_print_result(ft_strcmp("\x12\xff\x65\x12\xbd\xde\xad", "\x12\x02"));
 	return (0);
 }
