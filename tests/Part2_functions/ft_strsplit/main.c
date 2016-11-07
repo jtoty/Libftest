@@ -49,7 +49,7 @@ int		main(int argc, const char *argv[])
 	}
 	else if (atoi(argv[1]) == 3)
 	{
-		if (!(tabstr = ft_strsplit("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", 'i')))
+		if (!(tabstr = ft_strsplit("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
 			ft_print_result("NULL");
 		else
 		{
