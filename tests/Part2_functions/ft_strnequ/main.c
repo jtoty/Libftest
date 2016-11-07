@@ -31,7 +31,7 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 8)
 		ft_print_result(ft_strnequ("test", "test", 2));
 	else if (atoi(argv[1]) == 9)
-		ft_print_result(ft_strnequ("test", "test", 0));
+		ft_print_result(ft_strnequ("tew", "tez", 2));
 	else if (atoi(argv[1]) == 10)
 		ft_print_result(ft_strnequ("", "", 0));
 	else if (atoi(argv[1]) == 11)
