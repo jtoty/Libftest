@@ -174,6 +174,7 @@ else
 	MAKEFILE_VAR="missing_makefile"
 fi
 
+printf "${BLUE}Credits : achauvea, jmichaud, jtoty${DEFAULT}\n"
 if [ ${OPT_NO_SEARCH} -eq 0 ]
 then
 	func_check_file
