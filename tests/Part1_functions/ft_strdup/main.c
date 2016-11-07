@@ -26,7 +26,7 @@ int		main(int argc, const char *argv[])
 		else
 			ft_print_result(str_dup);
 		if (str_dup == str)
-			ft_print_result("str_dup's adress == str's adress");
+			ft_print_result("\nstr_dup's adress == str's adress");
 	}
 	return (0);
 }
