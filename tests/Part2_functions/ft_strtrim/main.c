@@ -57,5 +57,15 @@ int		main(int argc, const char *argv[])
 		if (strtrim == s1)
 			ft_print_result("\nA new string was not returned");
 	}
+	else if (atoi(argv[1]) == 5)
+	{
+		char s1[] = "          ";
+		if (!(strtrim = ft_strtrim(s1)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(strtrim);
+		if (strtrim == s1)
+			ft_print_result("\nA new string was not returned");
+	}
 	return (0);
 }

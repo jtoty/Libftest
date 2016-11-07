@@ -3,6 +3,7 @@
 #Added
 - Additional test for ft_strlcat
 - Additional test for ft_strcmp
+- Additional test for ft_strtrim
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/05~~~~~~~~~~~~~~~~~~~~~~~~~~
 
