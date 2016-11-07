@@ -21,7 +21,7 @@ int		main(int argc, const char *argv[])
 	i = 0;
 	if (atoi(argv[1]) == 1)
 	{
-		if (!(tabstr = ft_strsplit("lorem ipsum dolor sit amet", ' ')))
+		if (!(tabstr = ft_strsplit("          ", ' ')))
 			ft_print_result("NULL");
 		else
 		{
