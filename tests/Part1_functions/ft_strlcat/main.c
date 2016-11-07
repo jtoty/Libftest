@@ -35,22 +35,32 @@ int		main(int argc, const char *argv[])
 	if (atoi(argv[1]) == 1)
 	{
 		ft_print_result(ft_strlcat(dest, "lorem", 15));
+		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 2)
 	{
 		ft_print_result(ft_strlcat(dest, "", 15));
+		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 3)
 	{
 		dest[0] = '\0';
 		ft_print_result(ft_strlcat(dest, "lorem ipsum", 15));
+		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 4)
 	{
 		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
+		write(1, "\n", 1);
+		ft_print_result2(dest, 15);
+	}
+	else if (atoi(argv[1]) == 5)
+	{
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 3));
+		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
 	return (0);
