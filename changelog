@@ -2,6 +2,7 @@
 
 #Added
 - Additional test for ft_strlcat
+- Additional test for ft_strcmp
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/05~~~~~~~~~~~~~~~~~~~~~~~~~~
 
