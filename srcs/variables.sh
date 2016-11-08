@@ -51,12 +51,11 @@ Part2_func=('ft_memalloc.c' 'ft_memdel.c' 'ft_strnew.c' 'ft_strdel.c' 'ft_strclr
 #                 Bonus functions                 #
 ###################################################
 
-Bonus_func=('ft_lstadd.c' 'ft_lstdel.c' 'ft_lstdelone.c' \
-'ft_lstiter.c' 'ft_lstmap.c' 'ft_lstnew.c')
+Bonus_func=('ft_lstnew.c')
 
 Bonus_func_activation=('0' '0' '0' '0' '0' '0')
 
-Bonus_func_forbidden=('0' '0' '0' '0' '0' '0')
+Bonus_func_forbidden=('6' '0' '0' '0' '0' '0')
 
 
 ###################################################
