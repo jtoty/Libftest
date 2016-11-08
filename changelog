@@ -3,6 +3,9 @@
 #Fix
 - Tests for ft_strnequ
 
+#Added
+- Tests for ft_lstnew
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/07~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Added
