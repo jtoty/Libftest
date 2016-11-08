@@ -5,6 +5,7 @@
 
 #Added
 - Tests for ft_lstnew
+- Tests for ft_lstiter
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/07~~~~~~~~~~~~~~~~~~~~~~~~~~
 
