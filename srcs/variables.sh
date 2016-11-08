@@ -81,7 +81,7 @@ Additional_func_forbidden=('7' '7' '7' '7' \
 #                 Other variables                 #
 ###################################################
 
-tab_all_part=('Part1_func' 'Part2_func' 'Additional_func')
+tab_all_part=('Part1_func' 'Part2_func' 'Bonus_func' 'Additional_func')
 
 num_sys_func=('1' '2' '4')
 system_func=('void' 'malloc' 'free' 'printf' 'write')
