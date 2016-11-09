@@ -8,6 +8,9 @@
 - Tests for ft_lstdelone
 - One test for ft_strlcpy
 
+#Changed
+- Test 5 of ft_strlcat
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Fix
