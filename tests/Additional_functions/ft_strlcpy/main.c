@@ -55,5 +55,10 @@ int		main(int argc, const char *argv[])
 		ft_print_result(ft_strlcpy(dest, "lorem ipsum dolor sit amet", 15));
 		ft_print_result2(dest, 15);
 	}
+	else if (atoi(argv[1]) == 5)
+	{
+		ft_print_result(ft_strlcpy(dest, "lorem ipsum dolor sit amet", 15));
+		ft_print_result2(dest, 15);
+	}
 	return (0);
 }

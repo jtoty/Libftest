@@ -6,6 +6,7 @@
 - One test for ft_strlcat
 - Tests for ft_lstdel
 - Tests for ft_lstdelone
+- One test for ft_strlcpy
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 
