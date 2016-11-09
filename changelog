@@ -7,6 +7,7 @@
 - Tests for ft_lstdel
 - Tests for ft_lstdelone
 - One test for ft_strlcpy
+- ft_*.o are now removed at the end of the tests
 
 #Changed
 - Test 5 of ft_strlcat
