@@ -59,7 +59,7 @@ int		main(int argc, const char *argv[])
 	}
 	else if (atoi(argv[1]) == 5)
 	{
-		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 3));
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
