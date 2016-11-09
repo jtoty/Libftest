@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "../../../libft.h"
 #include <unistd.h>
+#include <string.h>
 
 void	ft_print_result(t_list *elem)
 {
@@ -32,18 +33,6 @@ t_list	*ft_map(t_list *elem)
 	return (new_elem);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
-	}
-	return (dest);
-}
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
@@ -61,7 +50,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		if (!(elem->content = malloc(sizeof(*(elem->content)) * content_size)))
 			return (NULL);
-		elem->content = ft_memcpy(elem->content, content, content_size);
+		elem->content = memcpy(elem->content, content, content_size);
 		elem->content_size = content_size;
 	}
 	elem->next = NULL;
