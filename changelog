@@ -8,9 +8,11 @@
 - Tests for ft_lstdelone
 - One test for ft_strlcpy
 - ft_*.o are now removed at the end of the tests
+- One test for ft_strnew
 
 #Changed
 - Test 5 of ft_strlcat
+- Test 1 of ft_strnew
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 

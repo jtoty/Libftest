@@ -61,8 +61,8 @@ bash /path/where/you/cloned/grademe.sh
 | `-u`<br />`--no-update` | Disable checking updates at launch |
 | `-p1`<br />`--no-part1`| Disable part 1 tests |
 | `-p2`<br />`--no-part2`| Disable part 2 tests |
-| `-a`<br />`--no-additional` | Disable additional part tests |
 | `-b`<br />`--no-bonus` | Disable bonus part tests |
+| `-a`<br />`--no-additional` | Disable additional part tests |
 | `ft_function-name` | Test only this function |
 
 Add successively all options you want, in the order you want.

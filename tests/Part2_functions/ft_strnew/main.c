@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../../../libft.h"
-#include <malloc/malloc.h>
 #include <limits.h>
 
 void	ft_print_result(char const *s, int n)
@@ -16,16 +15,6 @@ void	ft_print_result(char const *s, int n)
 	}
 }
 
-void	ft_print_result2(int n)
-{
-	char c;
-
-	if (n >= 10)
-		ft_print_result2(n / 10);
-	c = n % 10 + '0';
-	write (1, &c, 1);
-}
-
 int		main(int argc, const char *argv[])
 {
 	char	*str;
@@ -37,26 +26,12 @@ int		main(int argc, const char *argv[])
 		if (!(str = ft_strnew(16)))
 			ft_print_result("NULL", 4);
 		else
-		{
-			ft_print_result2(malloc_size(str));
-			if (malloc_size(str) == 16)
-				ft_print_result(str, 16);
-			else
-				ft_print_result(str, 17);
-		}
+			ft_print_result(str, 17);
 	}
 	else if (atoi(argv[1]) == 2)
 	{
 		if (!(str = ft_strnew(ULONG_MAX - 1)))
 			ft_print_result("NULL", 4);
-		else
-		{
-			ft_print_result2(malloc_size(str));
-			if (malloc_size(str) == 16)
-				ft_print_result(str, 16);
-			else
-				ft_print_result(str, 17);
-		}
 	}
 	return (0);
 }
