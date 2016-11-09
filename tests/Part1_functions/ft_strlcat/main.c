@@ -63,5 +63,11 @@ int		main(int argc, const char *argv[])
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
+	else if (atoi(argv[1]) == 6)
+	{
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 1));
+		write(1, "\n", 1);
+		ft_print_result2(dest, 15);
+	}
 	return (0);
 }
