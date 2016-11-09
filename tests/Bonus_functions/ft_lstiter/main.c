@@ -21,6 +21,42 @@ void	ft_print_result(t_list *elem)
 	write(1, "\n", 1);
 }
 
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *)dest)[i] = ((char *)src)[i];
+		i++;
+	}
+	return (dest);
+}
+
+t_list	*ft_lstnew(void const *content, size_t content_size)
+{
+	t_list	*elem;
+
+	elem = (t_list *)malloc(sizeof(t_list));
+	if (!elem)
+		return (NULL);
+	if (!content)
+	{
+		elem->content = NULL;
+		elem->content_size = 0;
+	}
+	else
+	{
+		if (!(elem->content = malloc(content_size)))
+			return (NULL);
+		elem->content = ft_memcpy(elem->content, content, content_size);
+		elem->content_size = content_size;
+	}
+	elem->next = NULL;
+	return (elem);
+}
+
 int main(int argc, const char *argv[])
 {
 	t_list		*elem;
