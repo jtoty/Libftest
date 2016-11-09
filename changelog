@@ -2,6 +2,7 @@
 
 #Added
 - Tests for ft_lstadd
+- One test for ft_strnstr
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 

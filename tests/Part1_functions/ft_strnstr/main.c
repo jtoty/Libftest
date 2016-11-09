@@ -80,5 +80,12 @@ int		main(int argc, const char *argv[])
 		else
 			ft_print_result(str);
 	}
+	else if (atoi(argv[1]) == 10)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
 	return (0);
 }
