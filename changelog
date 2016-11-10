@@ -3,6 +3,9 @@
 #Remove
 - Tests for ft_lstdel & ft_lstdelone due to errors
 
+#Added
+- One test for ft_strlcat
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Added

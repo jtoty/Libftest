@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../../../libft.h"
+#include <string.h>
 
 void	ft_print_result(int n)
 {
@@ -66,6 +67,13 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 6)
 	{
 		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 1));
+		write(1, "\n", 1);
+		ft_print_result2(dest, 15);
+	}
+	else if (atoi(argv[1]) == 7)
+	{
+		memset(dest, 'r', 15);
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
