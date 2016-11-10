@@ -14,11 +14,11 @@ func_check_update()
 			REMOTE_VERSION=$(git log --oneline "refs/remotes/origin/${LOCAL_BRANCH}" | awk 'END {print NR}')
 			if [ "${REMOTE}" != "${LOCAL}" -a "${REMOTE}" != "" -a "${LOCAL_VERSION}" -lt "${REMOTE_VERSION}" ]
 			then
-				printf "${RED}A new version is available\n"
+				printf "${RED}A new version is available.\n"
 				printf "${DEFAULT}Do you want to update ? [y/n]\n"
 				CHANGELOG=1
 			else
-				printf "${RED}Changes are made locally\n"
+				printf "${RED}Changes are made locally.\n"
 				printf "${DEFAULT}Do you want to restore the original version ? [y/n]\n"
 				CHANGELOG=0
 			fi
@@ -37,15 +37,15 @@ func_check_update()
 							head -n $(awk 'BEGIN {p=0}{if ($1 ~ /^~/){p+=1};if (p == 1) {print}}' ${PATH_TEST}/changelog | wc -l) ${PATH_TEST}/changelog
 						fi
 					else
-						printf "${GREEN}\nThe original version has been restored\n${DEFAULT}"
+						printf "${GREEN}\nThe original version has been restored.\n${DEFAULT}"
 					fi
-					printf "\nPlease relaunch script\n"
+					printf "\nPlease relaunch script.\n"
 					exit
 			fi
 		else
-			printf "No updates available\n\n"
+			printf "No updates available.\n\n"
 		fi
 	else
-		printf "${RED}Failed to check update\n\n"
+		printf "${RED}Failed to check update.\n\n"
 	fi
 }

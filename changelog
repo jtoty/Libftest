@@ -5,6 +5,7 @@
 
 #Added
 - One test for ft_strlcat
+- Display name of each part in deepthought file
 
 #Changed
 - Test 13 of ft_atoi
