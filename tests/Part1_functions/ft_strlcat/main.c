@@ -73,7 +73,7 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 7)
 	{
 		memset(dest, 'r', 15);
-		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
+		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
