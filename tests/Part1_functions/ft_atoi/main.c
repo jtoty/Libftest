@@ -31,7 +31,7 @@ int main(int argc, const char *argv[])
 	if (atoi(argv[1]) == 1)
 		ft_print_result(ft_atoi("0"));
 	else if (atoi(argv[1]) == 2)
-		ft_print_result(ft_atoi("546"));
+		ft_print_result(ft_atoi("546:5"));
 	else if (atoi(argv[1]) == 3)
 		ft_print_result(ft_atoi("-4886"));
 	else if (atoi(argv[1]) == 4)
@@ -63,6 +63,6 @@ int main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 17)
 		ft_print_result(ft_atoi("\t\n\r\v\fd469 \n"));
 	else if (atoi(argv[1]) == 18)
-		ft_print_result(ft_atoi("\n\n\n  46\b9 \nd"));
+		ft_print_result(ft_atoi("\n\n\n  -46\b9 \n5d6"));
 	return (0);
 }
