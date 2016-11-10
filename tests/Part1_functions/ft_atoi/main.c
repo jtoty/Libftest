@@ -53,7 +53,7 @@ int main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 12)
 		ft_print_result(ft_atoi("-47-5"));
 	else if (atoi(argv[1]) == 13)
-		ft_print_result(ft_atoi("  475 4"));
+		ft_print_result(ft_atoi("\e475"));
 	else if (atoi(argv[1]) == 14)
 		ft_print_result(ft_atoi("\t\n\r\v\f  469 \n"));
 	else if (atoi(argv[1]) == 15)

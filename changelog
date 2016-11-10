@@ -6,6 +6,9 @@
 #Added
 - One test for ft_strlcat
 
+#Changed
+- Test 13 of ft_atoi
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Added
