@@ -1,5 +1,10 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#Remove
+- Tests for ft_lstdel & ft_lstdelone due to errors
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #Added
 - Tests for ft_lstadd
 - One test for ft_strnstr
