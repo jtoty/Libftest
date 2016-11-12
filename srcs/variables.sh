@@ -61,7 +61,7 @@ Bonus_func=('ft_lstnew.c' 'ft_lstiter.c' 'ft_lstmap.c')
 
 Bonus_func_activation=('0' '0' '0')
 
-Bonus_func_forbidden=('6' '7' '6')
+Bonus_func_forbidden=('0' '0' '0')
 
 
 
