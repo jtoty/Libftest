@@ -60,7 +60,6 @@
 
 ##Bonus part
 
-- ft_lstadd.c
 - ft_lstiter.c
 - ft_lstmap.c
 - ft_lstnew.c
