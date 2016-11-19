@@ -81,4 +81,5 @@
 - ft_strcapitalize.c
 - ft_strlcpy.c
 - ft_strlowcase.c
+- ft_strndup.c
 - ft_strupcase.c

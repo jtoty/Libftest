@@ -8,6 +8,7 @@
 
 #Added
 - Option -h / --help : display help and exit
+- One additional function : ft_strndup
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -70,17 +70,17 @@ Bonus_func_forbidden=('4' '7' '4')
 Additional_func=('ft_isblank.c' 'ft_iscntrl.c' 'ft_isgraph.c' 'ft_islower.c' \
 'ft_isspace.c' 'ft_isupper.c' 'ft_isxdigit.c' 'ft_str_is_alpha.c' 'ft_str_is_lowercase.c' \
 'ft_str_is_numeric.c' 'ft_str_is_printable.c' 'ft_str_is_uppercase.c' 'ft_strcapitalize.c' \
-'ft_strlcpy.c' 'ft_strlowcase.c' 'ft_strupcase.c')
+'ft_strlcpy.c' 'ft_strlowcase.c' 'ft_strndup.c' 'ft_strupcase.c')
 
 Additional_func_activation=('0' '0' '0' '0' \
 '0' '0' '0' '0' '0' \
 '0' '0' '0' '0' \
-'0' '0' '0')
+'0' '0' '0' '0')
 
 Additional_func_forbidden=('7' '7' '7' '7' \
 '7' '7' '7' '7' '7' \
 '7' '7' '7' '7' \
-'7' '7' '7')
+'7' '7' '6' '7')
 
 ###################################################
 #                 Other variables                 #
