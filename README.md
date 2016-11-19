@@ -28,7 +28,7 @@ Makefile up to date.
 ### Installation
 
 ```bash
-git clone https://github.com/jtoty/grademe
+git clone https://github.com/jtoty/Libftest
 ```
 
 ### Configuration
