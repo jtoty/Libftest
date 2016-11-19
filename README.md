@@ -53,6 +53,7 @@ bash /path/where/you/cloned/grademe.sh
 ### Options available
 | Option | Description |
 | --- | --- |
+| `-h`<br />`--help` | Display help and exit |
 | `-c`<br />`--no-color` | Disable color |
 | `-s`<br />`--no-search` | Disable searching Makefile and author files |
 | `-q`<br />`--quick-lib` <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | When compiling library, do only `make re`. It may be useful on slower devices, such as Raspberry Pi, to avoid to wait too long for all the tests. However, other rules are still checked if they exist (but they are not tested). |

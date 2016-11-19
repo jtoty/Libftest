@@ -7,11 +7,16 @@ PATH_TEST="$(cd "$(dirname "$0")" && pwd -P)"
 exec 2> /dev/null
 
 source ${PATH_TEST}/srcs/variables.sh
+source ${PATH_TEST}/srcs/display_help.sh
 
 
 for arg in ${@}
 do
 	case "${arg}" in
+		"--help")			display_help | less
+							exit ;;
+		"-h")				display_help | less
+							exit ;;
 		"--no-search")		OPT_NO_SEARCH=1 ;;
 		"-s")				OPT_NO_SEARCH=1 ;;
 		"--quick-lib")		OPT_QUICK_LIB=1 ;;

@@ -1,10 +1,13 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/19~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Changed
-- Test 2 of ft_strnequ
-- Test 3 of ft_strnequ
-- Test 5 of ft_strnequ
-- Test 6 of ft_strnequ
+- Test 2 of ft_strnequ (previous test was wrong)
+- Test 3 of ft_strnequ (previous test was wrong)
+- Test 5 of ft_strnequ (previous test was wrong)
+- Test 6 of ft_strnequ (previous test was wrong)
+
+#Added
+- Option -h / --help : display help and exit
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 
