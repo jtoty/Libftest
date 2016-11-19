@@ -15,7 +15,8 @@ The script will do the following tests :
 - Tests functions
 
 At the end of the tests, a deepthought file will be created, inside which you
-can find all the results and error/failure messages.
+can find all the results and error/failure messages. You can also see your
+results in tests directory.
 
 The script will compil your files with your libft, so you must have your
 Makefile up to date.
@@ -33,7 +34,7 @@ git clone https://github.com/jtoty/grademe
 ### Configuration
 
 If you run the script for the first time, it will automatically create
-`your_config.sh` file and ask you to edit it with the path of your libft
+`my_config.sh` file and ask you to edit it with the path of your libft
 project.  
 You can also choose the colors that will be used and the path where the
 deepthought file will be created.

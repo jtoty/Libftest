@@ -1,7 +1,15 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/19~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Changed
+- Test 2 of ft_strnequ
+- Test 3 of ft_strnequ
+- Test 5 of ft_strnequ
+- Test 6 of ft_strnequ
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Remove
-- Tests for ft_lstdel & ft_lstdelone due to errors
+- Tests for ft_lstadd, ft_lstdel & ft_lstdelone due to errors
 
 #Added
 - One test for ft_strlcat
