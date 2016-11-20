@@ -79,6 +79,7 @@
 - ft_str_is_printable.c
 - ft_str_is_uppercase.c
 - ft_strcapitalize.c
+- ft_strcasecmp.c
 - ft_strlcpy.c
 - ft_strlowcase.c
 - ft_strndup.c

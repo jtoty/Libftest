@@ -35,19 +35,17 @@ int		main(int argc, const char *argv[])
 	memset(dest, 'r', 6);
 	if (atoi(argv[1]) == 1)
 	{
-		ft_print_result(ft_strlcpy(dest, "jour", 15));
 		ft_print_result(ft_strlcpy(dest, "lorem", 15));
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 2)
 	{
 		ft_print_result(ft_strlcpy(dest, "", 15));
-		ft_print_result(ft_strlcpy(dest, "", 15));
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 3)
 	{
-		ft_print_result(ft_strlcpy(dest, "lorem ipsum", 15));
+		ft_print_result(ft_strlcpy(dest, "lorem ipsum", 3));
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 4)
