@@ -2,14 +2,14 @@
 
 print_cheat()
 {
-	if grep -q "${system_func[$2]}" ${PATH_LIBFT}/$1
+	if grep -qw "${system_func[$2]}" ${PATH_LIBFT}/$1
 	then
 		if [ $3 -eq 0 ]
 		then
 			printf "${COLOR_FAIL}not clean${DEFAULT}"
 			printf "Cheat detected\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 		fi
-		grep -n "${system_func[$2]}" ${PATH_LIBFT}/$1 | awk '{print "Line " $0}' >> ${PATH_DEEPTHOUGHT}/deepthought
+		grep -wn "${system_func[$2]}" ${PATH_LIBFT}/$1 | awk '{print "Line " $0}' >> ${PATH_DEEPTHOUGHT}/deepthought
 		if [ $2 -eq 3 ]
 		then
 			printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
