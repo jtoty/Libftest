@@ -3,7 +3,7 @@
 check_cheating()
 {
 	clang -Wextra -Wall -Werror ${PATH_LIBFT}/$1 ${PATH_TEST}/main_check_cheating.c ${PATH_LIBFT}/libft.a
-	CHEAT_VAR=$(nm ${PATH_TEST}/a.out | grep U | tr -d ' ' | grep -v main | grep -v dyld )
+	CHEAT_VAR=$(nm ${PATH_TEST}/a.out | grep U | tr -d ' ' | grep -v main | grep -v dyld | grep -v chk)
 	printf "\033[${CHEAT_COL}G"
 	param2=$2
 	while [ $param2 -gt 0 ]
