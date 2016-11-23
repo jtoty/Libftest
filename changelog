@@ -4,6 +4,7 @@
 - Forbidden functions detection. nm command is used now for
 better detection. Option -f to disable it
 - List of forbidden functions in part 1
+- Improve rapidity when checking norme
 
 #Fix
 - Bug when checking forbidden functions
