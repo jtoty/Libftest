@@ -219,6 +219,8 @@ then
 	cp ${PATH_LIBFT}/libft.h ${PATH_TEST}
 fi
 
+printf "#include \"libft.h\"\n\nint\tmain(void)\n{\n\treturn (0);\n}" > ${PATH_TEST}/main_check_cheating.c
+
 for part in ${tab_all_part[*]}
 do
 	activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
@@ -232,10 +234,21 @@ do
 	fi
 done
 
+if [ -e ${PATH_TEST}/a.out ]
+then
+	rm ${PATH_TEST}/a.out
+fi
+
 if [ -e ${PATH_TEST}/libft.h ]
 then
 	rm ${PATH_TEST}/libft.h
 fi
+
+if [ -e ${PATH_TEST}/main_check_cheating.c ]
+then
+	rm ${PATH_TEST}/main_check_cheating.c
+fi
+
 if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] | [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
 then
 	printf "\n"

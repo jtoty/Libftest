@@ -4,12 +4,12 @@
 #                 Part1 functions                 #
 ###################################################
 
-Part1_func_forbidden=('7' '7' '7' '7' '4' \
-'7' '7' '7' '6' '7' \
-'7' '7' '7' '7' '7' \
-'7' '7' '7' '7' '7' \
-'7' '7' '7' '7' '7' \
-'7' '7' '7' '7')
+Part1_func_authorized=('0' '0' '0' '0' '3' \
+'0' '0' '0' '1' '0' \
+'0' '0' '0' '0' '0' \
+'0' '0' '0' '0' '0' \
+'0' '0' '0' '0' '0' \
+'0' '0' '0' '0')
 
 Part1_func_activation=('0' '0' '0' '0' '0' \
 '0' '0' '0' '0' '0' \
@@ -29,11 +29,11 @@ Part1_func=('ft_memset.c' 'ft_bzero.c' 'ft_memcpy.c' 'ft_memccpy.c' 'ft_memmove.
 #                 Part2 functions                 #
 ###################################################
 
-Part2_func_forbidden=('6' '5' '6' '5' '7' \
-'7' '7' '6' '6' '7' \
-'7' '6' '6' '6' '4' \
-'6' '3' '3' '3' '3' \
-'3' '3' '3' '3')
+Part2_func_authorized=('1' '2' '1' '2' '0' \
+'0' '0' '1' '1' '0' \
+'0' '1' '1' '1' '3' \
+'1' '4' '4' '4' '4' \
+'4' '4' '4' '4')
 
 Part2_func_activation=('0' '0' '0' '0' '0' \
 '0' '0' '0' '0' '0' \
@@ -61,7 +61,7 @@ Bonus_func=('ft_lstnew.c' 'ft_lstiter.c' 'ft_lstmap.c')
 
 Bonus_func_activation=('0' '0' '0')
 
-Bonus_func_forbidden=('4' '7' '4')
+Bonus_func_authorized=('3' '0' '3')
 
 ###################################################
 #              Additional functions               #
@@ -77,10 +77,10 @@ Additional_func_activation=('0' '0' '0' '0' \
 '0' '0' '0' '0' \
 '0' '0' '0' '0' '0')
 
-Additional_func_forbidden=('7' '7' '7' '7' \
-'7' '7' '7' '7' '7' \
-'7' '7' '7' '7' \
-'4' '7' '7' '6' '7')
+Additional_func_authorized=('0' '0' '0' '0' \
+'0' '0' '0' '0' '0' \
+'0' '0' '0' '0' \
+'3' '0' '0' '1' '0')
 
 ###################################################
 #                 Other variables                 #
@@ -92,9 +92,11 @@ num_sys_func=('1' '2' '4')
 system_func=('void' 'malloc' 'free' 'printf' 'write')
 
 NORME_COL=23
-CHEAT_COL=38
-COMPIL_COL=50
-TEST_COL=65
+#CHEAT_COL=38
+CHEAT_COL=50
+#COMPIL_COL=50
+COMPIL_COL=38
+TEST_COL=67
 RESULT_COL=87
 TITLE_LENGTH=92
 CHAR_LENGTH="-"

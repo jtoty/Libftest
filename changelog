@@ -1,5 +1,11 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/21~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#Changed
+- Forbidden functions detection. nm command is used now for
+better detection. Option -f to disable it.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/21~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #Fix
 - Bug when checking forbidden functions
 

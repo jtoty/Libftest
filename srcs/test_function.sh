@@ -21,7 +21,7 @@ check_turned_in_file()
 		printf "${COLOR_FAIL}NTI${DEFAULT}"
 		printf "\033[${RESULT_COL}G"
 		printf "${COLOR_FAIL}NTI${DEFAULT}\n"
-		printf "= Nothing turned in\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+		printf "Nothing turned in\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 		retvalue=0
 		return "$retvalue"
 	fi
@@ -35,7 +35,7 @@ test_function()
 	printf "FUNCTION"
 	printf "\033[${NORME_COL}GNORME"
 	printf "\033[${CHEAT_COL}GCHEAT"
-	printf "\033[${COMPIL_COL}GCOMPILATION"
+	printf "\033[${COMPIL_COL}GCOMPIL."
 	printf "\033[${TEST_COL}GTESTS"
 	printf "\033[${RESULT_COL}GRESULT\n${DEFAULT}"
 
@@ -66,26 +66,28 @@ test_function()
 				else
 					printf "\033[${NORME_COL}G${DEFAULT}disabled"
 				fi
-				if [ ${OPT_NO_FORBIDDEN} -eq 0 ]
-				then
-					check_cheating $function $(( ${part}_forbidden[$i] ))
-					check=$?
-					if [ $check -eq 1 ]
-					then
-						result=0
-					fi
-				else
-					printf "\033[${CHEAT_COL}G${DEFAULT}disabled"
-				fi
 				compilation $function
 				check_compilation
 				check=$?
 				if [ $check -eq 1 ]
 				then
+					if [ ${OPT_NO_FORBIDDEN} -eq 0 ]
+					then
+						check_cheating $function $(( ${part}_authorized[$i] ))
+						check=$?
+						if [ $check -eq 1 ]
+						then
+							result=0
+						fi
+					else
+						printf "\033[${CHEAT_COL}G${DEFAULT}disabled"
+					fi
 					diff_test $function
 				else
+					printf "\033[${CHEAT_COL}G"
+					printf "${COLOR_FAIL}compil. failed${DEFAULT}"
 					printf "\033[${TEST_COL}G"
-					printf "${COLOR_FAIL}compilation failed${DEFAULT}"
+					printf "${COLOR_FAIL}compil. failed${DEFAULT}"
 					result=0
 				fi
 				check=$?
