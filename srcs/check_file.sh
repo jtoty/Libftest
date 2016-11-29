@@ -69,11 +69,6 @@ check_auteur()
 
 check_header()
 {
-	text="= libft.h"
-	printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "$> norminette libft.h | grep -E '(Error|Warning)'\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 	printf "Header file"
 	if [ -e ${PATH_LIBFT}/libft.h ]
 	then
@@ -83,6 +78,11 @@ check_header()
 		then
 			printf "${DEFAULT}\033[15Gdisabled\n"
 		else
+			text="= libft.h"
+			printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "$> norminette libft.h | grep -E '(Error|Warning)'\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			NORME_VAR=$(norminette ${PATH_LIBFT}/libft.h 2>&1)
 			if echo "$NORME_VAR" | grep -q command
 			then
