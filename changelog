@@ -2,6 +2,7 @@
 
 #Added
 - One test for ft_strlcat
+- One test for ft_bzero
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/29~~~~~~~~~~~~~~~~~~~~~~~~~~
 

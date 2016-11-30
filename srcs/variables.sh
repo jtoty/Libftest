@@ -62,7 +62,7 @@ Part2_func=('ft_memalloc.c' 'ft_memdel.c' 'ft_strnew.c' 'ft_strdel.c' 'ft_strclr
 
 #Bonus_func_activation=('0' '0' '0' '0' '0' '0')
 
-#Bonus_func_forbidden=('4' '5' '5' '7' '7' '4')
+#Bonus_func_authorized=('3' '2' '2' '0' '0' '3')
 
 Bonus_func=('ft_lstnew.c' 'ft_lstiter.c' 'ft_lstmap.c')
 
@@ -99,9 +99,7 @@ num_sys_func=('1' '2' '4')
 system_func=('void' 'malloc' 'free' 'printf' 'write')
 
 NORME_COL=23
-#CHEAT_COL=38
 CHEAT_COL=50
-#COMPIL_COL=50
 COMPIL_COL=38
 TEST_COL=67
 RESULT_COL=87
