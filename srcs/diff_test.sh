@@ -40,10 +40,10 @@ diff_test()
 				diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d  . -f 1)/test${text}$k.output | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
 				printf "\nDiff KO :(\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 				retvalue=0
-				printf "${COLOR_FAIL}X${DEFAULT}"
+				printf "${COLOR_FAIL}✗${DEFAULT}"
 			else
 				printf "\nDiff OK :D\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-				printf "${COLOR_OK}O${DEFAULT}"
+				printf "${COLOR_OK}✓${DEFAULT}"
 			fi
 		fi
 		#if [ -e ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ]

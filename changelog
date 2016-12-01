@@ -1,5 +1,10 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/30~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#Changed
+- New character when display tests
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/30~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #Added
 - One test for ft_strlcat
 - One test for ft_bzero
