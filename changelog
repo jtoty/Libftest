@@ -1,3 +1,11 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~2016/12/03~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Added
+- One test for ft_strncpy
+
+#Changed
+- Image for README.md
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/30~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Changed
@@ -118,7 +126,7 @@ _ One test of ft_strnew
 
 #Changed
 - Separate mandatory functions in two parts : Part1 and Part2
-- Image for READEME.md
+- Image for README.md
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/03~~~~~~~~~~~~~~~~~~~~~~~~~~
 

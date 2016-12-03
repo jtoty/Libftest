@@ -11,9 +11,8 @@ void	ft_print_result(t_list *elem)
 	while (((char *)elem->content)[i])
 	{
 		write(1, &((char *)elem->content)[i], 1);
-		elem->content++;
+		i++;
 	}
-	write(1, "\n", 1);
 }
 
 void	ft_del(void *content, size_t size)
@@ -55,6 +54,7 @@ int main(int argc, const char *argv[])
 	char		str2 [] = "ipsum";
 	char		str3 [] = "dolor";
 	char		str4 [] = "sit";
+	//int			i;
 
 	elem = ft_lstnew(str, sizeof(str));
 	elem2 = ft_lstnew(str2, sizeof(str2));
@@ -65,18 +65,37 @@ int main(int argc, const char *argv[])
 	elem->next = elem2;
 	elem2->next = elem3;
 	elem3->next = elem4;
+	//i = '1';
 	if (atoi(argv[1]) == 1)
 	{
 		ft_lstdel(&elem3, &ft_del);
+		if (elem)
+			ft_print_result(elem);
+		else
+			write(1, "NULL", 4);
+		write(1, "\n", 1);
+		if (elem2)
+			ft_print_result(elem2);
+		else
+			write(1, "NULL", 4);
+		write(1, "\n", 1);
+		if (elem3)
+			ft_print_result(elem3);
+		else
+			write(1, "NULL", 4);
+		write(1, "\n", 1);
+		if (elem4)
+			ft_print_result(elem4);
+		else
+			write(1, "NULL", 4);
+		/*write(1, "\n", 1);
 		while (elem)
 		{
-			ft_print_result(elem);
+			write(1, &i, 1);
+			write(1, "\n", 1);
+			i++;
 			elem = elem->next;
-		}
-		if (!elem3)
-			write(1, "NULL", 4);
-		if (!elem4)
-			write(1, "\nNULL", 5);
+		}*/
 	}
 	return (0);
 }
