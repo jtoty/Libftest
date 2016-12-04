@@ -25,6 +25,7 @@ int		main(int argc, const char *argv[])
 	memset(dest, 'r', 6);
 	if (atoi(argv[1]) == 1)
 	{
+		dest[11] = 'a';
 		if (dest != ft_strcat(dest, "lorem"))
 			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
@@ -38,14 +39,8 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 3)
 	{
 		dest[0] = '\0';
+		dest[11] = 'a';
 		if (dest != ft_strcat(dest, "lorem ipsum"))
-			ft_print_result("dest's adress was not returned\n", 31);
-		ft_print_result(dest, 15);
-	}
-	else if (atoi(argv[1]) == 4)
-	{
-		dest[14] = 'i';
-		if (dest != ft_strcat(dest, "abcdefgh"))
 			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}

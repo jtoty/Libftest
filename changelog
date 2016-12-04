@@ -2,7 +2,10 @@
 
 #Added
 - One test for ft_memmove
-- One test for ft_strcat
+
+#Changed
+- Test 1 of ft_strcat
+- Test 3 of ft_strcat
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/12/03~~~~~~~~~~~~~~~~~~~~~~~~~~
 
