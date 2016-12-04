@@ -42,5 +42,12 @@ int		main(int argc, const char *argv[])
 			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
+	else if (atoi(argv[1]) == 4)
+	{
+		dest[14] = 'i';
+		if (dest != ft_strcat(dest, "abcdefgh"))
+			ft_print_result("dest's adress was not returned\n", 31);
+		ft_print_result(dest, 15);
+	}
 	return (0);
 }
