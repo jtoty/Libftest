@@ -249,7 +249,7 @@ then
 	rm ${PATH_TEST}/main_check_cheating.c
 fi
 
-if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] | [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
+if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] || [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
 then
 	printf "\n"
 fi
