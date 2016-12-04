@@ -26,32 +26,32 @@ int		main(int argc, const char *argv[])
 	if (atoi(argv[1]) == 1)
 	{
 		if (dest != ft_strncat(dest, "lorem", 2))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
 	else if (atoi(argv[1]) == 2)
 	{
 		if (dest != ft_strncat(dest, "lorem", 9))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
 	else if (atoi(argv[1]) == 3)
 	{
 		if (dest != ft_strncat(dest, "", 3))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
 	else if (atoi(argv[1]) == 4)
 	{
 		if (dest != ft_strncat(dest, "lorem ipsum", 0))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
 	else if (atoi(argv[1]) == 5)
 	{
 		dest[0] = '\0';
 		if (dest != ft_strncat(dest, "lorem ipsum", 10))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
 	return (0);

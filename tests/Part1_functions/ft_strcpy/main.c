@@ -26,19 +26,19 @@ int		main(int argc, const char *argv[])
 	if (atoi(argv[1]) == 1)
 	{
 		if (dest != ft_strcpy(dest, "lorem"))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
 	else if (atoi(argv[1]) == 2)
 	{
 		if (dest != ft_strcpy(dest, "lorem ipsum"))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
 	else if (atoi(argv[1]) == 3)
 	{
 		if (dest != ft_strcpy(dest, ""))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 15);
 	}
 	return (0);

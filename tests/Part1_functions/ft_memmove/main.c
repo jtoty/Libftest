@@ -26,25 +26,31 @@ int		main(int argc, const char *argv[])
 	if (atoi(argv[1]) == 1)
 	{
 		if (dest != ft_memmove(dest, "consectetur", 5))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 22);
 	}
 	else if (atoi(argv[1]) == 2)
 	{
 		if (dest != ft_memmove(dest, "con\0sec\0\0te\0tur", 10))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 22);
 	}
 	else if (atoi(argv[1]) == 3)
 	{
 		if (dest != ft_memmove(dest, src, 8))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 22);
 	}
 	else if (atoi(argv[1]) == 4)
 	{
-		if (dest != ft_memmove(src, dest,8))
-			ft_print_result("dest's adress was not returned\n", 30);
+		if (src != ft_memmove(src, dest, 8))
+			ft_print_result("dest's adress was not returned\n", 31);
+		ft_print_result(dest, 22);
+	}
+	else if (atoi(argv[1]) == 5)
+	{
+		if (src != ft_memmove(src, dest, 0))
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(dest, 22);
 	}
 	return (0);

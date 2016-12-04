@@ -25,19 +25,19 @@ int		main(int argc, const char *argv[])
 	if (atoi(argv[1]) == 1)
 	{
 		if (mem != ft_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 14))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(mem, 30);
 	}
 	else if (atoi(argv[1]) == 2)
 	{
 		if (mem != ft_memcpy(mem, "zyxwvutst", 0))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(mem, 30);
 	}
 	else if (atoi(argv[1]) == 3)
 	{
 		if (mem != ft_memcpy(mem, "zy\0xw\0vu\0\0tsr", 11))
-			ft_print_result("dest's adress was not returned\n", 30);
+			ft_print_result("dest's adress was not returned\n", 31);
 		ft_print_result(mem, 30);
 	}
 	return (0);
