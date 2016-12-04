@@ -35,6 +35,7 @@ int		main(int argc, const char *argv[])
 	memset(dest, 'r', 6);
 	if (atoi(argv[1]) == 1)
 	{
+		dest[11] = 'a';
 		ft_print_result(ft_strlcat(dest, "lorem", 15));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
@@ -48,24 +49,28 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 3)
 	{
 		dest[0] = '\0';
+		dest[11] = 'a';
 		ft_print_result(ft_strlcat(dest, "lorem ipsum", 15));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 4)
 	{
+		dest[14] = 'a';
 		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 5)
 	{
+		dest[10] = 'a';
 		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
 	}
 	else if (atoi(argv[1]) == 6)
 	{
+		dest[10] = 'a';
 		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 1));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
@@ -79,6 +84,7 @@ int		main(int argc, const char *argv[])
 	}
 	else if (atoi(argv[1]) == 8)
 	{
+		dest[10] = 'a';
 		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 6));
 		write(1, "\n", 1);
 		ft_print_result2(dest, 15);
