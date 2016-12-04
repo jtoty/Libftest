@@ -24,22 +24,26 @@ int		main(int argc, const char *argv[])
 	memset(mem, 'j', 15);
 	if (atoi(argv[1]) == 1)
 	{
-		ft_memset(mem, 'c', 5);
+		if (mem != ft_memset(mem, 'c', 5))
+			ft_print_result("mem's adress was not returned\n", 30);
 		ft_print_result(mem, 15);
 	}
 	else if (atoi(argv[1]) == 2)
 	{
-		ft_memset(mem, 'c', 14);
+		if (mem != ft_memset(mem, 'c', 14))
+			ft_print_result("mem's adress was not returned\n", 30);
 		ft_print_result(mem, 15);
 	}
 	else if (atoi(argv[1]) == 3)
 	{
-		ft_memset(mem, '\n', 6);
+		if (mem != ft_memset(mem, '\n', 6))
+			ft_print_result("mem's adress was not returned\n", 30);
 		ft_print_result(mem, 15);
 	}
 	else if (atoi(argv[1]) == 4)
 	{
-		ft_memset(mem, '\0', 1);
+		if (mem != ft_memset(mem, '\0', 1))
+			ft_print_result("mem's adress was not returned\n", 30);
 		ft_print_result(mem, 15);
 	}
 	return (0);
