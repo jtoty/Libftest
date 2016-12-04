@@ -57,7 +57,6 @@ int main(int argc, const char *argv[])
 	char		str2 [] = "ipsum";
 	char		str3 [] = "dolor";
 	char		str4 [] = "sit";
-	int			i;
 
 	elem = ft_lstnew(str, sizeof(str));
 	elem2 = ft_lstnew(str2, sizeof(str2));
@@ -68,7 +67,6 @@ int main(int argc, const char *argv[])
 	elem->next = elem2;
 	elem2->next = elem3;
 	elem3->next = elem4;
-	i = '1';
 	nb_free_done = 0;
 	if (atoi(argv[1]) == 1)
 	{
@@ -96,14 +94,6 @@ int main(int argc, const char *argv[])
 		}
 		else
 			write(1, "NULL", 4);
-		write(1, "\n", 1);
-		while (elem)
-		{
-			write(1, &i, 1);
-			write(1, "\n", 1);
-			i++;
-			elem = elem->next;
-		}
 	}
 	return (0);
 }
