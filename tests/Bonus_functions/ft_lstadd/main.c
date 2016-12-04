@@ -41,6 +41,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 
 int main(int argc, const char *argv[])
 {
+	t_list		*begin;
 	t_list		*elem;
 	t_list		*elem2;
 	t_list		*elem3;
@@ -59,13 +60,15 @@ int main(int argc, const char *argv[])
 		return (0);
 	if (atoi(argv[1]) == 1)
 	{
-		ft_lstadd(&elem4, elem3);
-		ft_lstadd(&elem3, elem2);
-		ft_lstadd(&elem2, elem);
-		while (elem)
+		begin = NULL;
+		ft_lstadd(&begin, elem4);
+		ft_lstadd(&begin, elem3);
+		ft_lstadd(&begin, elem2);
+		ft_lstadd(&begin, elem);
+		while (begin)
 		{
-			ft_print_result(elem);
-			elem = elem->next;
+			ft_print_result(begin);
+			begin = begin->next;
 		}
 	}
 	return (0);
