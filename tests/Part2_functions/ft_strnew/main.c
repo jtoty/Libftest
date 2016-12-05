@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../../../libft.h"
-#include <limits.h>
 
 void	ft_print_result(char const *s, int n)
 {
@@ -23,15 +22,17 @@ int		main(int argc, const char *argv[])
 		return (0);
 	if (atoi(argv[1]) == 1)
 	{
-		if (!(str = ft_strnew(16)))
+		if (!(str = ft_strnew(30)))
 			ft_print_result("NULL", 4);
 		else
-			ft_print_result(str, 17);
+			ft_print_result(str, 31);
 	}
-	else if (atoi(argv[1]) == 2)
+	if (atoi(argv[1]) == 2)
 	{
-		if (!(str = ft_strnew(ULONG_MAX - 1)))
+		if (!(str = ft_strnew(0)))
 			ft_print_result("NULL", 4);
+		else
+			ft_print_result(str, 1);
 	}
 	return (0);
 }
