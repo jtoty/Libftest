@@ -10,38 +10,50 @@ display_help()
 	printf "\t-h, --help\n"
 	printf "\t\tDisplay help and exit\n\n"
 
-	printf "\t-c, --no-color\n"
+	printf "\t-c\n"
 	printf "\t\tDisable color\n\n"
 
-	printf "\t-s, --no-search\n"
+	printf "\t-s\n"
 	printf "\t\tDisable searching Makefile, author and header file\n\n"
 
-	printf "\t-q, --quick-lib\n"
+	printf "\t-q\n"
 	printf "\t\tWhen compiling library, do only 'make re'\n\n"
 
-	printf "\t-l, --no-library\n"
+	printf "\t-l\n"
 	printf "\t\tDisable compiling library\n\n"
 
-	printf "\t-f, --no-forbidden\n"
+	printf "\t-f\n"
 	printf "\t\tDisable checking forbidden functions\n\n"
 
-	printf "\t-n, --no-norminette\n"
+	printf "\t-n\n"
 	printf "\t\tDisable norminette\n\n"
 
-	printf "\t-u, --no-update\n"
+	printf "\t-u\n"
 	printf "\t\tDisable checking updates at launch\n\n"
 
-	printf "\t-p1, --no-part1\n"
+	printf "\t-p1\n"
 	printf "\t\tDisable part 1 tests\n\n"
 
-	printf "\t-p2, --no-part2\n"
+	printf "\t-p2\n"
 	printf "\t\tDisable part 2 tests\n\n"
 
-	printf "\t-b, --no-bonus\n"
+	printf "\t-b\n"
 	printf "\t\tDisable bonus part tests\n\n"
 
-	printf "\t-a, --no-additional\n"
+	printf "\t-a\n"
 	printf "\t\tDisable additional part tests\n\n"
+
+	printf "\t-op1\n"
+	printf "\t\tDo only part 1 tests\n\n"
+
+	printf "\t-op2\n"
+	printf "\t\tDo only part 2 tests\n\n"
+
+	printf "\t-ob\n"
+	printf "\t\tDo only bonus part tests\n\n"
+
+	printf "\t-oa\n"
+	printf "\t\tDo additional part tests\n\n"
 
 	printf "\tft_function-name\n"
 	printf "\t\tTest only this function\n\n"

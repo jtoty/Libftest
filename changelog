@@ -1,3 +1,11 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~2016/12/07~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Added
+- Option -op1 : do only part 1 tests
+- Option -op2 : do only part 2 tests
+- Option -ob : do only bonus part tests
+- Option -oa : do only additional part tests
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/12/04~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Added
