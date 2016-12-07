@@ -14,20 +14,22 @@ void	ft_print_result(char const *s)
 
 void	iter(char *c)
 {
-	*c = 'z';
+	if (*c >= 'a' && *c <= 'z')
+		*c = *c - 32;
+	else if (*c >= 'A' && *c <= 'Z')
+		*c = *c + 32;
 }
 
 int		main(int argc, const char *argv[])
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(*str) * 10);
+	str = (char *)malloc(sizeof(*str) * 12);
 	if (argc == 1 || !str)
 		return (0);
 	if (atoi(argv[1]) == 1)
 	{
-		memset(str, 'b', 9);
-		str[9] = '\0';
+		strcpy(str, "LoReM iPsUm");
 		ft_striter(str, &iter);
 		ft_print_result(str);
 	}

@@ -3,8 +3,6 @@
 #include <string.h>
 #include "../../../libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-
 void	ft_print_result(char const *s)
 {
 	while (*s)
