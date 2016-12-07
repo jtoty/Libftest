@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include "../../../libft.h"
 
 char	*ft_strmap(char const *s, char (*f)(char));
 
