@@ -58,17 +58,11 @@ Part2_func=('ft_memalloc.c' 'ft_memdel.c' 'ft_strnew.c' 'ft_strdel.c' 'ft_strclr
 #                 Bonus functions                 #
 ###################################################
 
-#Bonus_func=('ft_lstnew.c' 'ft_lstdelone.c' 'ft_lstdel.c' 'ft_lstadd.c' 'ft_lstiter.c' 'ft_lstmap.c')
+Bonus_func=('ft_lstnew.c' 'ft_lstdelone.c' 'ft_lstdel.c' 'ft_lstadd.c' 'ft_lstiter.c' 'ft_lstmap.c')
 
-#Bonus_func_activation=('0' '0' '0' '0' '0' '0')
+Bonus_func_activation=('0' '0' '0' '0' '0' '0')
 
-#Bonus_func_authorized=('3' '2' '2' '0' '0' '3')
-
-Bonus_func=('ft_lstnew.c' 'ft_lstiter.c' 'ft_lstmap.c')
-
-Bonus_func_activation=('0' '0' '0')
-
-Bonus_func_authorized=('3' '0' '3')
+Bonus_func_authorized=('3' '2' '2' '0' '0' '3')
 
 ###################################################
 #              Additional functions               #

@@ -5,6 +5,9 @@
 - Option -op2 : do only part 2 tests
 - Option -ob : do only bonus part tests
 - Option -oa : do only additional part tests
+- Tests for ft_lstadd
+- Tests for ft_lstdelone
+- Tests for ft_lstdel
 
 #Changed
 - Tests of ft_strchr
