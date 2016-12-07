@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../../../libft.h"
+
+char	*ft_strmap(char const *s, char (*f)(char));
 
 void	ft_print_result(char const *s)
 {
@@ -14,8 +15,12 @@ void	ft_print_result(char const *s)
 
 char	map(char c)
 {
-	c = 'y';
-	return (c);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	else if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
 }
 
 int		main(int argc, const char *argv[])
@@ -23,17 +28,18 @@ int		main(int argc, const char *argv[])
 	char	*str;
 	char	*strmap;
 
-	str = (char *)malloc(sizeof(*str) * 10);
+	str = (char *)malloc(sizeof(*str) * 12);
 	if (argc == 1 || !str)
 		return (0);
 	if (atoi(argv[1]) == 1)
 	{
-		memset(str, 'd', 9);
-		str[9] = '\0';
+		strcpy(str, "LoReM iPsUm");
 		strmap = ft_strmap(str, &map);
 		ft_print_result(strmap);
 		if (strmap == str)
 			ft_print_result("\nA new string was not returned");
+		if (strmap[11] != '\0')
+			ft_print_result("\nString is not null terminated");
 	}
 	return (0);
 }
