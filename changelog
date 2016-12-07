@@ -8,6 +8,7 @@
 
 #Changed
 - Tests of ft_strchr
+- Tests of ft_strrchr
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/12/04~~~~~~~~~~~~~~~~~~~~~~~~~~
 
