@@ -10,6 +10,7 @@
 - Tests of ft_strchr
 - Tests of ft_strrchr
 - Tests of ft_strmap
+- Tests of ft_strmapi
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/12/04~~~~~~~~~~~~~~~~~~~~~~~~~~
 
