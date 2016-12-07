@@ -69,7 +69,7 @@ bash /path/where/you/cloned/grademe.sh
 | `-op2`| Do only part 2 tests |
 | `-ob` | Do only bonus part tests |
 | `-oa` | Do only additional part tests |
-| `ft_function-name` | Test only this function |
+| `ft_function` | Test only this function |
 
 Add successively all options you want, in the order you want.
 For example :
