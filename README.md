@@ -54,17 +54,21 @@ bash /path/where/you/cloned/grademe.sh
 | Option | Description |
 | --- | --- |
 | `-h`<br />`--help` | Display help and exit |
-| `-c`<br />`--no-color` | Disable color |
-| `-s`<br />`--no-search` | Disable searching Makefile and author files |
-| `-q`<br />`--quick-lib` <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | When compiling library, do only `make re`. It may be useful on slower devices, such as Raspberry Pi, to avoid to wait too long for all the tests. However, other rules are still checked if they exist (but they are not tested). |
-| `-l`<br /> `--no-library` | Disable compiling library |
-| `-f`<br />`--no-forbidden` | Disable checking forbidden functions |
-| `-n`<br />`--no-norminette` | Disable norminette |
-| `-u`<br />`--no-update` | Disable checking updates at launch |
-| `-p1`<br />`--no-part1`| Disable part 1 tests |
-| `-p2`<br />`--no-part2`| Disable part 2 tests |
-| `-b`<br />`--no-bonus` | Disable bonus part tests |
-| `-a`<br />`--no-additional` | Disable additional part tests |
+| `-c` | Disable color |
+| `-s` | Disable searching Makefile and author files |
+| `-q` | When compiling library, do only `make re`. It may be useful on slower devices, such as Raspberry Pi, to avoid to wait too long for all the tests. However, other rules are still checked if they exist (but they are not tested). |
+| `-l` | Disable compiling library |
+| `-f` | Disable checking forbidden functions |
+| `-n` | Disable norminette |
+| `-u` | Disable checking updates at launch |
+| `-p1` | Disable part 1 tests |
+| `-p2` | Disable part 2 tests |
+| `-b`| Disable bonus part tests |
+| `-a` | Disable additional part tests |
+| `-op1`| Do only part 1 tests |
+| `-op2`| Do only part 2 tests |
+| `-ob` | Do only bonus part tests |
+| `-oa` | Do only additional part tests |
 | `ft_function-name` | Test only this function |
 
 Add successively all options you want, in the order you want.
