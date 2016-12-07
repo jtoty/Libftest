@@ -14,44 +14,61 @@ void	ft_print_result(char const *s)
 
 int		main(int argc, const char *argv[])
 {
-	const char *str;
+	char		*str;
+	char		str2[] = "bonjour";
 
 	if (argc == 1)
 		return (0);
 	if (atoi(argv[1]) == 1)
 	{
-		if (!(str = ft_strchr("bonjour", 'b')))
+		if (!(str = ft_strchr(str2, 'b')))
 			ft_print_result("NULL");
 		else
+		{
 			ft_print_result(str);
+			if (str != str2)
+				ft_print_result("\nReturn value is false");
+		}
 	}
 	else if (atoi(argv[1]) == 2)
 	{
-		if (!(str = ft_strchr("bonjour", 'o')))
+		if (!(str = ft_strchr(str2, 'o')))
 			ft_print_result("NULL");
 		else
+		{
 			ft_print_result(str);
+			if (str != str2 + 1)
+				ft_print_result("\nReturn value is false");
+		}
 	}
 	else if (atoi(argv[1]) == 3)
 	{
-		if (!(str = ft_strchr("bonjour", 'j')))
+		if (!(str = ft_strchr(str2, 'j')))
 			ft_print_result("NULL");
 		else
+		{
 			ft_print_result(str);
+			if (str != str2 + 3)
+				ft_print_result("\nReturn value is false");
+		}
 	}
 	else if (atoi(argv[1]) == 4)
 	{
-		if (!(str = ft_strchr("bonjour", 's')))
+		if (!(str = ft_strchr(str2, 's')))
 			ft_print_result("NULL");
 		else
 			ft_print_result(str);
 	}
 	else if (atoi(argv[1]) == 5)
 	{
-		if (!(str = ft_strchr("bonjour", '\0')))
+		if (!(str = ft_strchr(str2, '\0')))
 			ft_print_result("NULL");
 		else
+		{
 			ft_print_result(str);
+			if (str != str2 + 7)
+				ft_print_result("\nReturn value is false");
+		}
 	}
 	return (0);
 }

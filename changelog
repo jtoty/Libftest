@@ -6,6 +6,9 @@
 - Option -ob : do only bonus part tests
 - Option -oa : do only additional part tests
 
+#Changed
+- Tests of ft_strchr
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/12/04~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Added
