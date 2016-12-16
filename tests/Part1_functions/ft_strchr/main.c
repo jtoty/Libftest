@@ -70,5 +70,17 @@ int		main(int argc, const char *argv[])
 				ft_print_result("\nReturn value is false");
 		}
 	}
+	else if (atoi(argv[1]) == 6)
+	{
+		char	str3[] = "";
+		if (!(str = ft_strchr(str3, '\0')))
+			ft_print_result("NULL");
+		else
+		{
+			ft_print_result(str);
+			if (str != str3)
+				ft_print_result("\nReturn value is false");
+		}
+	}
 	return (0);
 }
