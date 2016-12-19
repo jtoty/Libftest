@@ -5,11 +5,12 @@
 
 void	ft_print_result(char const *s)
 {
-	while (*s)
-	{
-		write(1, &*s, 1);
-		s++;
-	}
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
 }
 
 void	ft_print_result2(int n)
@@ -38,7 +39,7 @@ int		main(int argc, const char *argv[])
 	str = (char *)malloc(sizeof(*str) * 12);
 	if (argc == 1 || !str)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if (atoi(argv[1]) == 1)
 	{
 		strcpy(str, "LoReM iPsUm");
 		ft_striteri(str, &iter);

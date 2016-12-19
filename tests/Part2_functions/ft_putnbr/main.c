@@ -4,25 +4,27 @@
 
 int		main(int argc, const char *argv[])
 {
+	int		arg;
+
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 		ft_putnbr(0);
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 		ft_putnbr(5);
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 		ft_putnbr(-5);
-	else if (atoi(argv[1]) == 4)
+	else if (arg == 4)
 		ft_putnbr(42);
-	else if (atoi(argv[1]) == 5)
+	else if (arg == 5)
 		ft_putnbr(-57);
-	else if (atoi(argv[1]) == 6)
+	else if (arg == 6)
 		ft_putnbr(164189);
-	else if (atoi(argv[1]) == 7)
+	else if (arg == 7)
 		ft_putnbr(-987441);
-	else if (atoi(argv[1]) == 8)
+	else if (arg == 8)
 		ft_putnbr(2147483647);
-	else if (atoi(argv[1]) == 9)
+	else if (arg == 9)
 		ft_putnbr(-2147483648LL);
 	return (0);
 }

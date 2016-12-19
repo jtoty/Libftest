@@ -4,11 +4,12 @@
 
 void	ft_print_result(char const *s)
 {
-	while (*s)
-	{
-		write(1, &*s, 1);
-		s++;
-	}
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
 }
 
 void	ft_print_result2(int n)
@@ -24,10 +25,11 @@ void	ft_print_result2(int n)
 int main(int argc, const char *argv[])
 {
 	t_list		*elem;
+	int			arg;
 
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 	{
 		char	str [] = "lorem ipsum dolor sit";
 
@@ -50,7 +52,7 @@ int main(int argc, const char *argv[])
 			}
 		}
 	}
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 	{
 		int		i;
 
@@ -74,7 +76,7 @@ int main(int argc, const char *argv[])
 			}
 		}
 	}
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 	{
 		if (!(elem = ft_lstnew(NULL, 5)))
 				ft_print_result("NULL");

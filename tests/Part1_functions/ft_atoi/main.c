@@ -26,43 +26,45 @@ void	ft_print_result(int n)
 
 int main(int argc, const char *argv[])
 {
+	int		arg;
+
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 		ft_print_result(ft_atoi("0"));
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 		ft_print_result(ft_atoi("546:5"));
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 		ft_print_result(ft_atoi("-4886"));
-	else if (atoi(argv[1]) == 4)
+	else if (arg == 4)
 		ft_print_result(ft_atoi("+548"));
-	else if (atoi(argv[1]) == 5)
+	else if (arg == 5)
 		ft_print_result(ft_atoi("054854"));
-	else if (atoi(argv[1]) == 6)
+	else if (arg == 6)
 		ft_print_result(ft_atoi("000074"));
-	else if (atoi(argv[1]) == 7)
+	else if (arg == 7)
 		ft_print_result(ft_atoi("+-54"));
-	else if (atoi(argv[1]) == 8)
+	else if (arg == 8)
 		ft_print_result(ft_atoi("-+48"));
-	else if (atoi(argv[1]) == 9)
+	else if (arg == 9)
 		ft_print_result(ft_atoi("--47"));
-	else if (atoi(argv[1]) == 10)
+	else if (arg == 10)
 		ft_print_result(ft_atoi("++47"));
-	else if (atoi(argv[1]) == 11)
+	else if (arg == 11)
 		ft_print_result(ft_atoi("+47+5"));
-	else if (atoi(argv[1]) == 12)
+	else if (arg == 12)
 		ft_print_result(ft_atoi("-47-5"));
-	else if (atoi(argv[1]) == 13)
+	else if (arg == 13)
 		ft_print_result(ft_atoi("\e475"));
-	else if (atoi(argv[1]) == 14)
+	else if (arg == 14)
 		ft_print_result(ft_atoi("\t\n\r\v\f  469 \n"));
-	else if (atoi(argv[1]) == 15)
+	else if (arg == 15)
 		ft_print_result(ft_atoi("-2147483648"));
-	else if (atoi(argv[1]) == 16)
+	else if (arg == 16)
 		ft_print_result(ft_atoi("2147483647"));
-	else if (atoi(argv[1]) == 17)
+	else if (arg == 17)
 		ft_print_result(ft_atoi("\t\n\r\v\fd469 \n"));
-	else if (atoi(argv[1]) == 18)
+	else if (arg == 18)
 		ft_print_result(ft_atoi("\n\n\n  -46\b9 \n5d6"));
 	return (0);
 }

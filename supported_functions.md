@@ -76,6 +76,7 @@
 - ft_isspace.c
 - ft_isupper.c
 - ft_isxdigit.c
+- ft_itoa_base.c
 - ft_str_is_alpha.c
 - ft_str_is_lowercase.c
 - ft_str_is_numeric.c

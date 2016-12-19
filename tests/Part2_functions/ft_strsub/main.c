@@ -4,21 +4,23 @@
 
 void	ft_print_result(char const *s)
 {
-	while (*s)
-	{
-		write(1, &*s, 1);
-		s++;
-	}
+	int		len;
+	
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
 }
 
 int		main(int argc, const char *argv[])
 {
-	char str[] = "lorem ipsum dolor sit amet";
-	char *strsub;
+	char	str[] = "lorem ipsum dolor sit amet";
+	char	*strsub;
+	int		arg;
 
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 	{
 		if (!(strsub = ft_strsub(str, 0, 10)))
 			ft_print_result("NULL");
@@ -27,7 +29,7 @@ int		main(int argc, const char *argv[])
 		if (str == strsub)
 			ft_print_result("\nA new string was not returned");
 	}
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 	{
 		if (!(strsub = ft_strsub(str, 7, 10)))
 			ft_print_result("NULL");
@@ -36,7 +38,7 @@ int		main(int argc, const char *argv[])
 		if (str == strsub)
 			ft_print_result("\nA new string was not returned");
 	}
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 	{
 		if (!(strsub = ft_strsub(str, 7, 0)))
 			ft_print_result("NULL");

@@ -5,20 +5,18 @@
 
 void	ft_print_result(t_list *elem)
 {
-	int		i;
+	int		len;
 
-	i = 0;
-	while (((char *)elem->content)[i])
+	len = 0;
+	while (((char *)elem->content)[len])
 	{
-		((char *)elem->content)[i] = 'd';
-		i++;
+		((char *)elem->content)[len] = 'd';
+		len++;
 	}
-	i = 0;
-	while (((char *)elem->content)[i])
-	{
-		write(1, &((char *)elem->content)[i], 1);
-		elem->content++;
-	}
+	len = 0;
+	while (((char *)elem->content)[len])
+		len++;
+	write(1, elem->content, len);
 	write(1, "\n", 1);
 }
 

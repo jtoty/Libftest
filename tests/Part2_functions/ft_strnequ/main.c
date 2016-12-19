@@ -12,29 +12,31 @@ void	ft_print_result(int n)
 
 int		main(int argc, const char *argv[])
 {
+	int		arg;
+
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 		ft_print_result(ft_strnequ("salut", "salut", 6));
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 		ft_print_result(ft_strnequ("test", "tests", 6));
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 		ft_print_result(ft_strnequ("tests", "test", 6));
-	else if (atoi(argv[1]) == 4)
+	else if (arg == 4)
 		ft_print_result(ft_strnequ("test", "tEst", 6));
-	else if (atoi(argv[1]) == 5)
+	else if (arg == 5)
 		ft_print_result(ft_strnequ("", "test", 6));
-	else if (atoi(argv[1]) == 6)
+	else if (arg == 6)
 		ft_print_result(ft_strnequ("test", "", 6));
-	else if (atoi(argv[1]) == 7)
+	else if (arg == 7)
 		ft_print_result(ft_strnequ("", "", 6));
-	else if (atoi(argv[1]) == 8)
+	else if (arg == 8)
 		ft_print_result(ft_strnequ("test", "test", 2));
-	else if (atoi(argv[1]) == 9)
+	else if (arg == 9)
 		ft_print_result(ft_strnequ("tew", "tez", 2));
-	else if (atoi(argv[1]) == 10)
+	else if (arg == 10)
 		ft_print_result(ft_strnequ("", "", 0));
-	else if (atoi(argv[1]) == 11)
+	else if (arg == 11)
 		ft_print_result(ft_strnequ("abcd", "zxyw", 0));
 	return (0);
 }

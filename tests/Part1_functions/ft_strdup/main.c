@@ -5,11 +5,12 @@
 
 void	ft_print_result(char const *s)
 {
-	while (*s)
-	{
-		write(1, &*s, 1);
-		s++;
-	}
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
 }
 
 int		main(int argc, const char *argv[])

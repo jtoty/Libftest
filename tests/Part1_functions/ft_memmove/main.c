@@ -3,55 +3,44 @@
 #include <string.h>
 #include "../../../libft.h"
 
-void	ft_print_result(char const *s, int n)
-{
-	int i;
-
-	i = 0;
-	while (i < n)
-	{
-		write (1, &s[i], 1);
-		i++;
-	}
-}
-
 int		main(int argc, const char *argv[])
 {
 	char	src[] = "lorem ipsum dolor sit amet";
 	char	*dest;
+	int		arg;
 
 	dest = src + 1;
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 	{
 		if (dest != ft_memmove(dest, "consectetur", 5))
-			ft_print_result("dest's adress was not returned\n", 31);
-		ft_print_result(dest, 22);
+			write(1, "dest's adress was not returned\n", 31);
+		write(1, dest, 22);
 	}
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 	{
 		if (dest != ft_memmove(dest, "con\0sec\0\0te\0tur", 10))
-			ft_print_result("dest's adress was not returned\n", 31);
-		ft_print_result(dest, 22);
+			write(1, "dest's adress was not returned\n", 31);
+		write(1, dest, 22);
 	}
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 	{
 		if (dest != ft_memmove(dest, src, 8))
-			ft_print_result("dest's adress was not returned\n", 31);
-		ft_print_result(dest, 22);
+			write(1, "dest's adress was not returned\n", 31);
+		write(1, dest, 22);
 	}
-	else if (atoi(argv[1]) == 4)
+	else if (arg == 4)
 	{
 		if (src != ft_memmove(src, dest, 8))
-			ft_print_result("dest's adress was not returned\n", 31);
-		ft_print_result(dest, 22);
+			write(1, "dest's adress was not returned\n", 31);
+		write(1, dest, 22);
 	}
-	else if (atoi(argv[1]) == 5)
+	else if (arg == 5)
 	{
 		if (src != ft_memmove(src, dest, 0))
-			ft_print_result("dest's adress was not returned\n", 31);
-		ft_print_result(dest, 22);
+			write(1, "dest's adress was not returned\n", 31);
+		write(1, dest, 22);
 	}
 	return (0);
 }

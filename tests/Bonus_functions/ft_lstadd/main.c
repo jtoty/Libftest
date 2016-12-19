@@ -5,14 +5,12 @@
 
 void	ft_print_result(t_list *elem)
 {
-	int		i;
+	int		len;
 
-	i = 0;
-	while (((char *)elem->content)[i])
-	{
-		write(1, &((char *)elem->content)[i], 1);
-		elem->content++;
-	}
+	len = 0;
+	while (((char *)elem->content)[len])
+		len++;
+	write(1, elem->content, len);
 	write(1, "\n", 1);
 }
 
@@ -58,7 +56,7 @@ int main(int argc, const char *argv[])
 	elem4 = ft_lstnew(str4, sizeof(str4));
 	if (argc == 1 || !elem || !elem2 || !elem3 || !elem4)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if (atoi(argv[1]) == 1)
 	{
 		begin = NULL;
 		ft_lstadd(&begin, elem4);

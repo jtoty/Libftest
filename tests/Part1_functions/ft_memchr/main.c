@@ -6,20 +6,22 @@
 
 void	ft_print_result(const char *s)
 {
-	while (*s)
-	{
-		write(1, &*s, 1);
-		s++;
-	}
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
 }
 
 int		main(int argc, const char *argv[])
 {
 	const char *str;
+	int			arg;
 
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 	{
 		str = ft_memchr("bonjour", 'b', 4);
 		if (!str)
@@ -27,7 +29,7 @@ int		main(int argc, const char *argv[])
 		else
 			ft_print_result(str);
 	}
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 	{
 		str = ft_memchr("bonjour", 'o', 7);
 		if (!str)
@@ -35,7 +37,7 @@ int		main(int argc, const char *argv[])
 		else
 			ft_print_result(str);
 	}
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 	{
 		str = ft_memchr("bonjourno", 'n', 2);
 		if (!str)
@@ -43,7 +45,7 @@ int		main(int argc, const char *argv[])
 		else
 			ft_print_result(str);
 	}
-	else if (atoi(argv[1]) == 4)
+	else if (arg == 4)
 	{
 		str = ft_memchr("bonjour", 'j', 6);
 		if (!str)
@@ -51,7 +53,7 @@ int		main(int argc, const char *argv[])
 		else
 			ft_print_result(str);
 	}
-	else if (atoi(argv[1]) == 5)
+	else if (arg == 5)
 	{
 		str = ft_memchr("bonjour", 's', 7);
 		if (!str)
@@ -59,7 +61,7 @@ int		main(int argc, const char *argv[])
 		else
 			ft_print_result(str);
 	}
-	else if (atoi(argv[1]) == 6)
+	else if (arg == 6)
 	{
 		int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
 

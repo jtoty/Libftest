@@ -13,11 +13,12 @@ void	ft_print_result(int n)
 
 int		main(int argc, const char *argv[])
 {
-	int i;
+	int		i;
+	int		arg;
 
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	if ((arg = atoi(argv[1])) == 1)
 	{
 		i = 0;
 		while (i <= 47)
@@ -26,7 +27,7 @@ int		main(int argc, const char *argv[])
 			i++;
 		}
 	}
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 	{
 		i = '0';
 		while (i <= '9')
@@ -35,7 +36,7 @@ int		main(int argc, const char *argv[])
 			i++;
 		}
 	}
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 	{
 		i = 58;
 		while (i <= 64)
@@ -44,7 +45,7 @@ int		main(int argc, const char *argv[])
 			i++;
 		}
 	}
-	else if (atoi(argv[1]) == 4)
+	else if (arg == 4)
 	{
 		i = 'A';
 		while (i <= 'Z')
@@ -53,7 +54,7 @@ int		main(int argc, const char *argv[])
 			i++;
 		}
 	}
-	else if (atoi(argv[1]) == 5)
+	else if (arg == 5)
 	{
 		i = 91;
 		while (i <= 96)
@@ -62,7 +63,7 @@ int		main(int argc, const char *argv[])
 			i++;
 		}
 	}
-	else if (atoi(argv[1]) == 6)
+	else if (arg == 6)
 	{
 		i = 'a';
 		while (i <= 'z')
@@ -71,7 +72,7 @@ int		main(int argc, const char *argv[])
 			i++;
 		}
 	}
-	else if (atoi(argv[1]) == 7)
+	else if (arg == 7)
 	{
 		i = 123;
 		while (i <= 127)

@@ -5,21 +5,23 @@
 
 void	ft_print_result(char const *s)
 {
-	while (*s)
-	{
-		write(1, &*s, 1);
-		s++;
-	}
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
 }
 
 int		main(int argc, const char *argv[])
 {
 	char	str[] = "lorem ipsum dolor sit amet";
 	char	*str_dup;
+	int		arg;
 
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 	{
 		if (!(str_dup = ft_strndup(str, 11)))
 			ft_print_result("NULL");
@@ -28,7 +30,7 @@ int		main(int argc, const char *argv[])
 		if (str_dup == str)
 			ft_print_result("\nstr_dup's adress == str's adress");
 	}
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 	{
 		if (!(str_dup = ft_strndup(str, 0)))
 			ft_print_result("NULL");
@@ -37,7 +39,7 @@ int		main(int argc, const char *argv[])
 		if (str_dup == str)
 			ft_print_result("\nstr_dup's adress == str's adress");
 	}
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 	{
 		if (!(str_dup = ft_strndup(str, 30)))
 			ft_print_result("NULL");

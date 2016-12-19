@@ -4,22 +4,24 @@
 
 void	ft_print_result(char const *s)
 {
-	while (*s)
-	{
-		write(1, &*s, 1);
-		s++;
-	}
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
 }
 
 int		main(int argc, const char *argv[])
 {
-	char s1[] = "lorem ipsum";
-	char s2[] = "dolor sit amet";
-	char *strjoin;
+	char	s1[] = "lorem ipsum";
+	char	s2[] = "dolor sit amet";
+	char	*strjoin;
+	int		arg;
 
 	if (argc == 1)
 		return (0);
-	if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 	{	
 		if (!(strjoin = ft_strjoin(s1, s2)))
 			ft_print_result("NULL");
@@ -28,7 +30,7 @@ int		main(int argc, const char *argv[])
 		if (strjoin == s1 || strjoin == s2)
 			ft_print_result("\nA new string was not returned");
 	}
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 	{	
 		s1[0] = '\0';
 		if (!(strjoin = ft_strjoin(s1, s2)))
@@ -38,7 +40,7 @@ int		main(int argc, const char *argv[])
 		if (strjoin == s1 || strjoin == s2)
 			ft_print_result("\nA new string was not returned");
 	}
-	else if (atoi(argv[1]) == 3)
+	else if (arg == 3)
 	{	
 		s2[0] = '\0';
 		if (!(strjoin = ft_strjoin(s1, s2)))
@@ -48,7 +50,7 @@ int		main(int argc, const char *argv[])
 		if (strjoin == s1 || strjoin == s2)
 			ft_print_result("\nA new string was not returned");
 	}
-	else if (atoi(argv[1]) == 4)
+	else if (arg == 4)
 	{	
 		s1[0] = '\0';
 		s2[0] = '\0';
