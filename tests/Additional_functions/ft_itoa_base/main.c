@@ -26,8 +26,10 @@ int		main(int argc, const char *argv[])
 	else if ((arg = atoi(argv[1])) == 1)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -37,8 +39,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 2)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -48,8 +52,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 3)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -59,8 +65,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 4)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -70,8 +78,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 5)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -81,8 +91,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 6)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -92,8 +104,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 7)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -103,8 +117,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 8)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -114,8 +130,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 9)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -125,8 +143,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 10)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -136,8 +156,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 11)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -147,8 +169,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 12)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -158,8 +182,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 13)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -169,8 +195,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 14)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));
@@ -180,8 +208,10 @@ int		main(int argc, const char *argv[])
 	else if (arg == 15)
 	{
 		ft_print_result(ft_itoa_base(0, arg + 1));
-		ft_print_result(ft_itoa_base(5, arg + 1));
-		ft_print_result(ft_itoa_base(-5, arg + 1));
+		ft_print_result(ft_itoa_base(arg, arg + 1));
+		ft_print_result(ft_itoa_base(-arg, arg + 1));
+		ft_print_result(ft_itoa_base(arg + 1, arg + 1));
+		ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
 		ft_print_result(ft_itoa_base(8124, arg + 1));
 		ft_print_result(ft_itoa_base(-9874, arg + 1));
 		ft_print_result(ft_itoa_base(543000, arg + 1));

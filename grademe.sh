@@ -128,6 +128,14 @@ fi
 
 source ${PATH_TEST}/my_config.sh
 
+if [ ${DIRECTORY} -eq 1 ]
+then
+	mkdir ${PATH_TEST}/libft
+	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/libft
+	cp ${PATH_LIBFT}/*/* ${PATH_TEST}/libft
+	PATH_LIBFT=${PATH_TEST}/libft
+fi
+
 for part in ${tab_all_part[*]}
 do
 	opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
@@ -260,6 +268,11 @@ fi
 if [ -e ${PATH_TEST}/main_check_cheating.c ]
 then
 	rm ${PATH_TEST}/main_check_cheating.c
+fi
+
+if [ ${DIRECTORY} -eq 1 ]
+then
+	rm -rf ${PATH_TEST}/libft
 fi
 
 if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] || [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
