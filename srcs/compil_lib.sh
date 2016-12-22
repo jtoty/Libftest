@@ -70,7 +70,7 @@ func_compil_lib()
 		then
 			rm -f ${PATH_LIBFT}/ft_*.o
 			printf "\n$> make $(grep -w NAME ${PATH_LIBFT}/Makefile | grep = | cut -d '=' -f 2 | tr -d ' ' | tr -d '\t')\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			make --no-print-directory -C ${PATH_LIBFT} $(grep NAME ${PATH_LIBFT}/${MAKEFILE_VAR} | grep = | cut -d '=' -f 2 | td -d ' ' | tr -d '\t') >>${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			make --no-print-directory -C ${PATH_LIBFT} $(grep NAME ${PATH_LIBFT}/${MAKEFILE_VAR} | grep = | cut -d '=' -f 2 | tr -d ' ' | tr -d '\t') >>${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [ -z "$(grep -w '$(NAME)' ${PATH_LIBFT}/${MAKEFILE_VAR} | grep ':' | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w '$(NAME)')" ]
 			then
 				printf "\033[17G${COLOR_FAIL}missing rule${DEFAULT}"
