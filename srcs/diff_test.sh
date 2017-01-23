@@ -37,7 +37,9 @@ diff_test()
 			printf "$> diff -U 3 user_output_test${text}$k test${text}$k.output\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			if [ "$DIFF" != "" ] || [ ! -e ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ]
 			then
-				diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d  . -f 1)/test${text}$k.output | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
+				#diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d  . -f 1)/test${text}$k.output | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
+				#echo "${DIFF}" >> ${PATH_DEEPTHOUGHT}
+				echo "${DIFF}" | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
 				printf "\nDiff KO :(\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 				retvalue=0
 				printf "${COLOR_FAIL}✗${DEFAULT}"

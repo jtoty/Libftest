@@ -10,6 +10,9 @@ display_help()
 	printf "\t-h, --help\n"
 	printf "\t\tDisplay help and exit\n\n"
 
+	printf "\t-d\n"
+	printf "\t\tAllows to perfom the tests even if the files are in directories\n\n"
+
 	printf "\t-c\n"
 	printf "\t\tDisable color\n\n"
 

@@ -1,3 +1,9 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~2017/01/23~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Added
+- Option -d : allows to perform the tests even if the files
+are in directories
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/12/22~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Added

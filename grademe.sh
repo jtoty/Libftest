@@ -17,6 +17,7 @@ do
 							exit ;;
 		"-h")				display_help | less
 							exit ;;
+		"-d")				DIRECTORY=1 ;;
 		"-s")				OPT_NO_SEARCH=1 ;;
 		"-q")				OPT_QUICK_LIB=1 ;;
 		"-l")				OPT_NO_LIBRARY=1 ;;
@@ -130,10 +131,14 @@ source ${PATH_TEST}/my_config.sh
 
 if [ ${DIRECTORY} -eq 1 ]
 then
-	mkdir ${PATH_TEST}/libft
-	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/libft
-	cp ${PATH_LIBFT}/*/* ${PATH_TEST}/libft
-	PATH_LIBFT=${PATH_TEST}/libft
+	if [ -d ${PATH_TEST}/dirlibft ]
+	then
+		rm -rf ${PATH_TEST}/dirlibft
+	fi
+	mkdir ${PATH_TEST}/dirlibft
+	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/dirlibft
+	find ${PATH_LIBFT} -type f -name *.[ch] -print | xargs cp -t ${PATH_TEST}/dirlibft
+	PATH_LIBFT=${PATH_TEST}/dirlibft
 fi
 
 for part in ${tab_all_part[*]}
@@ -272,7 +277,10 @@ fi
 
 if [ ${DIRECTORY} -eq 1 ]
 then
-	rm -rf ${PATH_TEST}/libft
+	if [ -d ${PATH_TEST}/dirlibft ]
+	then
+		rm -rf ${PATH_TEST}/dirlibft
+	fi
 fi
 
 if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] || [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
