@@ -54,6 +54,7 @@ bash /path/where/you/cloned/grademe.sh
 | Option | Description |
 | --- | --- |
 | `-h`<br />`--help` | Display help and exit |
+| `-d` | Allows to perform the tests even if the files are in directories |
 | `-c` | Disable color |
 | `-s` | Disable searching Makefile and author files |
 | `-q` | When compiling library, do only `make re`. It may be useful on slower devices, such as Raspberry Pi, to avoid to wait too long for all the tests. However, other rules are still checked if they exist (but they are not tested). |
