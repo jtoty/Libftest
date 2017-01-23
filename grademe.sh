@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    grademe.sh                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/01/23 18:26:01 by jtoty             #+#    #+#              #
+#    Updated: 2017/01/23 18:26:03 by jtoty            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #!/bin/bash
 
 #PATH_TEST=$(dirname $(readlink -f $0))
@@ -137,7 +149,8 @@ then
 	fi
 	mkdir ${PATH_TEST}/dirlibft
 	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/dirlibft
-	find ${PATH_LIBFT} -type f -name *.[ch] -print | xargs cp -t ${PATH_TEST}/dirlibft
+	#find ${PATH_LIBFT} -type f -name "*.[ch]" -print | xargs cp -t ${PATH_TEST}/dirlibft
+	find ${PATH_LIBFT} -type f -name "*.[ch]" -print -exec cp {} ${PATH_TEST}/dirlibft  \;
 	PATH_LIBFT=${PATH_TEST}/dirlibft
 fi
 
