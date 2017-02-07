@@ -6,7 +6,7 @@
 #    By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/23 18:26:01 by jtoty             #+#    #+#              #
-#    Updated: 2017/01/23 18:43:41 by jtoty            ###   ########.fr        #
+#    Updated: 2017/02/07 12:20:03 by jtoty            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -218,7 +218,6 @@ else
 	MAKEFILE_VAR="missing_makefile"
 fi
 
-printf "${COLOR_TITLE}Credits : achauvea, jmichaud, jtoty${DEFAULT}\n"
 if [ ${OPT_NO_SEARCH} -eq 0 ]
 then
 	func_check_file
