@@ -17,7 +17,7 @@ int		main(int argc, const char *argv[])
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-		ft_print_result(ft_strnequ("salut", "salut", 6));
+		ft_print_result(ft_strnequ("salut", "salut", 50));
 	else if (arg == 2)
 		ft_print_result(ft_strnequ("test", "tests", 6));
 	else if (arg == 3)

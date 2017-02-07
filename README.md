@@ -84,5 +84,7 @@ Any suggestions or bugs reporting ?
 Contact jtoty@student.42.fr
 
 ### Contributors
-- jmichaud : https://github.com/MrJe
 - achauvea
+- jmichaud : https://github.com/MrJe
+- mwragg
+- tlernoul
