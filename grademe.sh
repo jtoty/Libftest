@@ -6,7 +6,7 @@
 #    By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/23 18:26:01 by jtoty             #+#    #+#              #
-#    Updated: 2017/02/25 16:30:15 by jtoty            ###   ########.fr        #
+#    Updated: 2017/02/25 16:36:15 by jtoty            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ PATH_TEST="$(cd "$(dirname "$0")" && pwd -P)"
 exec 2> /dev/null
 
 source ${PATH_TEST}/srcs/variables.sh
-source ${PATH_TEST}/srcs/display_help.sh
-
 
 for arg in ${@}
 do
