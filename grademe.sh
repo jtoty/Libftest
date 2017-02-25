@@ -6,7 +6,7 @@
 #    By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/23 18:26:01 by jtoty             #+#    #+#              #
-#    Updated: 2017/02/07 12:20:03 by jtoty            ###   ########.fr        #
+#    Updated: 2017/02/25 16:30:15 by jtoty            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ source ${PATH_TEST}/srcs/display_help.sh
 for arg in ${@}
 do
 	case "${arg}" in
-		"--help")			display_help | less
+		"--help")			man ${PATH_TEST}/srcs/help.1
 							exit ;;
-		"-h")				display_help | less
+		"-h")				man ${PATH_TEST}/srcs/help.1
 							exit ;;
 		"-d")				DIRECTORY=1 ;;
 		"-s")				OPT_NO_SEARCH=1 ;;
