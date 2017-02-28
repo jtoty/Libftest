@@ -3,6 +3,7 @@
 #Added
 - Abort detection
 - Bus error detection
+- Timeout detection
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2017/02/25~~~~~~~~~~~~~~~~~~~~~~~~~~
 
