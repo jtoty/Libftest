@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/28 15:28:06 by jtoty             #+#    #+#             */
+/*   Updated: 2017/02/28 15:28:10 by jtoty            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <unistd.h>
 #include "../../../libft.h"
@@ -18,6 +30,7 @@ int		main(int argc, const char *argv[])
 	char	*dest;
 	int		arg;
 
+	ualarm(5000000, 0);
 	if (!(dest = (char *)malloc(sizeof(*dest) * 15)) || argc == 1)
 		return (0);
 	memset(dest, 0, 15);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/28 15:26:59 by jtoty             #+#    #+#             */
+/*   Updated: 2017/02/28 15:27:01 by jtoty            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <unistd.h>
 #include "../../../libft.h"
@@ -16,6 +28,7 @@ int		main(int argc, const char *argv[])
 	char	str[] = "loremipsumdolorsitamet";
 	int		arg;
 
+	ualarm(5000000, 0);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
