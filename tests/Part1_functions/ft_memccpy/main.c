@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/28 12:01:23 by jtoty             #+#    #+#             */
+/*   Updated: 2017/02/28 12:01:24 by jtoty            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
@@ -19,6 +31,7 @@ int		main(int argc, const char *argv[])
 	void	*membis;
 	int		arg;
 
+	ualarm(5000000, 0);
 	if (!(mem = malloc(sizeof(*mem) * 30)) || argc == 1)
 		return (0);
 	memset(mem, 'j', 29);

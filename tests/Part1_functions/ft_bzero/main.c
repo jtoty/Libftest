@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/28 11:58:52 by jtoty             #+#    #+#             */
+/*   Updated: 2017/02/28 11:58:54 by jtoty            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
@@ -7,6 +19,7 @@ int		main(int argc, const char *argv[])
 {
 	void	*mem;
 
+	ualarm(5000000, 0);
 	if (argc == 1 || !(mem = malloc(sizeof(*mem) * 5)))
 		return (0);
 	if (atoi(argv[1]) == 1)

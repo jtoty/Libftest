@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/28 12:34:12 by jtoty             #+#    #+#             */
+/*   Updated: 2017/02/28 12:34:13 by jtoty            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
@@ -28,6 +40,7 @@ int		main(int argc, const char *argv[])
 	char	*str;
 	char	*strmap;
 
+	ualarm(5000000, 0);
 	str = (char *)malloc(sizeof(*str) * 12);
 	if (argc == 1 || !str)
 		return (0);
