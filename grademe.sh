@@ -6,7 +6,7 @@
 #    By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/23 18:26:01 by jtoty             #+#    #+#              #
-#    Updated: 2017/02/25 16:36:15 by jtoty            ###   ########.fr        #
+#    Updated: 2017/02/28 11:42:36 by jtoty            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -145,6 +145,7 @@ then
 	then
 		rm -rf ${PATH_TEST}/dirlibft
 	fi
+	printf "Copying files...\nPlease wait a moment.\n"
 	mkdir ${PATH_TEST}/dirlibft
 	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/dirlibft
 	#find ${PATH_LIBFT} -type f -name "*.[ch]" -print | xargs cp -t ${PATH_TEST}/dirlibft
