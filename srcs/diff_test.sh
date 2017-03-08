@@ -6,7 +6,7 @@
 #    By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/23 18:26:48 by jtoty             #+#    #+#              #
-#    Updated: 2017/02/28 11:29:51 by jtoty            ###   ########.fr        #
+#    Updated: 2017/03/08 18:34:58 by jtoty            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ diff_test()
 		then
 			printf "Command './user_exe ${text}$k' got killed by a Bus error\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			printf "${COLOR_FAIL}B${DEFAULT}"
+			retvalue=0
 		elif [ $SIG -eq 139 ]
 		then
 			printf "Command './user_exe ${text}$k' got killed by a Segmentation fault\n" >> ${PATH_DEEPTHOUGHT}/deepthought
@@ -58,6 +59,7 @@ diff_test()
 		then
 			printf "Command './user_exe ${text}$k' got killed by a Timeout\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			printf "${COLOR_FAIL}T${DEFAULT}"
+			retvalue=0
 		else
 			DIFF=$(diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d  . -f 1)/test${text}$k.output)
 			printf "$> diff -U 3 user_output_test${text}$k test${text}$k.output\n" >> ${PATH_DEEPTHOUGHT}/deepthought
