@@ -57,7 +57,17 @@ check_auteur()
 			printf "\033[15G${COLOR_FAIL}Empty file\n${DEFAULT}"
 		elif [ "$(cat -e ${PATH_LIBFT}/${AUTHOR_VAR} | grep '\$')" != "" ]
 		then
-			printf "\033[15G${COLOR_OK}$(cat -e ${PATH_LIBFT}/${AUTHOR_VAR})${DEFAULT}\n"
+			if [ "$(norminette ${PATH_LIBFT}/${AUTHOR_VAR} | grep command)" != "" ]
+			then
+				printf "\033[15G${COLOR_OK}$(cat ${PATH_LIBFT}/${AUTHOR_VAR})${DEFAULT}\n"
+			else
+				if [ "$(cat ${PATH_LIBFT}/${AUTHOR_VAR})" != "$(echo $(whoami))" ]
+				then
+					printf "\033[15G${COLOR_FAIL}Wrong login\n${DEFAULT}"
+				else
+					printf "\033[15G${COLOR_OK}$(cat ${PATH_LIBFT}/${AUTHOR_VAR})${DEFAULT}\n"
+				fi
+			fi
 		else
 			printf "\033[15G${COLOR_FAIL}'\\\n' missing${DEFAULT}\n"
 		fi
