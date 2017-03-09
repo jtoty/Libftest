@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 15:24:40 by jtoty             #+#    #+#             */
-/*   Updated: 2017/02/28 15:24:41 by jtoty            ###   ########.fr       */
+/*   Updated: 2017/03/09 15:58:21 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		main(int argc, const char *argv[])
 	int		i;
 	int		arg;
 
-	ualarm(5000000, 0);
+	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)

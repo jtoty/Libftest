@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:04:55 by jtoty             #+#    #+#             */
-/*   Updated: 2017/02/28 12:05:06 by jtoty            ###   ########.fr       */
+/*   Updated: 2017/03/09 15:44:42 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(int argc, const char *argv[])
 	char	str[] = "lorem ipsum dolor sit amet";
 	char	*str_dup;
 
-	ualarm(5000000, 0);
+	alarm(5);
 	if (argc == 1)
 		return (0);
 	if (atoi(argv[1]) == 1)

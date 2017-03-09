@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:33:44 by jtoty             #+#    #+#             */
-/*   Updated: 2017/02/28 12:33:45 by jtoty            ###   ########.fr       */
+/*   Updated: 2017/03/09 15:53:13 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		main(int argc, const char *argv[])
 {
 	char	*str;
 
-	ualarm(5000000, 0);
+	alarm(5);
 	str = (char *)malloc(sizeof(*str) * 12);
 	if (argc == 1 || !str)
 		return (0);

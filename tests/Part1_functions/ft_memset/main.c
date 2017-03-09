@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:02:51 by jtoty             #+#    #+#             */
-/*   Updated: 2017/02/28 12:02:51 by jtoty            ###   ########.fr       */
+/*   Updated: 2017/03/09 15:43:26 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(int argc, const char *argv[])
 	void	*mem;
 	int		arg;
 
-	ualarm(5000000, 0);
+	alarm(5);
 	if (!(mem = malloc(sizeof(*mem) * 15)) || argc == 1)
 		return (0);
 	memset(mem, 'j', 15);

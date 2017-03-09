@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 15:16:21 by jtoty             #+#    #+#             */
-/*   Updated: 2017/02/28 15:16:22 by jtoty            ###   ########.fr       */
+/*   Updated: 2017/03/09 15:56:01 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int main(int argc, const char *argv[])
 	elem2 = ft_lstnew(str2, sizeof(str2));
 	elem3 = ft_lstnew(str3, sizeof(str3));
 	elem4 = ft_lstnew(str4, sizeof(str4));
-	ualarm(5000000, 0);
+	alarm(5);
 	if (argc == 1 || !elem || !elem2 || !elem3 || !elem4)
 		return (0);
 	elem->next = elem2;
