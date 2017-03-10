@@ -57,7 +57,7 @@ check_auteur()
 			printf "\033[15G${COLOR_FAIL}Empty file\n${DEFAULT}"
 		elif [ "$(cat -e ${PATH_LIBFT}/${AUTHOR_VAR} | grep '\$')" != "" ]
 		then
-			if [ "$(norminette ${PATH_LIBFT}/${AUTHOR_VAR} | grep command)" != "" ]
+			if [ "$(norminette ${PATH_LIBFT}/${AUTHOR_VAR} 2>&1 | grep command)" != "" ]
 			then
 				printf "\033[15G${COLOR_OK}$(cat ${PATH_LIBFT}/${AUTHOR_VAR})${DEFAULT}\n"
 			else
