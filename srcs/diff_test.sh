@@ -33,9 +33,10 @@ diff_test()
 			text=""
 		fi
 		printf "$> ./user_exe ${text}$k\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-		if [ $1 == "ft_putchar_fd.c" ] || [ $1 == "ft_putstr_fd.c" ] || [ $1 == "ft_putendl_fd.c" ] || [ $1 == "ft_putnbr_fd.c" ]
+		if [ $(( $k%2 )) -eq 1 ] && ([ $1 == "ft_putchar_fd.c" ] || [ $1 == "ft_putstr_fd.c" ] || [ $1 == "ft_putendl_fd.c" ] || [ $1 == "ft_putnbr_fd.c" ])
 		then
-			${PATH_TEST}/user_exe $k > ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k 2>&1
+			#${PATH_TEST}/user_exe $k > ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k 2>&1
+			${PATH_TEST}/user_exe $k > /dev/null 2> ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k
 		else
 			${PATH_TEST}/user_exe $k > ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k
 		fi

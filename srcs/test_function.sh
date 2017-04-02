@@ -46,7 +46,7 @@ test_function()
 	printf "${COLOR_TITLE}"
 	printf "FUNCTION"
 	printf "\033[${NORME_COL}GNORME"
-	printf "\033[${CHEAT_COL}GCHEAT"
+	printf "\033[${CHEAT_COL}GFORBIDDEN FUNC."
 	printf "\033[${COMPIL_COL}GCOMPIL."
 	printf "\033[${TEST_COL}GTESTS"
 	printf "\033[${RESULT_COL}GRESULT\n${DEFAULT}"
