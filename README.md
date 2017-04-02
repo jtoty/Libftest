@@ -2,6 +2,7 @@
 <img align="right" src="./srcs/img_readme.jpg" width="50%"/>
 This repository contains script to test your libft project.  
 The script will do the following tests :
+
 - Check if the author file exists
 - Check content of the author file
 - Check if libft.h exists
@@ -57,7 +58,7 @@ bash /path/where/you/cloned/grademe.sh
 | `-d` | Allows to perform the tests even if the files are in directories |
 | `-c` | Disable color |
 | `-s` | Disable searching Makefile and author files |
-| `-q` | When compiling library, do only `make re`. It may be useful on slower devices, such as Raspberry Pi, to avoid to wait too long for all the tests. However, other rules are still checked if they exist (but they are not tested). |
+| `-m` | When compiling library, test all the Makefile's rules (instead of doing only make re and checking if other rules exist). |
 | `-l` | Disable compiling library |
 | `-f` | Disable checking forbidden functions |
 | `-n` | Disable norminette |

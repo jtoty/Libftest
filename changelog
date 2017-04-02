@@ -3,8 +3,12 @@
 #Added
 - Legend at the end of the script
 
-#Fix
+#Fixed
 - Tests for fd functions
+
+#Changed
+- Option -q becomes -m and allows to test all the Makefile's
+rules instead of doing only make re
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2017/02/28~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -109,7 +113,7 @@ are in directories
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/29~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#Fix
+#Fixed
 - Display error in deepthought file
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/21~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,12 +124,12 @@ better detection. Option -f to disable it
 - List of forbidden functions in part 1
 - Improve rapidity when checking norme
 
-#Fix
+#Fixed
 - Bug when checking forbidden functions
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/21~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#Fix
+#Fixed
 - Bug when checking forbidden functions
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/20~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,7 +181,7 @@ better detection. Option -f to disable it
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/08~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#Fix
+#Fixed
 - Tests for ft_strnequ
 
 #Added
@@ -203,7 +207,7 @@ better detection. Option -f to disable it
 - One test of ft_memcmp
 _ One test of ft_strnew
 
-#Fix
+#Fixed
 - Checking content of author file
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~2016/11/04~~~~~~~~~~~~~~~~~~~~~~~~~~
