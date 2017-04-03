@@ -6,7 +6,7 @@
 #    By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/23 18:26:36 by jtoty             #+#    #+#              #
-#    Updated: 2017/01/23 18:26:37 by jtoty            ###   ########.fr        #
+#    Updated: 2017/04/03 10:35:38 by jtoty            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ func_compil_lib()
 		printf "\033[$(( (${TITLE_LENGTH} - ${#text}) / 2 ))G${COLOR_FAIL}${text}${DEFAULT}\n\n"
 		printf "\n${text}\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 	else
-		if [ ${OPT_FULL_MAKEFILE} -eq 0 ]
+		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			printf "make all"
 			printf "\033[17Gmake \$(NAME)"
@@ -52,7 +52,7 @@ func_compil_lib()
 			printf "\033[83Glibft.a\n"
 		fi
 
-		if [ ${OPT_FULL_MAKEFILE} -eq 0 ]
+		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			rm -f ${PATH_LIBFT}/ft_*.o
 			printf "\n$> make all\n" >> ${PATH_DEEPTHOUGHT}/deepthought
@@ -78,7 +78,7 @@ func_compil_lib()
 			fi
 		fi
 
-		if [ ${OPT_FULL_MAKEFILE} -eq 0 ]
+		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			rm -f ${PATH_LIBFT}/ft_*.o
 			printf "\n$> make $(grep -w NAME ${PATH_LIBFT}/Makefile | grep = | cut -d '=' -f 2 | tr -d ' ' | tr -d '\t')\n" >> ${PATH_DEEPTHOUGHT}/deepthought
@@ -104,7 +104,7 @@ func_compil_lib()
 			fi
 		fi
 
-		if [ ${OPT_FULL_MAKEFILE} -eq 0 ]
+		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			printf "\n$> make fclean\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			make --no-print-directory -C ${PATH_LIBFT} fclean >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
@@ -132,7 +132,7 @@ func_compil_lib()
 		fi
 
 		printf "\n$> make re\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-		if [ ${OPT_FULL_MAKEFILE} -eq 0 ]
+		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			make --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [ -z "$(grep -w re ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w re)" ]
@@ -155,7 +155,7 @@ func_compil_lib()
 			fi
 		fi
 
-		if [ ${OPT_FULL_MAKEFILE} -eq 0 ]
+		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			printf "\n$> make clean\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			make --no-print-directory -C ${PATH_LIBFT} clean >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
