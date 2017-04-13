@@ -109,5 +109,12 @@ int		main(int argc, const char *argv[])
 				ft_print_result("\nReturn value is false");
 		}
 	}
+	else if (arg == 8)
+	{
+		if (!(str = ft_strrchr(str2 + 2, 'b')))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
 	return (0);
 }
