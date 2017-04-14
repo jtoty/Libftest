@@ -86,5 +86,6 @@
 - ft_strcasecmp.c
 - ft_strlcpy.c
 - ft_strlowcase.c
+- ft_strncasecmp.c
 - ft_strndup.c
 - ft_strupcase.c
