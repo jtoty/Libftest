@@ -1,6 +1,6 @@
-#include "../../../libft.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include "../../../libft.h"
 
 void	ft_print_result(char const *s)
 {
@@ -21,21 +21,21 @@ int		main(int argc, const char *argv[])
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
 	{
-		if (!(str = ft_strcasestr("lorem ipsum dolor sit amet", "lorem")))
+		if (!(str = ft_strcasestr("lorEm ipsum dolor sit amet", "loRem")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(str);
 	}
 	else if (arg == 2)
 	{
-		if (!(str = ft_strcasestr("lorem ipsum dolor sit amet", "ipsum")))
+		if (!(str = ft_strcasestr("lorem iPsum dolor sit amet", "iPSum")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(str);
 	}
 	else if (arg == 3)
 	{
-		if (!(str = ft_strcasestr("lorem ipsum dolor sit lorem ipsum dolor", "ipsum")))
+		if (!(str = ft_strcasestr("lorem iPSum dolor sit lorem ipsum dolor", "ipsum")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(str);
@@ -49,21 +49,21 @@ int		main(int argc, const char *argv[])
 	}
 	else if (arg == 5)
 	{
-		if (!(str = ft_strcasestr("lorem ipsum dolor sit amet", "ipsumm")))
+		if (!(str = ft_strcasestr("lorem ipsum dolor sit amet", "ipSUmm")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(str);
 	}
 	else if (arg == 6)
 	{
-		if (!(str = ft_strcasestr("lorem ipsum dolor sit amet", "dol")))
+		if (!(str = ft_strcasestr("lorem ipsum dolor sit amet", "dOl")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(str);
 	}
 	else if (arg == 7)
 	{
-		if (!(str = ft_strcasestr("lorem ipsum dolor sit amet", "consectetur")))
+		if (!(str = ft_strcasestr("lorem ipsum dolor sit amet", "consECtetur")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(str);
