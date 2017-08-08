@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 11:58:41 by jtoty             #+#    #+#             */
-/*   Updated: 2017/03/09 15:38:15 by jtoty            ###   ########.fr       */
+/*   Updated: 2017/08/08 16:11:12 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ int main(int argc, const char *argv[])
 		ft_print_result(ft_atoi("\t\n\r\v\fd469 \n"));
 	else if (arg == 18)
 		ft_print_result(ft_atoi("\n\n\n  -46\b9 \n5d6"));
+	else if (arg == 19)
+		ft_print_result(ft_atoi(""));
 	return (0);
 }
