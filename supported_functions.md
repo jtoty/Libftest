@@ -84,6 +84,7 @@
 - ft_str_is_uppercase.c
 - ft_strcapitalize.c
 - ft_strcasecmp.c
+- ft_strcasestr.c
 - ft_strlcpy.c
 - ft_strlowcase.c
 - ft_strncasecmp.c

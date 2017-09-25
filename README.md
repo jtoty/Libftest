@@ -1,5 +1,5 @@
 # Libftest
-<img align="right" src="./srcs/img_readme.jpg" width="50%"/>
+<img align="right" src="./srcs/img_readme.png" width="50%"/>
 This repository contains script to test your libft project.  
 The script will do the following tests :
 

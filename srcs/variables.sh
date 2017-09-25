@@ -84,7 +84,7 @@ Additional_func=('ft_isblank.c' 'ft_iscntrl.c' 'ft_isgraph.c' 'ft_islower.c' \
 'ft_isspace.c' 'ft_isupper.c' 'ft_isxdigit.c' 'ft_str_is_alpha.c' 'ft_str_is_lowercase.c' \
 'ft_str_is_numeric.c' 'ft_str_is_printable.c' 'ft_str_is_uppercase.c' 'ft_strcapitalize.c' \
 'ft_strcasecmp.c' 'ft_strlcpy.c' 'ft_strlowcase.c' 'ft_strndup.c' 'ft_strupcase.c' \
-'ft_itoa_base.c' 'ft_strncasecmp.c' 'ft_strcasestr')
+'ft_itoa_base.c' 'ft_strncasecmp.c' 'ft_strcasestr.c')
 
 Additional_func_activation=('0' '0' '0' '0' \
 '0' '0' '0' '0' '0' \
