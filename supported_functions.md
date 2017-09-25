@@ -1,6 +1,6 @@
-#Supported functions
-##Mandatory part
-###Part I
+# Supported functions
+## Mandatory part
+### Part I
 
 - ft_atoi.c
 - ft_bzero.c
@@ -31,7 +31,7 @@
 - ft_tolower.c
 - ft_toupper.c
 
-###Part II
+### Part II
 
 - ft_itoa.c
 - ft_memalloc.c
@@ -58,7 +58,7 @@
 - ft_strsub
 - ft_strtrim.c
 
-##Bonus part
+## Bonus part
 
 - ft_lstiter.c
 - ft_lstmap.c
@@ -67,7 +67,7 @@
 - ft_lstdel.c
 - ft_lstdelone.c
 
-##Addtional part
+## Addtional part
 
 - ft_isblank.c
 - ft_iscntrl.c
