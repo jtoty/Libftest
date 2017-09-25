@@ -80,7 +80,7 @@ bash grademe.sh ft_atoi -f ft_strlen -n
 ```
 
 ### Supported functions
-All the supported functions are listed [on this page](https://github.com/jtoty/Libftest/blob/master/supported_functions.md)
+All the supported functions are listed [on this page](https://github.com/jtoty/Libftest/blob/master/supported_functions.md).
 ## Contribution
 
 Any suggestions or bugs reporting ?
