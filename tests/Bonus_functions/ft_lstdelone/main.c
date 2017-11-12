@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 15:15:51 by jtoty             #+#    #+#             */
-/*   Updated: 2017/03/09 15:55:41 by jtoty            ###   ########.fr       */
+/*   Updated: 2017/11/12 21:23:22 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,11 @@ int main(int argc, const char *argv[])
 		if (elem3)
 			ft_print_result(elem3);
 		else
+		{
 			write(1, "NULL", 4);
+			if (elem2)
+				elem2->next = elem4;
+		}
 		write(1, "\n", 1);
 		if (elem4)
 			ft_print_result(elem4);
