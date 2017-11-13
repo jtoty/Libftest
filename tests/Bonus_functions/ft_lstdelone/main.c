@@ -46,7 +46,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	else
 	{
 		if (!(elem->content = malloc(sizeof(*(elem->content)) * content_size)))
+		{
+			free(elem);
 			return (NULL);
+		}
 		elem->content = memcpy(elem->content, content, content_size);
 		elem->content_size = content_size;
 	}
@@ -64,7 +67,6 @@ int main(int argc, const char *argv[])
 	char		str2 [] = "ipsum";
 	char		str3 [] = "dolor";
 	char		str4 [] = "sit";
-	int			i;
 
 	elem = ft_lstnew(str, sizeof(str));
 	elem2 = ft_lstnew(str2, sizeof(str2));
@@ -76,7 +78,6 @@ int main(int argc, const char *argv[])
 	elem->next = elem2;
 	elem2->next = elem3;
 	elem3->next = elem4;
-	i = '1';
 	if (atoi(argv[1]) == 1)
 	{
 		ft_lstdelone(&elem3, &ft_del);
@@ -99,14 +100,6 @@ int main(int argc, const char *argv[])
 			ft_print_result(elem4);
 		else
 			write(1, "NULL", 4);
-		write(1, "\n", 1);
-		while (elem)
-		{
-			write(1, &i, 1);
-			write(1, "\n", 1);
-			i++;
-			elem = elem->next;
-		}
 	}
 	return (0);
 }
