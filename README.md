@@ -85,9 +85,3 @@ All the supported functions are listed [on this page](https://github.com/jtoty/L
 
 Any suggestions or bugs reporting ?
 Contact jtoty@student.42.fr
-
-### Contributors
-- achauvea
-- jmichaud : https://github.com/MrJe
-- mwragg
-- tlernoul
