@@ -1,6 +1,6 @@
 # Libftest
 <img align="right" src="./srcs/img_readme.png" width="50%"/>
-This repository contains script to test your libft project.  
+This repository contains script to test your libft project.
 The script will do the following tests :
 
 - Check if the author file exists
@@ -36,7 +36,7 @@ git clone https://github.com/jtoty/Libftest
 
 If you run the script for the first time, it will automatically create
 `my_config.sh` file and ask you to edit it with the path of your libft
-project.  
+project.
 You can also choose the colors that will be used and the path where the
 deepthought file will be created.
 
@@ -85,3 +85,7 @@ All the supported functions are listed [on this page](https://github.com/jtoty/L
 
 Any suggestions or bugs reporting ?
 Contact jtoty@student.42.fr
+
+### Contributors
+- jmichaud : https://github.com/MrJe
+- tlernoul
