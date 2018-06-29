@@ -90,3 +90,4 @@
 - ft_strncasecmp
 - ft_strndup
 - ft_strupcase
+- ft_strtok
