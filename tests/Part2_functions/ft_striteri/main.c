@@ -25,19 +25,14 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-void	ft_print_result2(int n)
-{
-	char c;
-
-	if ( n >= 10)
-		ft_print_result2(n / 10);
-	c = n % 10 + '0';
-	write(1, &c, 1);
-}
-
 void	iter(unsigned int i, char *c)
 {
-	ft_print_result2(i);
+	static int indexArray[11] = {0};
+
+	if (i > 11 || indexArray[i] == 1)
+		write(1, "wrong index\n", 12);
+	else
+		indexArray[i] = 1;
 	if (*c >= 'a' && *c <= 'z')
 		*c = *c - 32;
 	else if (*c >= 'A' && *c <= 'Z')
@@ -56,7 +51,6 @@ int		main(int argc, const char *argv[])
 	{
 		strcpy(str, "LoReM iPsUm");
 		ft_striteri(str, &iter);
-		write(1, "\n", 1);
 		ft_print_result(str);
 	}
 	return (0);
