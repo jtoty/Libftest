@@ -29,7 +29,7 @@ void	iter(unsigned int i, char *c)
 {
 	static int indexArray[11] = {0};
 
-	if (i > 11 || indexArray[i] == 1)
+	if (i > 10 || indexArray[i] == 1)
 		write(1, "wrong index\n", 12);
 	else
 		indexArray[i] = 1;
