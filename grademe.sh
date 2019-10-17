@@ -116,10 +116,10 @@ source ${PATH_TEST}/srcs/check_update.sh
 
 cd ${PATH_TEST}
 
-if [ ${OPT_NO_UPDATE} -eq 0 ]
-then
-	func_check_update
-fi
+//if [ ${OPT_NO_UPDATE} -eq 0 ]
+//then
+//	func_check_update
+//fi
 
 if [ ! -e ${PATH_TEST}/my_config.sh ]
 then
