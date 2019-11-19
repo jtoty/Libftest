@@ -36,7 +36,7 @@ int		main(int argc, const char *argv[])
 	i = 0;
 	if ((arg = atoi(argv[1])) == 1)
 	{
-		if (!(tabstr = ft_strsplit("          ", ' ')))
+		if (!(tabstr = ft_split("          ", ' ')))
 			ft_print_result("NULL");
 		else
 		{
@@ -50,7 +50,7 @@ int		main(int argc, const char *argv[])
 	}
 	else if (arg == 2)
 	{
-		if (!(tabstr = ft_strsplit("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
+		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
 			ft_print_result("NULL");
 		else
 		{
@@ -64,7 +64,7 @@ int		main(int argc, const char *argv[])
 	}
 	else if (arg == 3)
 	{
-		if (!(tabstr = ft_strsplit("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
+		if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
 			ft_print_result("NULL");
 		else
 		{
@@ -78,7 +78,7 @@ int		main(int argc, const char *argv[])
 	}
 	else if (arg == 4)
 	{
-		if (!(tabstr = ft_strsplit("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
+		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
 			ft_print_result("NULL");
 		else
 		{
@@ -92,7 +92,7 @@ int		main(int argc, const char *argv[])
 	}
 	else if (arg == 5)
 	{
-		if (!(tabstr = ft_strsplit("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
+		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
 			ft_print_result("NULL");
 		else
 		{
