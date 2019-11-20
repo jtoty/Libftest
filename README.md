@@ -76,7 +76,7 @@ bash /path/where/you/cloned/grademe.sh
 Add successively all options you want, in the order you want.
 For example :
 ```bash
-bash grademe.sh ft_atoi -f ft_strlen -n
+bash grademe.sh ft_atoi -f ft_strlen -n -d
 ```
 
 ### Supported functions
