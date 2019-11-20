@@ -18,7 +18,7 @@ PATH_TEST="$(cd "$(dirname "$0")" && pwd -P)"
 #exec 6>&2 2>/dev/null
 exec 2> /dev/null
 
-source ${PATH_TEST}/srcs/variables.sh
+source ${PATH_TEST}/srcs/variables/core.sh
 
 for arg in ${@}
 do
@@ -104,7 +104,7 @@ do
 	esac
 done
 
-source ${PATH_TEST}/srcs/colors.sh
+source ${PATH_TEST}/srcs/variables/colors.sh
 source ${PATH_TEST}/srcs/check_cheat.sh
 source ${PATH_TEST}/srcs/check_compilation.sh
 source ${PATH_TEST}/srcs/check_file.sh
