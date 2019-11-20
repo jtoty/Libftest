@@ -17,7 +17,7 @@
 void	ft_print_result(char const *s)
 {
 	int		len;
-	
+
 	len = 0;
 	while (s[len])
 		len++;
@@ -27,7 +27,7 @@ void	ft_print_result(char const *s)
 int		main(int argc, const char *argv[])
 {
 	char	str[] = "lorem ipsum dolor sit amet";
-	char	*strsub;
+	char	*substr;
 	int		arg;
 
 	alarm(5);
@@ -35,38 +35,38 @@ int		main(int argc, const char *argv[])
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
 	{
-		if (!(strsub = ft_strsub(str, 0, 10)))
+		if (!(substr = ft_substr(str, 0, 10)))
 			ft_print_result("NULL");
 		else
-			ft_print_result(strsub);
-		if (str == strsub)
+			ft_print_result(substr);
+		if (str == substr)
 			ft_print_result("\nA new string was not returned");
 	}
 	else if (arg == 2)
 	{
-		if (!(strsub = ft_strsub(str, 7, 10)))
+		if (!(substr = ft_substr(str, 7, 10)))
 			ft_print_result("NULL");
 		else
-			ft_print_result(strsub);
-		if (str == strsub)
+			ft_print_result(substr);
+		if (str == substr)
 			ft_print_result("\nA new string was not returned");
 	}
 	else if (arg == 3)
 	{
-		if (!(strsub = ft_strsub(str, 7, 0)))
+		if (!(substr = ft_substr(str, 7, 0)))
 			ft_print_result("NULL");
 		else
-			ft_print_result(strsub);
-		if (str == strsub)
+			ft_print_result(substr);
+		if (str == substr)
 			ft_print_result("\nA new string was not returned");
 	}
 	else if (arg == 4)
 	{
-		if (!(strsub = ft_strsub(str, 0, 0)))
+		if (!(substr = ft_substr(str, 0, 0)))
 			ft_print_result("NULL");
 		else
-			ft_print_result(strsub);
-		if (str == strsub)
+			ft_print_result(substr);
+		if (str == substr)
 			ft_print_result("\nA new string was not returned");
 	}
 	return (0);
