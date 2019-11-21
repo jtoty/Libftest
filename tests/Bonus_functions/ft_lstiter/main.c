@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../../../libft.h"
+#include "libft.h"
 #include <string.h>
 
 void	ft_modify_list_with_d(t_list *elem)

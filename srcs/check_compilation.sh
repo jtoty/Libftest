@@ -18,8 +18,8 @@ compilation()
 	then
 		rm -f ${PATH_TEST}/user_exe
 	fi
-	printf "$> clang -Wextra -Wall -Werror $1 main.c libft.a -o user_exe\n\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	clang -Wextra -Wall -Werror ${PATH_LIBFT}/$1 ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/main.c ${PATH_LIBFT}/libft.a 2>>${PATH_DEEPTHOUGHT}/deepthought -o user_exe
+	printf "$> clang -Wextra -Wall -Werror main.c $1 -L. -lft -I. -o user_exe\n\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+	clang -Wextra -Wall -Werror ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/main.c ${PATH_LIBFT}/$1 -L${PATH_LIBFT} -lft -I${PATH_LIBFT} 2>>${PATH_DEEPTHOUGHT}/deepthought -o user_exe
 }
 
 check_compilation()

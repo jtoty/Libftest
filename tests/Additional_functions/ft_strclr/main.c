@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../../../libft.h"
+#include "libft.h"
 
 int		main(int argc, const char *argv[])
 {

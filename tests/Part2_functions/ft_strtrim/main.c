@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../../../libft.h"
+#include "libft.h"
 
 void	ft_print_result(char const *s)
 {
@@ -27,6 +27,7 @@ void	ft_print_result(char const *s)
 int		main(int argc, const char *argv[])
 {
 	char	*strtrim;
+	char	set [] = "\t \n";
 	int		arg;
 
 	alarm(5);
@@ -35,7 +36,7 @@ int		main(int argc, const char *argv[])
 	else if ((arg = atoi(argv[1])) == 1)
 	{
 		char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
-		if (!(strtrim = ft_strtrim(s1, "\t \n")))
+		if (!(strtrim = ft_strtrim(s1, set)))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
@@ -45,7 +46,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 2)
 	{
 		char s1[] = "lorem ipsum dolor sit amet \n \t ";
-		if (!(strtrim = ft_strtrim(s1, "\t \n")))
+		if (!(strtrim = ft_strtrim(s1, set)))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
@@ -55,7 +56,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 3)
 	{
 		char s1[] = " \n \t lorem ipsum dolor sit amet";
-		if (!(strtrim =ft_strtrim(s1, "\t \n")))
+		if (!(strtrim =ft_strtrim(s1, set)))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
@@ -65,7 +66,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 4)
 	{
 		char s1[] = "  \n  \t  lorem \n ipsum \t dolor \n sit \t amet  \t \n ";
-		if (!(strtrim = ft_strtrim(s1, "\t \n")))
+		if (!(strtrim = ft_strtrim(s1, set)))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
@@ -75,7 +76,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 5)
 	{
 		char s1[] = "          ";
-		if (!(strtrim = ft_strtrim(s1, "\t \n")))
+		if (!(strtrim = ft_strtrim(s1, set)))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
