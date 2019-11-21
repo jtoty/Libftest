@@ -27,7 +27,6 @@ do
 							exit ;;
 		"-h")				man ${PATH_TEST}/srcs/help.1
 							exit ;;
-		"-d")				DIRECTORY=1 ;;
 		"-s")				OPT_NO_SEARCH=1 ;;
 		"-m")				OPT_FULL_MAKEFILE=1 ;;
 		"-l")				OPT_NO_LIBRARY=1 ;;
@@ -139,19 +138,21 @@ fi
 
 source ${PATH_TEST}/my_config.sh
 
-if [ ${DIRECTORY} -eq 1 ]
-then
-	if [ -d ${PATH_TEST}/dirlibft ]
+copying_files()
+{
+	if [ -d ${PATH_TEST}/${TMP_TESTS_DIR} ]
 	then
-		rm -rf ${PATH_TEST}/dirlibft
+		rm -rf ${PATH_TEST}/${TMP_TESTS_DIR}
 	fi
 	printf "Copying files...\nPlease wait a moment.\n"
-	mkdir ${PATH_TEST}/dirlibft
-	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/dirlibft
+	mkdir ${PATH_TEST}/${TMP_TESTS_DIR}
+	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/${TMP_TESTS_DIR}
 	#find ${PATH_LIBFT} -type f -name "*.[ch]" -print | xargs cp -t ${PATH_TEST}/dirlibft
-	find ${PATH_LIBFT} -type f -name "*.[ch]" -exec cp {} ${PATH_TEST}/dirlibft  \;
-	PATH_LIBFT=${PATH_TEST}/dirlibft
-fi
+	find ${PATH_LIBFT} -type f -name "*.[ch]" -exec cp {} ${PATH_TEST}/${TMP_TESTS_DIR}  \;
+	PATH_LIBFT=${PATH_TEST}/${TMP_TESTS_DIR}
+}
+
+copying_files
 
 for part in ${tab_all_part[*]}
 do
@@ -286,12 +287,9 @@ then
 	rm ${PATH_TEST}/main_check_cheating.c
 fi
 
-if [ ${DIRECTORY} -eq 1 ]
+if [ -d ${PATH_TEST}/${TMP_TESTS_DIR} ]
 then
-	if [ -d ${PATH_TEST}/dirlibft ]
-	then
-		rm -rf ${PATH_TEST}/dirlibft
-	fi
+	rm -rf ${PATH_TEST}/${TMP_TESTS_DIR}
 fi
 
 if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] || [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
