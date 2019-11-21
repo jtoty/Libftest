@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:35:29 by jtoty             #+#    #+#             */
-/*   Updated: 2017/03/09 15:54:44 by jtoty            ###   ########.fr       */
+/*   Updated: 2019/11/19 23:54:44 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		main(int argc, const char *argv[])
 	else if ((arg = atoi(argv[1])) == 1)
 	{
 		char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
-		if (!(strtrim = ft_strtrim(s1)))
+		if (!(strtrim = ft_strtrim(s1, "\t \n")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
@@ -45,7 +45,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 2)
 	{
 		char s1[] = "lorem ipsum dolor sit amet \n \t ";
-		if (!(strtrim = ft_strtrim(s1)))
+		if (!(strtrim = ft_strtrim(s1, "\t \n")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
@@ -55,7 +55,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 3)
 	{
 		char s1[] = " \n \t lorem ipsum dolor sit amet";
-		if (!(strtrim = ft_strtrim(s1)))
+		if (!(strtrim =ft_strtrim(s1, "\t \n")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
@@ -65,7 +65,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 4)
 	{
 		char s1[] = "  \n  \t  lorem \n ipsum \t dolor \n sit \t amet  \t \n ";
-		if (!(strtrim = ft_strtrim(s1)))
+		if (!(strtrim = ft_strtrim(s1, "\t \n")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
@@ -75,7 +75,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 5)
 	{
 		char s1[] = "          ";
-		if (!(strtrim = ft_strtrim(s1)))
+		if (!(strtrim = ft_strtrim(s1, "\t \n")))
 			ft_print_result("NULL");
 		else
 			ft_print_result(strtrim);
