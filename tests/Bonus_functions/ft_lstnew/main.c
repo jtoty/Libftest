@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_print_result(char const *s)
+static void		ft_print_result(char const *s)
 {
 	int		len;
 
@@ -24,7 +24,7 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-void	ft_print_result2(int n)
+static void		ft_print_result2(int n)
 {
 	char c;
 
@@ -34,7 +34,7 @@ void	ft_print_result2(int n)
 	write (1, &c, 1);
 }
 
-int main(int argc, const char *argv[])
+int 			main(int argc, const char *argv[])
 {
 	t_list		*elem;
 	int			arg;

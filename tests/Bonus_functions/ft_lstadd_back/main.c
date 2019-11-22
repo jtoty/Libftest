@@ -15,7 +15,7 @@
 #include <unistd.h>
 #include <string.h>
 
-void	ft_print_result(t_list *elem)
+static void		ft_print_result(t_list *elem)
 {
 	int		len;
 
@@ -26,7 +26,7 @@ void	ft_print_result(t_list *elem)
 	write(1, "\n", 1);
 }
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+static t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*elem;
 
@@ -40,16 +40,19 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		if (!(elem->content = malloc(sizeof(*(elem->content)) * content_size)))
+		if (!(elem->content = ft_memalloc(content_size)))
+		{
+			free(elem);
 			return (NULL);
-		elem->content = memcpy(elem->content, content, content_size);
+		}
+		elem->content = ft_memcpy(elem->content, content, content_size);
 		elem->content_size = content_size;
 	}
 	elem->next = NULL;
 	return (elem);
 }
 
-int main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	t_list		*begin;
 	t_list		*elem;

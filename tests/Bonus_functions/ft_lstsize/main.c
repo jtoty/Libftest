@@ -15,12 +15,12 @@
 #include "libft.h"
 #include <string.h>
 
-void	ft_print_result2(char c)
+static void		ft_print_result2(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_print_result(int n)
+static void		ft_print_result(int n)
 {
 	if (n >= 0)
 	{
@@ -37,7 +37,7 @@ void	ft_print_result(int n)
 	}
 }
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+static t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*elem;
 
@@ -52,7 +52,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	else
 	{
 		if (!(elem->content = malloc(sizeof(*(elem->content)) * content_size)))
+		{
+			free(elem);
 			return (NULL);
+		}
 		elem->content = memcpy(elem->content, content, content_size);
 		elem->content_size = content_size;
 	}
@@ -60,7 +63,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	return (elem);
 }
 
-int main(int argc, const char *argv[])
+int 			main(int argc, const char *argv[])
 {
 	int			arg;
 	t_list		*elem;

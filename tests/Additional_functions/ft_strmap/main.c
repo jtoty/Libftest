@@ -15,7 +15,7 @@
 #include <string.h>
 #include "libft.h"
 
-void	ft_print_result(char const *s)
+static void	ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,7 +25,7 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-char	map(char c)
+static char	map(char c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
@@ -35,7 +35,7 @@ char	map(char c)
 		return (c);
 }
 
-int		main(int argc, const char *argv[])
+int			main(int argc, const char *argv[])
 {
 	char	*str;
 	char	*strmap;

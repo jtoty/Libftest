@@ -16,7 +16,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-void	ft_print_result(const char *s)
+static void		ft_print_result(const char *s)
 {
 	int		len;
 
@@ -26,7 +26,7 @@ void	ft_print_result(const char *s)
 	write(1, s, len);
 }
 
-int		main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	const char *str;
 	int			arg;

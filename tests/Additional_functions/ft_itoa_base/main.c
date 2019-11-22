@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_print_result(char *s)
+static void	ft_print_result(char *s)
 {
 	int		len;
 
@@ -29,7 +29,7 @@ void	ft_print_result(char *s)
 	write(1, "\n", 1);
 }
 
-int		main(int argc, const char *argv[])
+int			main(int argc, const char *argv[])
 {
 	int		arg;
 

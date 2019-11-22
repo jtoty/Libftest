@@ -15,7 +15,7 @@
 #include "libft.h"
 #include <string.h>
 
-void	ft_modify_list_with_d(t_list *elem)
+static void		ft_modify_list_with_d(t_list *elem)
 {
 	int		len;
 
@@ -27,7 +27,7 @@ void	ft_modify_list_with_d(t_list *elem)
 	}
 }
 
-void	ft_print_result(t_list *elem)
+static void		ft_print_result(t_list *elem)
 {
 	int		len;
 
@@ -42,7 +42,7 @@ void	ft_print_result(t_list *elem)
 	}
 }
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+static t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*elem;
 
@@ -57,7 +57,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	else
 	{
 		if (!(elem->content = malloc(sizeof(*(elem->content)) * content_size)))
+		{
+			free(elem);
 			return (NULL);
+		}
 		elem->content = memcpy(elem->content, content, content_size);
 		elem->content_size = content_size;
 	}
@@ -65,7 +68,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	return (elem);
 }
 
-int main(int argc, const char *argv[])
+int 			main(int argc, const char *argv[])
 {
 	t_list		*elem;
 	t_list		*elem2;

@@ -15,7 +15,7 @@
 #include <string.h>
 #include "libft.h"
 
-void	ft_print_result(char const *s)
+static void		ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,7 +25,7 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-char	mapi(unsigned int i, char c)
+static char		mapi(unsigned int i, char c)
 {
 	static int indexArray[11] = {0};
 
@@ -41,7 +41,7 @@ char	mapi(unsigned int i, char c)
 		return (c);
 }
 
-int		main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	char	*str;
 	char	*strmapi;

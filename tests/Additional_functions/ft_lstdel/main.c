@@ -15,7 +15,7 @@
 #include <unistd.h>
 #include <string.h>
 
-void	ft_print_result(t_list *elem)
+static void		ft_print_result(t_list *elem)
 {
 	int		len;
 
@@ -27,14 +27,14 @@ void	ft_print_result(t_list *elem)
 
 static int	nb_free_done;
 
-void	ft_del(void *content, size_t size)
+static void		ft_del(void *content, size_t size)
 {
 	(void)size;
 	free(content);
 	nb_free_done++;
 }
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+static t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*elem;
 
@@ -60,7 +60,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	return (elem);
 }
 
-int main(int argc, const char *argv[])
+int				 main(int argc, const char *argv[])
 {
 	t_list		*elem;
 	t_list		*elem2;

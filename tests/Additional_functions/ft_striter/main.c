@@ -15,7 +15,7 @@
 #include <string.h>
 #include "libft.h"
 
-void	ft_print_result(char const *s)
+static void	ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,7 +25,7 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-void	iter(char *c)
+static void	iter(char *c)
 {
 	if (*c >= 'a' && *c <= 'z')
 		*c = *c - 32;
@@ -33,7 +33,7 @@ void	iter(char *c)
 		*c = *c + 32;
 }
 
-int		main(int argc, const char *argv[])
+int			main(int argc, const char *argv[])
 {
 	char	*str;
 

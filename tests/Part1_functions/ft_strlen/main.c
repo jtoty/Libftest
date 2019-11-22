@@ -15,7 +15,7 @@
 #include <string.h>
 #include "libft.h"
 
-void	ft_print_result(int n)
+static void		ft_print_result(int n)
 {
 	char c;
 
@@ -25,7 +25,7 @@ void	ft_print_result(int n)
 	write (1, &c, 1);
 }
 
-int		main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	int		arg;
 
