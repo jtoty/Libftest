@@ -81,5 +81,6 @@ int				main(int argc, const char *argv[])
 			ft_print_result(membis);
 		}
 	}
+	free(membis);
 	return (0);
 }

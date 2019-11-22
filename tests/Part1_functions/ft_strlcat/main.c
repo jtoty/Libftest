@@ -98,5 +98,6 @@ int				main(int argc, const char *argv[])
 		write(1, "\n", 1);
 		write(1, dest, 15);
 	}
+	free(dest);
 	return (0);
 }

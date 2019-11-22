@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-static void	ft_print_result(int n)
+static void		ft_print_result(int n)
 {
 	if (n)
 		write(1, "1", 1);
@@ -22,7 +22,7 @@ static void	ft_print_result(int n)
 		write(1, "0", 1);
 }
 
-int			main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	int		i;
 	int		arg;

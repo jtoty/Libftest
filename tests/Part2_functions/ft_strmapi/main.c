@@ -53,12 +53,19 @@ int				main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 1)
 	{
 		strcpy(str, "LoReM iPsUm");
-		strmapi = ft_strmapi(str, &mapi);
-		ft_print_result(strmapi);
-		if (strmapi == str)
-			ft_print_result("\nA new string was not returned");
-		if (strmapi[11] != '\0')
-			ft_print_result("\nString is not null terminated");
+		if (!(strmapi = ft_strmapi(str, &mapi))
+			ft_print_result("NULL");
+		else
+		{
+			ft_print_result(strmapi);
+			if (strmapi[11] != '\0')
+				ft_print_result("\nString is not null terminated");
+			if (strmapi == str)
+				ft_print_result("\nA new string was not returned");
+			else
+				free(strmapi);
+		}
 	}
+	free(str);
 	return (0);
 }

@@ -28,6 +28,7 @@ int		main(int argc, const char *argv[])
 			write(1, "NULL", 4);
 		else
 			write(1, str, 31);
+		free(str);
 	}
 	else if (arg == 2)
 	{
@@ -35,6 +36,7 @@ int		main(int argc, const char *argv[])
 			write(1, "NULL", 4);
 		else
 			write(1, str, 1);
+		free(str);
 	}
 	return (0);
 }

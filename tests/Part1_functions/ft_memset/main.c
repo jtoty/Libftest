@@ -48,5 +48,6 @@ int		main(int argc, const char *argv[])
 			write(1, "mem's adress was not returned\n", 30);
 		write(1, mem, 15);
 	}
+	free(mem);
 	return (0);
 }

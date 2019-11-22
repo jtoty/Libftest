@@ -14,22 +14,28 @@
 #include <unistd.h>
 #include "libft.h"
 
-static void	ft_print_result(char *s)
+static void		ft_print_result(char *s)
 {
 	int		len;
 
-	len = 0;
-	while (s[len])
+	if (!s)
+		write(1, "NULL", 4);
+	else
 	{
-		if (s[len] >= 'a' && s[len] <= 'z')
-			s[len] -= 32;
-		len++;
+		len = 0;
+		while (s[len])
+		{
+			if (s[len] >= 'a' && s[len] <= 'z')
+				s[len] -= 32;
+			len++;
+		}
+		write(1, s, len);
+		free(s);
 	}
-	write(1, s, len);
 	write(1, "\n", 1);
 }
 
-int			main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	int		arg;
 

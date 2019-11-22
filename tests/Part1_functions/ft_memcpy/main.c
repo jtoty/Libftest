@@ -42,5 +42,6 @@ int		main(int argc, const char *argv[])
 			write(1, "dest's adress was not returned\n", 31);
 		write(1, mem, 30);
 	}
+	free(mem);
 	return (0);
 }

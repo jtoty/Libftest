@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-static void		ft_print_result(char const *s)
+static void			ft_print_result(char const *s)
 {
 	int		len;
 
@@ -24,7 +24,22 @@ static void		ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-int				main(int argc, const char *argv[])
+static void			ft_print_tabstr(char **tabstr);
+{
+	int		i;
+
+	i = 0;
+	while (tabstr[i] != '\0')
+	{
+		ft_print_result(tabstr[i]);
+		write(1, "\n", 1);
+		free(tabstr[i]);
+		i++;
+	}
+	free(tabstr);
+}
+
+int					main(int argc, const char *argv[])
 {
 	char	**tabstr;
 	int		i;
@@ -39,70 +54,35 @@ int				main(int argc, const char *argv[])
 		if (!(tabstr = ft_split("          ", ' ')))
 			ft_print_result("NULL");
 		else
-		{
-			while (tabstr[i] != '\0')
-			{
-				ft_print_result(tabstr[i]);
-				write(1, "\n", 1);
-				i++;
-			}
-		}
+			ft_print_tabstr(tabstr);
 	}
 	else if (arg == 2)
 	{
 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
 			ft_print_result("NULL");
 		else
-		{
-			while (tabstr[i] != '\0')
-			{
-				ft_print_result(tabstr[i]);
-				write(1, "\n", 1);
-				i++;
-			}
-		}
+			ft_print_tabstr(tabstr);
 	}
 	else if (arg == 3)
 	{
 		if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
 			ft_print_result("NULL");
 		else
-		{
-			while (tabstr[i] != '\0')
-			{
-				ft_print_result(tabstr[i]);
-				write(1, "\n", 1);
-				i++;
-			}
-		}
+			ft_print_tabstr(tabstr);
 	}
 	else if (arg == 4)
 	{
 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
 			ft_print_result("NULL");
 		else
-		{
-			while (tabstr[i] != '\0')
-			{
-				ft_print_result(tabstr[i]);
-				write(1, "\n", 1);
-				i++;
-			}
-		}
+			ft_print_tabstr(tabstr);
 	}
 	else if (arg == 5)
 	{
 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
 			ft_print_result("NULL");
 		else
-		{
-			while (tabstr[i] != '\0')
-			{
-				ft_print_result(tabstr[i]);
-				write(1, "\n", 1);
-				i++;
-			}
-		}
+			ft_print_tabstr(tabstr);
 	}
 	return (0);
 }

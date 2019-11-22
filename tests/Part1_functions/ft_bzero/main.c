@@ -34,5 +34,6 @@ int		main(int argc, const char *argv[])
 		ft_bzero(mem, 0);
 		write(1, mem, 5);
 	}
+	free(mem);
 	return (0);
 }

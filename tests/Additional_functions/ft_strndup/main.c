@@ -15,7 +15,7 @@
 #include <string.h>
 #include "libft.h"
 
-static void	ft_print_result(char const *s)
+static void		ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,7 +25,7 @@ static void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-int			main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	char	str[] = "lorem ipsum dolor sit amet";
 	char	*str_dup;
@@ -42,6 +42,8 @@ int			main(int argc, const char *argv[])
 			ft_print_result(str_dup);
 		if (str_dup == str)
 			ft_print_result("\nstr_dup's adress == str's adress");
+		else
+			free(str_dup);
 	}
 	else if (arg == 2)
 	{
@@ -51,6 +53,8 @@ int			main(int argc, const char *argv[])
 			ft_print_result(str_dup);
 		if (str_dup == str)
 			ft_print_result("\nstr_dup's adress == str's adress");
+		else
+			free(str_dup);
 	}
 	else if (arg == 3)
 	{
@@ -60,6 +64,8 @@ int			main(int argc, const char *argv[])
 			ft_print_result(str_dup);
 		if (str_dup == str)
 			ft_print_result("\nstr_dup's adress == str's adress");
+		else
+			free(str_dup);
 	}
 	return (0);
 }

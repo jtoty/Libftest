@@ -15,7 +15,7 @@
 #include <string.h>
 #include "libft.h"
 
-static void	ft_print_result(char const *s)
+static void		ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,7 +25,7 @@ static void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-static char	map(char c)
+static char		map(char c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
@@ -35,7 +35,7 @@ static char	map(char c)
 		return (c);
 }
 
-int			main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	char	*str;
 	char	*strmap;
@@ -47,12 +47,20 @@ int			main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 1)
 	{
 		strcpy(str, "LoReM iPsUm");
-		strmap = ft_strmap(str, &map);
+		if (!(strmap = ft_strmap(str, &map))
+		{
+			free(str);
+			ft_print_result("NULL\n");
+			return (0);
+		}
 		ft_print_result(strmap);
 		if (strmap == str)
 			ft_print_result("\nA new string was not returned");
-		if (strmap[11] != '\0')
+		if (strmap[11] != '\0') {
 			ft_print_result("\nString is not null terminated");
+			free(strmap);
+		}
 	}
+	free(str);
 	return (0);
 }
