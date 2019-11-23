@@ -24,42 +24,32 @@ static void		ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-int				main(int argc, const char *argv[])
+static void		check_strtok(char *delim)
 {
 	char	str[] = "abc,def;ghi,jkl.mno,pqr";
-	char  *token;
+	char	*token;
+
+	if ((token = ft_strtok(str, delim)))
+	{
+		ft_print_result(token);
+		while ((token = ft_strtok(NULL, delim)))
+			ft_print_result(token);
+	}
+	else
+		ft_print_result("NULL");
+}
+
+int				main(int argc, const char *argv[])
+{
 	int		arg;
 
 	if (argc == 1)
 		return (0);
 	if ((arg = atoi(argv[1])) == 1)
-	{
-		if ((token = ft_strtok(str, ",")))
-		{
-			ft_print_result(token);
-			while ((token = ft_strtok(NULL, ",")))
-				ft_print_result(token);
-		}
-		else
-			ft_print_result("NULL");
-	}
+		check_strtok(",");
 	else if (arg == 2)
-	{
-		if ((token = ft_strtok(str, "y")))
-			ft_print_result(token);
-		else
-			ft_print_result("NULL");
-	}
+		check_strtok("y");
 	else if (arg == 3)
-	{
-		if ((token = ft_strtok(str, ",;.")))
-		{
-			ft_print_result(token);
-			while ((token = ft_strtok(NULL, ",;.")))
-				ft_print_result(token);
-		}
-		else
-			ft_print_result("NULL");
-	}
+		check_strtok(",;.");
 	return (0);
 }
