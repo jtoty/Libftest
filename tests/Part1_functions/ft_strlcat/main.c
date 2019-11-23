@@ -52,7 +52,7 @@ int				main(int argc, const char *argv[])
 		check_strlcat(dest, "lorem", 15, dest_len);
 	}
 	else if (arg == 2)
-		check_strlcat(dest, "", 15);
+		check_strlcat(dest, "", 15, dest_len);
 	else if (arg == 3)
 	{
 		dest[0] = '\0';

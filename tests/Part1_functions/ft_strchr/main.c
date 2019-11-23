@@ -54,12 +54,7 @@ int				main(int argc, const char *argv[])
 	else if (arg == 3)
 		check_strchr(str2, 'j', 3);
 	else if (arg == 4)
-	{
-		if (!(str = ft_strchr(str2, 's')))
-			ft_print_result("NULL");
-		else
-			ft_print_result(str);
-	}
+		check_strchr(str2, 's', 0);
 	else if (arg == 5)
 		check_strchr(str2, '\0', 7);
 	else if (arg == 6)

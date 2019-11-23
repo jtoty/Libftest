@@ -16,6 +16,8 @@
 #include "libft.h"
 static void		check_toupper(int start, int end)
 {
+	int		c;
+
 	while (start <= end)
 	{
 		c = ft_toupper(start);
@@ -26,8 +28,6 @@ static void		check_toupper(int start, int end)
 
 int				main(int argc, const char *argv[])
 {
-	int		i;
-	int		c;
 	int		arg;
 
 	alarm(5);
@@ -40,7 +40,7 @@ int				main(int argc, const char *argv[])
 	else if (arg == 3)
 		check_toupper(58, 64);
 	else if (arg == 4)
-		check_toupper('A'', 'Z');
+		check_toupper('A', 'Z');
 	else if (arg == 5)
 		check_toupper(91, 96);
 	else if (arg == 6)

@@ -35,7 +35,7 @@ int				main(int argc, const char *argv[])
 	if ((arg = atoi(argv[1])) == 1)
 		check_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 14);
 	else if (arg == 2)
-		check_memcpy(mem, "zyxwvutst", 0))
+		check_memcpy(mem, "zyxwvutst", 0);
 	else if (arg == 3)
 		check_memcpy(mem, "zy\0xw\0vu\0\0tsr", 11);
 	return (0);

@@ -17,6 +17,8 @@
 
 static void		check_tolower(int start, int end)
 {
+	int		c;
+
 	while (start <= end)
 	{
 		c = ft_tolower(start);
@@ -27,8 +29,6 @@ static void		check_tolower(int start, int end)
 
 int				main(int argc, const char *argv[])
 {
-	int		i;
-	int		c;
 	int		arg;
 
 	alarm(5);
@@ -41,7 +41,7 @@ int				main(int argc, const char *argv[])
 	else if (arg == 3)
 		check_tolower(58, 64);
 	else if (arg == 4)
-		check_tolower('A'', 'Z');
+		check_tolower('A', 'Z');
 	else if (arg == 5)
 		check_tolower(91, 96);
 	else if (arg == 6)

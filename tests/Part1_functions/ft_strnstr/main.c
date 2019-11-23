@@ -28,7 +28,7 @@ static void		check_strnstr(char *big, char *little, int len)
 {
 	const char *str;
 
-	if (!(str = ft_strnstr(big, litte, len)))
+	if (!(str = ft_strnstr(big, little, len)))
 		ft_print_result("NULL");
 	else
 		ft_print_result(str);

@@ -35,12 +35,12 @@ int				main(int argc, const char *argv[])
 		return (0);
 	memset(mem, 'j', mem_size);
 	if ((arg = atoi(argv[1])) == 1)
-		check_memset(mem, 'c', 5);
+		check_memset(mem, 'c', 5, mem_size);
 	else if (arg == 2)
-		check_memset(mem, 'c', 14);
+		check_memset(mem, 'c', 14, mem_size);
 	else if (arg == 3)
-		check_memset(mem, '\n', 6);
+		check_memset(mem, '\n', 6, mem_size);
 	else if (arg == 4)
-		check_memset(mem, '\0', 1);
+		check_memset(mem, '\0', 1, mem_size);
 	return (0);
 }

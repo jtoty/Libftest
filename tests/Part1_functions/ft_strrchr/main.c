@@ -27,6 +27,8 @@ static void		ft_print_result(char const *s)
 
 static void		check_strrchr(char *s, int c, int offset)
 {
+	char		*str;
+	
 	if (!(str = ft_strrchr(s, c)))
 		ft_print_result("NULL");
 	else
@@ -39,7 +41,6 @@ static void		check_strrchr(char *s, int c, int offset)
 
 int				main(int argc, const char *argv[])
 {
-	char		*str;
 	char		str2[] = "bonjour";
 	int			arg;
 
