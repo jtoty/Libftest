@@ -53,7 +53,7 @@ int				main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 1)
 	{
 		strcpy(str, "LoReM iPsUm");
-		if (!(strmapi = ft_strmapi(str, &mapi))
+		if (!(strmapi = ft_strmapi(str, &mapi)))
 			ft_print_result("NULL");
 		else
 		{

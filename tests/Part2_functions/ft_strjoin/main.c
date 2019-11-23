@@ -42,7 +42,6 @@ int					main(int argc, const char *argv[])
 {
 	char	s1[] = "lorem ipsum";
 	char	s2[] = "dolor sit amet";
-	char	*strjoin;
 	int		arg;
 
 	alarm(5);

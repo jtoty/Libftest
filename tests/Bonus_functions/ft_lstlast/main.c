@@ -25,7 +25,7 @@ static void		ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-static t_list	*ft_lstnew(void const *content, size_t content_size)
+static t_list	*get_lst_new_elem(void const *content, size_t content_size)
 {
 	t_list	*elem;
 
@@ -63,8 +63,8 @@ int				 main(int argc, const char *argv[])
 	char		str3 [] = "dolor";
 	char		str4 [] = "sit";
 
-	elem = ft_lstnew(str, sizeof(str));
-	elem2 = ft_lstnew(str2, sizeof(str2));
+	elem = get_lst_new_elem(str, sizeof(str));
+	elem2 = get_lst_new_elem(str2, sizeof(str2));
 	elem3 = ft_lstnew(str3, sizeof(str3));
 	elem4 = ft_lstnew(str4, sizeof(str4));
 	alarm(5);

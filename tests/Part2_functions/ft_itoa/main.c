@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-static void		ft_print_result(char const *s)
+static void		ft_print_result(char *s)
 {
 	int		len;
 

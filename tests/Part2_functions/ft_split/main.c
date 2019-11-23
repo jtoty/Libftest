@@ -24,7 +24,7 @@ static void			ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-static void			ft_print_tabstr(char **tabstr);
+static void			ft_print_tabstr(char **tabstr)
 {
 	int		i;
 
