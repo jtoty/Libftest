@@ -20,6 +20,8 @@ static void		check_memmove(void *dest, void *src, int n)
 	if (dest != ft_memmove(dest, src, n))
 		write(1, "dest's adress was not returned\n", 31);
 	write(1, dest, 22);
+	write(1, "\n", 1);
+	write(1, src, 22);
 }
 
 int				main(int argc, const char *argv[])

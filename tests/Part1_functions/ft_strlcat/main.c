@@ -27,7 +27,6 @@ static void		ft_print_result(int n)
 
 static void		check_strlcat(char *dest, char *src, int size, int dest_len)
 {
-	dest[11] = 'a';
 	ft_print_result(ft_strlcat(dest, src, size));
 	write(1, "\n", 1);
 	write(1, dest, dest_len);
