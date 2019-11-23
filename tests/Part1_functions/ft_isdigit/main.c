@@ -23,76 +23,35 @@
 		write(1, "0", 1);
 }
 
+static void		check_isdigit(int start, int end)
+{
+	while (start <= end)
+	{
+		ft_print_result(ft_isdigit(start));
+		start++;
+	}
+}
+
 int				main(int argc, const char *argv[])
 {
-	int		i;
 	int		arg;
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
-	if ((arg = atoi(argv[1])) == 1)
-	{
-		i = 0;
-		while (i <= 47)
-		{
-			ft_print_result(ft_isdigit(i));
-			i++;
-		}
-	}
+	else if ((arg = atoi(argv[1])) == 1)
+		check_isdigit(0, 47);
 	else if (arg == 2)
-	{
-		i = '0';
-		while (i <= '9')
-		{
-			ft_print_result(ft_isdigit(i));
-			i++;
-		}
-	}
+		check_isdigit('0', '9');
 	else if (arg == 3)
-	{
-		i = 58;
-		while (i <= 64)
-		{
-			ft_print_result(ft_isdigit(i));
-			i++;
-		}
-	}
+		check_isdigit(58, 64);
 	else if (arg == 4)
-	{
-		i = 'A';
-		while (i <= 'Z')
-		{
-			ft_print_result(ft_isdigit(i));
-			i++;
-		}
-	}
+		check_isdigit('A', 'Z');
 	else if (arg == 5)
-	{
-		i = 91;
-		while (i <= 96)
-		{
-			ft_print_result(ft_isdigit(i));
-			i++;
-		}
-	}
+		check_isdigit(91, 96);
 	else if (arg == 6)
-	{
-		i = 'a';
-		while (i <= 'z')
-		{
-			ft_print_result(ft_isdigit(i));
-			i++;
-		}
-	}
+		check_isdigit('a', 'z');
 	else if (arg == 7)
-	{
-		i = 123;
-		while (i <= 127)
-		{
-			ft_print_result(ft_isdigit(i));
-			i++;
-		}
-	}
+		check_isdigit(123, 127);
 	return (0);
 }

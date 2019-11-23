@@ -23,85 +23,35 @@ static void		ft_print_result(int n)
 		write(1, "0", 1);
 }
 
+static void		check_isascii(int start, int end)
+{
+	while (start <= end)
+	{
+		ft_print_result(ft_isascii(start));
+		start++;
+	}
+}
+
 int				main(int argc, const char *argv[])
 {
-	int		i;
 	int		arg;
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-	{
-		i = 0;
-		while (i <= 47)
-		{
-			ft_print_result(ft_isascii(i));
-			i++;
-		}
-	}
+		check_isascii(0, 47);
 	else if (arg == 2)
-	{
-		i = '0';
-		while (i <= '9')
-		{
-			ft_print_result(ft_isascii(i));
-			i++;
-		}
-	}
+		check_isascii('0', '9');
 	else if (arg == 3)
-	{
-		i = 58;
-		while (i <= 64)
-		{
-			ft_print_result(ft_isascii(i));
-			i++;
-		}
-	}
+		check_isascii(58, 64);
 	else if (arg == 4)
-	{
-		i = 'A';
-		while (i <= 'Z')
-		{
-			ft_print_result(ft_isascii(i));
-			i++;
-		}
-	}
+		check_isascii('A', 'Z');
 	else if (arg == 5)
-	{
-		i = 91;
-		while (i <= 96)
-		{
-			ft_print_result(ft_isascii(i));
-			i++;
-		}
-	}
+		check_isascii(91, 96);
 	else if (arg == 6)
-	{
-		i = 'a';
-		while (i <= 'z')
-		{
-			ft_print_result(ft_isascii(i));
-			i++;
-		}
-	}
+		check_isascii('a', 'z');
 	else if (arg == 7)
-	{
-		i = 123;
-		while (i <= 127)
-		{
-			ft_print_result(ft_isascii(i));
-			i++;
-		}
-	}
-	else if (arg == 8)
-	{
-		i = 128;
-		while (i <= 138)
-		{
-			ft_print_result(ft_isascii(i));
-			i++;
-		}
-	}
+		check_isascii(123, 127);
 	return (0);
 }
