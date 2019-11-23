@@ -14,29 +14,27 @@
 #include <unistd.h>
 #include "libft.h"
 
-int		main(int argc, const char *argv[])
+static void		check_strnew(int len)
 {
 	char	*str;
+
+	if (!(str = ft_strnew(len)))
+		write(1, "NULL", 4);
+	else
+		write(1, str, len + 1);
+	free(str);
+}
+
+int				main(int argc, const char *argv[])
+{
 	int		arg;
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-	{
-		if (!(str = ft_strnew(30)))
-			write(1, "NULL", 4);
-		else
-			write(1, str, 31);
-		free(str);
-	}
+		check_strnew(30);
 	else if (arg == 2)
-	{
-		if (!(str = ft_strnew(0)))
-			write(1, "NULL", 4);
-		else
-			write(1, str, 1);
-		free(str);
-	}
+		check_strnew(0);
 	return (0);
 }
