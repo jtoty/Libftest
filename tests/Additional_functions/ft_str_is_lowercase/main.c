@@ -22,8 +22,10 @@ static void	ft_print_result(int n)
 		write(1, "0", 1);
 }
 
-static void		check_str_is_lowercase(int start, int end, char *str)
+static void		check_str_is_lowercase(int start, int end)
 {
+	char	str[] = "loremipsumdolorsitamet";
+
 	while (start <= end)
 	{
 		str[0] = start;
@@ -35,7 +37,6 @@ static void		check_str_is_lowercase(int start, int end, char *str)
 int				main(int argc, const char *argv[])
 {
 	int		arg;
-	char	str[] = "loremipsumdolorsitamet";
 
 	alarm(5);
 	if (argc == 1)

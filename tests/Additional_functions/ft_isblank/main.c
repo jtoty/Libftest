@@ -33,7 +33,6 @@ static void		check_isblank(int start, int end)
 
 int				main(int argc, const char *argv[])
 {
-	int		i;
 	int		arg;
 
 	alarm(5);

@@ -53,5 +53,7 @@ int				main(int argc, const char *argv[])
 		check_isascii('a', 'z');
 	else if (arg == 7)
 		check_isascii(123, 127);
+	else if (arg == 7)
+		check_isascii(128, 138);
 	return (0);
 }

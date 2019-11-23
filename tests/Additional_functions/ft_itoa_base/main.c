@@ -35,7 +35,7 @@ static void		ft_print_result(char *s)
 	write(1, "\n", 1);
 }
 
-static void		check_itoa__base_results(int arg)
+static void		check_itoa_base(int arg)
 {
 	ft_print_result(ft_itoa_base(0, arg + 1));
 	ft_print_result(ft_itoa_base(arg, arg + 1));
@@ -56,8 +56,8 @@ int				main(int argc, const char *argv[])
 	alarm(5);
 	if (argc == 1)
 		return (0);
-	arg = atoi(argv[1]));
-	if (arg > 1)
-		check_itoa__base_results(arg);
+	arg = atoi(argv[1]);
+	if (arg > 0)
+		check_itoa_base(arg);
 	return (0);
 }

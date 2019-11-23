@@ -26,14 +26,13 @@ static void		check_isxdigit(int start, int end)
 {
 	while (start <= end)
 	{
-		ft_print_result(ft_isblank(start));
+		ft_print_result(ft_isxdigit(start));
 		start++;
 	}
 }
 
 int				main(int argc, const char *argv[])
 {
-	int		i;
 	int		arg;
 
 	alarm(5);

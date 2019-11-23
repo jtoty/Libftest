@@ -25,6 +25,18 @@ static void		ft_print_result(char const *s)
 	write(1, s, len);
 }
 
+// static void		check_memccpy(void *dest, void *src, int c, int n)
+// {
+// 	if (!(mem = ft_memccpy(mem, "zyxwvutsrqponmlkjihgfedcba", 'r', 20)))
+// 		ft_print_result("NULL");
+// 	else
+// 	{
+// 		ft_print_result(mem);
+// 		write(1, "\n", 1);
+// 		ft_print_result(membis);
+// 	}
+// }
+
 int				main(int argc, const char *argv[])
 {
 	void	*mem;

@@ -14,11 +14,11 @@
 #include <unistd.h>
 #include "libft.h"
 
-static void		check_putchar_fd(int start, int end, int fd)
+static void		check_putchar(int start, int end)
 {
 	while (start <= end)
 	{
-		ft_putchar_fd(start, fd);
+		ft_putchar(start);
 		start++;
 	}
 }
@@ -31,18 +31,18 @@ int				main(int argc, const char *argv[])
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-		check_putchar_fd(0, 47, 2);
+		check_putchar(0, 47);
 	else if (arg == 2)
-		check_putchar_fd('0', '9', 1);
+		check_putchar('0', '9');
 	else if (arg == 3)
-		check_putchar_fd(58, 64, 2);
+		check_putchar(58, 64);
 	else if (arg == 4)
-		check_putchar_fd('A', 'Z', 1);
+		check_putchar('A', 'Z');
 	else if (arg == 5)
-		check_putchar_fd(91, 96, 2);
+		check_putchar(91, 96);
 	else if (arg == 6)
-		check_putchar_fd('a', 'z', 1);
+		check_putchar('a', 'z');
 	else if (arg == 7)
-		check_putchar_fd(123, 127, 2);
+		check_putchar(123, 127);
 	return (0);
 }

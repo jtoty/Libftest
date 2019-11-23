@@ -15,7 +15,7 @@
 #include <string.h>
 #include "libft.h"
 
-static void		check_strncat(char *dest, char *src, int n, int len)
+static void		check_strncpy(char *dest, char *src, int n, int len)
 {
 	if (dest != ft_strncpy(dest, src, n))
 		write(1, "dest's adress was not returned\n", 31);

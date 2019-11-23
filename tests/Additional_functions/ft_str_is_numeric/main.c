@@ -22,8 +22,10 @@ static void	ft_print_result(int n)
 		write(1, "0", 1);
 }
 
-static void		check_str_is_numeric(int start, int end, char *str)
+static void		check_str_is_numeric(int start, int end)
 {
+	char	str[] = "0123456789012345678901";
+
 	while (start <= end)
 	{
 		str[0] = start;
@@ -34,7 +36,6 @@ static void		check_str_is_numeric(int start, int end, char *str)
 
 int			main(int argc, const char *argv[])
 {
-	char	str[] = "0123456789012345678901";
 	int		arg;
 
 	alarm(5);

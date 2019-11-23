@@ -26,14 +26,13 @@ static void		check_isupper(int start, int end)
 {
 	while (start <= end)
 	{
-		ft_print_result(ft_isblank(start));
+		ft_print_result(ft_isupper(start));
 		start++;
 	}
 }
 
 int				main(int argc, const char *argv[])
 {
-	int		i;
 	int		arg;
 
 	alarm(5);
