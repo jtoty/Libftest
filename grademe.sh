@@ -104,7 +104,7 @@ do
 done
 
 source ${PATH_TEST}/srcs/variables/colors.sh
-source ${PATH_TEST}/srcs/check_cheat.sh
+source ${PATH_TEST}/srcs/check_forbidden_function.sh
 source ${PATH_TEST}/srcs/check_compilation.sh
 source ${PATH_TEST}/srcs/check_file.sh
 source ${PATH_TEST}/srcs/check_norme.sh
@@ -120,6 +120,7 @@ then
 	func_check_update
 fi
 
+# Check if my_config.sh file exists, otherwise create it
 if [ ! -e ${PATH_TEST}/my_config.sh ]
 then
 	printf "${BOLD}my_config.sh${DEFAULT} file is not found.\n"
@@ -154,6 +155,7 @@ copying_files()
 
 copying_files
 
+# Activate functions that will be tested
 for part in ${tab_all_part[*]}
 do
 	opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
@@ -227,6 +229,7 @@ then
 	func_compil_lib
 fi
 
+# Activate part if opt_no_part is equal to 0
 for part in ${tab_all_part[*]}
 do
 	opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
@@ -237,6 +240,7 @@ do
 	fi
 done
 
+# Print starting tests only if at least one part is activated
 for part in ${tab_all_part[*]}
 do
 	activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
@@ -257,8 +261,9 @@ then
 	cp ${PATH_LIBFT}/libft.h ${PATH_TEST}
 fi
 
-printf "#include \"libft.h\"\n\nint\tmain(void)\n{\n\treturn (0);\n}" > ${PATH_TEST}/main_check_cheating.c
+printf "#include \"libft.h\"\n\nint\tmain(void)\n{\n\treturn (0);\n}" > ${PATH_TEST}/main_check_forbidden_function.c
 
+# launch tests
 for part in ${tab_all_part[*]}
 do
 	activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
@@ -282,9 +287,9 @@ then
 	rm ${PATH_TEST}/libft.h
 fi
 
-if [ -e ${PATH_TEST}/main_check_cheating.c ]
+if [ -e ${PATH_TEST}/main_check_forbidden_function.c ]
 then
-	rm ${PATH_TEST}/main_check_cheating.c
+	rm ${PATH_TEST}/main_check_forbidden_function.c
 fi
 
 if [ -d ${PATH_TEST}/${TMP_TESTS_DIR} ]
