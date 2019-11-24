@@ -23,8 +23,6 @@ Additional_func=(
 	'ft_isupper.c'			\
 	'ft_isxdigit.c'			\
 	'ft_itoa_base.c'		\
-	'ft_lstadd.c'			\
-	'ft_lstdel.c'			\
 	'ft_memalloc.c'			\
 	'ft_memdel.c'			\
 	'ft_putchar.c'			\
@@ -69,8 +67,6 @@ Additional_func_authorized=(
 	'0'	\
 	'0'	\
 	'1'	\
-	'0'	\
-	'2'	\
 	'1'	\
 	'2'	\
 	'4'	\
@@ -107,8 +103,6 @@ Additional_func_authorized=(
 )
 
 Additional_func_activation=(
-	'0'	\
-	'0'	\
 	'0'	\
 	'0'	\
 	'0'	\
