@@ -15,7 +15,7 @@
 #include "libft.h"
 #include <string.h>
 
-static void		ft_modify_list_with_d(t_list *elem)
+static void			ft_modify_list_with_d(t_list *elem)
 {
 	int		len;
 
@@ -27,7 +27,7 @@ static void		ft_modify_list_with_d(t_list *elem)
 	}
 }
 
-static void		ft_print_result(t_list *elem)
+static void			ft_print_result(t_list *elem)
 {
 	int		len;
 
@@ -42,7 +42,7 @@ static void		ft_print_result(t_list *elem)
 	}
 }
 
-static t_list	*get_lst_new_elem(void *content)
+static t_list		*get_lst_new_elem(void *content)
 {
 	t_list	*elem;
 
@@ -112,7 +112,7 @@ static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
 	return (elem);
 }
 
-int				 main(int argc, const char *argv[])
+int					 main(int argc, const char *argv[])
 {
 	t_list		*elem;
 	t_list		*elem2;
@@ -128,16 +128,16 @@ int				 main(int argc, const char *argv[])
 	if (!(elem2 = get_elem_lst(elem, tab, 1)))
 		return (0);
 	elem->next = elem2;
-	if (!(elem2 = get_elem_lst(elem, tab, 2)))
+	if (!(elem3 = get_elem_lst(elem, tab, 2)))
 		return (0);
 	elem2->next = elem3;
-	if (!(elem2 = get_elem_lst(elem, tab, 3)))
+	if (!(elem4 = get_elem_lst(elem, tab, 3)))
 		return (0);
 	elem3->next = elem4;
 	alarm(5);
 	if (atoi(argv[1]) == 1)
 	{
-		ft_lstiter(elem, &ft_modify_list_with_d);
+		ft_lstiter(elem, (void *)&ft_modify_list_with_d);
 		ft_print_result(elem);
 	}
 	free_memory_and_return(tab, 4);

@@ -15,7 +15,7 @@
 #include "libft.h"
 #include <string.h>
 
-static void		ft_print_result(char const *s)
+static void			ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,7 +25,7 @@ static void		ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-static t_list	*get_lst_new_elem(void *content)
+static t_list		*get_lst_new_elem(void *content)
 {
 	t_list	*elem;
 
@@ -95,7 +95,7 @@ static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
 	return (elem);
 }
 
-int				 main(int argc, const char *argv[])
+int					 main(int argc, const char *argv[])
 {
 	int			arg;
 	t_list		*elem;
@@ -112,10 +112,10 @@ int				 main(int argc, const char *argv[])
 	if (!(elem2 = get_elem_lst(elem, tab, 1)))
 		return (0);
 	elem->next = elem2;
-	if (!(elem2 = get_elem_lst(elem, tab, 2)))
+	if (!(elem3 = get_elem_lst(elem, tab, 2)))
 		return (0);
 	elem2->next = elem3;
-	if (!(elem2 = get_elem_lst(elem, tab, 3)))
+	if (!(elem4 = get_elem_lst(elem, tab, 3)))
 		return (0);
 	elem3->next = elem4;
 	alarm(5);

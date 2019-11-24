@@ -15,7 +15,7 @@
 #include <unistd.h>
 #include <string.h>
 
-static void		ft_print_result(t_list *elem)
+static void			ft_print_result(t_list *elem)
 {
 	int		len;
 
@@ -27,13 +27,13 @@ static void		ft_print_result(t_list *elem)
 
 static int	nb_free_done;
 
-static void		ft_del(void *content)
+static void			ft_delelem(void *content)
 {
 	free(content);
 	nb_free_done++;
 }
 
-static t_list	*get_lst_new_elem(void *content)
+static t_list		*get_lst_new_elem(void *content)
 {
 	t_list	*elem;
 
@@ -103,9 +103,8 @@ static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
 	return (elem);
 }
 
-int				 main(int argc, const char *argv[])
+	int				 main(int argc, const char *argv[])
 {
-	int			arg;
 	t_list		*elem;
 	t_list		*elem2;
 	t_list		*elem3;
@@ -120,17 +119,17 @@ int				 main(int argc, const char *argv[])
 	if (!(elem2 = get_elem_lst(elem, tab, 1)))
 		return (0);
 	elem->next = elem2;
-	if (!(elem2 = get_elem_lst(elem, tab, 2)))
+	if (!(elem3 = get_elem_lst(elem, tab, 2)))
 		return (0);
 	elem2->next = elem3;
-	if (!(elem2 = get_elem_lst(elem, tab, 3)))
+	if (!(elem4 = get_elem_lst(elem, tab, 3)))
 		return (0);
 	elem3->next = elem4;
 	nb_free_done = 0;
 	alarm(5);
 	if (atoi(argv[1]) == 1)
 	{
-		ft_lstclear(&elem3, &ft_del);
+		ft_lstclear(&elem3, &ft_delelem);
 		if (elem)
 			ft_print_result(elem);
 		else
