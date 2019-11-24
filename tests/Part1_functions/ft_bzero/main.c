@@ -26,14 +26,15 @@ int				main(int argc, const char *argv[])
 {
 	void	*mem;
 	int		len;
+	int		arg;
 
 	alarm(5);
 	len = 5;
 	if (argc == 1 || !(mem = malloc(sizeof(*mem) * len)))
 		return (0);
-	if (atoi(argv[1]) == 1)
+	if ((arg = atoi(argv[1])) == 1)
 		check_bzero(mem, 'e', len, 5);
-	else if (atoi(argv[1]) == 2)
+	else if (arg == 2)
 		check_bzero(mem, 'e', len, 0);
 	free(mem);
 	return (0);

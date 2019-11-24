@@ -15,36 +15,37 @@
 #include <string.h>
 #include "libft.h"
 
+static void		check_strcat(char *dest, char *src, int len)
+{
+	if (dest != ft_strcat(dest, src))
+		write(1, "dest's adress was not returned\n", 31);
+	write(1, dest, len);
+}
+
 int		main(int argc, const char *argv[])
 {
 	char	*dest;
 	int		arg;
+	int		len;
 
 	alarm(5);
-	if (!(dest = (char *)malloc(sizeof(*dest) * 15)) || argc == 1)
+	len = 15;
+	if (!(dest = (char *)malloc(sizeof(*dest) * len)) || argc == 1)
 		return (0);
-	memset(dest, 0, 15);
+	memset(dest, 0, len);
 	memset(dest, 'r', 6);
 	if ((arg = atoi(argv[1])) == 1)
 	{
 		dest[11] = 'a';
-		if (dest != ft_strcat(dest, "lorem"))
-			write(1, "dest's adress was not returned\n", 31);
-		write(1, dest, 15);
+		check_strcat(dest, "lorem", 15);
 	}
 	else if (arg == 2)
-	{
-		if (dest != ft_strcat(dest, ""))
-			write(1, "dest's adress was not returned\n", 31);
-		write(1, dest, 15);
-	}
+		check_strcat(dest, "", 15);
 	else if (arg == 3)
 	{
 		dest[0] = '\0';
 		dest[11] = 'a';
-		if (dest != ft_strcat(dest, "lorem ipsum"))
-			write(1, "dest's adress was not returned\n", 31);
-		write(1, dest, 15);
+		check_strcat(dest, "lorem ipsum", 15);
 	}
 	free(dest);
 	return (0);
