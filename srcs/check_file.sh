@@ -5,7 +5,7 @@ check_makefile()
 	printf "Makefile"
 	#if [ -e ${PATH_LIBFT}/Makefile ] || [ -e ${PATH_LIBFT}/makefile ]
 	if [ -e ${PATH_LIBFT}/${MAKEFILE_VAR} ]
-	then 
+	then
 		printf "\033[15G-Wall"
 		printf "\033[25G-Wextra"
 		printf "\033[35G-Werror\n"
@@ -40,7 +40,7 @@ check_auteur()
 {
 	printf "\nAuthor file"
 	if [ -e ${PATH_LIBFT}/auteur ] || [ -e ${PATH_LIBFT}/author ]
-	then 
+	then
 		if [ -e ${PATH_LIBFT}/auteur ]
 		then
 			AUTHOR_VAR="auteur"
@@ -79,7 +79,7 @@ check_auteur()
 
 check_header()
 {
-	printf "Header file"
+	printf "\nHeader file"
 	if [ -e ${PATH_LIBFT}/libft.h ]
 	then
 		printf "\033[15GNorme\n"
@@ -122,6 +122,6 @@ func_check_file()
 	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
 	printf "\n\n${DEFAULT}"
 	check_makefile
-	check_auteur
+	# check_auteur
 	check_header
 }
