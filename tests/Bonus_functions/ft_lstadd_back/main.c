@@ -60,14 +60,14 @@ static void			free_memory_lst_and_return(t_list *elem)
 	}
 }
 
-static char			**get_content_lst(unsigned int size)
+static char			**get_content_lst(int size)
 {
 	char	**tab;
 	int		i;
 	char	str [] = "abcdef";
 
 	if (!(tab = (char **)malloc(sizeof(*tab) * size + 1)))
-		return (0)
+		return (0);
 	tab[size] = NULL;
 	i = 0;
 	while (i < size)
@@ -105,7 +105,7 @@ int				 main(int argc, const char *argv[])
 	t_list		*begin;
 	char		**tab;
 
-	if (argc == 1 || (!(tab = get_content_lst(4)))
+	if (argc == 1 || (!(tab = get_content_lst(4))))
 		return (0);
 	elem = NULL;
 	if (!(elem = get_elem_lst(elem, tab, 0)))

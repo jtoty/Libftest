@@ -46,7 +46,7 @@ int 			main(int argc, const char *argv[])
 	{
 		char	str [] = "lorem ipsum dolor sit";
 
-		if (!(elem = ft_lstnew(str, (sizeof(str)))))
+		if (!(elem = ft_lstnew(str))))
 				ft_print_result("NULL");
 		else
 		{
@@ -57,20 +57,20 @@ int 			main(int argc, const char *argv[])
 				ft_print_result(elem->content);
 				write(1, "\n", 1);
 			}
-				ft_print_result2(elem->content_size);
 			if (!(elem->next))
 			{
 				write(1, "\n", 1);
 				ft_print_result("NULL");
 			}
 		}
+		free(elem);
 	}
 	else if (arg == 2)
 	{
 		int		i;
 
 		i = 42;
-		if (!(elem = ft_lstnew(&i, (sizeof(i)))))
+		if (!(elem = ft_lstnew(&i)))
 				ft_print_result("NULL");
 		else
 		{
@@ -81,17 +81,17 @@ int 			main(int argc, const char *argv[])
 				ft_print_result2(*(int *)(elem->content));
 				write(1, "\n", 1);
 			}
-				ft_print_result2(elem->content_size);
 			if (!(elem->next))
 			{
 				write(1, "\n", 1);
 				ft_print_result("NULL");
 			}
 		}
+		free(elem);
 	}
 	else if (arg == 3)
 	{
-		if (!(elem = ft_lstnew(NULL, 5)))
+		if (!(elem = ft_lstnew(NULL)))
 				ft_print_result("NULL");
 		else
 		{
@@ -105,13 +105,13 @@ int 			main(int argc, const char *argv[])
 				ft_print_result(elem->content);
 				write(1, "\n", 1);
 			}
-				ft_print_result2(elem->content_size);
 			if (!(elem->next))
 			{
 				write(1, "\n", 1);
 				ft_print_result("NULL");
 			}
 		}
+		free(elem);
 	}
 	return (0);
 }
