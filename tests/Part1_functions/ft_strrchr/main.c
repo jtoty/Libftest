@@ -13,9 +13,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../../../libft.h"
+#include "libft.h"
 
-void	ft_print_result(char const *s)
+static void		ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,9 +25,22 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-int		main(int argc, const char *argv[])
+static void		check_strrchr(char *s, int c, int offset)
 {
 	char		*str;
+	
+	if (!(str = ft_strrchr(s, c)))
+		ft_print_result("NULL");
+	else
+	{
+		ft_print_result(str);
+		if (str != (s + offset))
+			ft_print_result("\nReturn value is false");
+	}
+}
+
+int				main(int argc, const char *argv[])
+{
 	char		str2[] = "bonjour";
 	int			arg;
 
@@ -35,86 +48,28 @@ int		main(int argc, const char *argv[])
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-	{
-		if (!(str = ft_strrchr(str2, 'b')))
-			ft_print_result("NULL");
-		else
-		{
-			ft_print_result(str);
-			if (str != str2)
-				ft_print_result("\nReturn value is false");
-		}
-	}
+		check_strrchr(str2, 'b', 0);
 	else if (arg == 2)
-	{
-		if (!(str = ft_strrchr(str2, 'o')))
-			ft_print_result("NULL");
-		else
-		{
-			ft_print_result(str);
-			if (str != str2 + 4)
-				ft_print_result("\nReturn value is false");
-		}
-	}
+		check_strrchr(str2, 'o', 4);
 	else if (arg == 3)
 	{
 		char	str3[]= "bonjourno";
-		if (!(str = ft_strrchr(str3, 'o')))
-			ft_print_result("NULL");
-		else
-		{
-			ft_print_result(str);
-			if (str != str3 + 8)
-				ft_print_result("\nReturn value is false");
-		}
+
+		check_strrchr(str3, 'o', 8);
 	}
 	else if (arg == 4)
-	{
-		if (!(str = ft_strrchr(str2, 'j')))
-			ft_print_result("NULL");
-		else
-		{
-			ft_print_result(str);
-			if (str != str2 + 3)
-				ft_print_result("\nReturn value is false");
-		}
-	}
+		check_strrchr(str2, 'j', 3);
 	else if (arg == 5)
-	{
-		if (!(str = ft_strrchr(str2, 's')))
-			ft_print_result("NULL");
-		else
-			ft_print_result(str);
-	}
+		check_strrchr(str2, 's', 0);
 	else if (arg == 6)
-	{
-		if (!(str = ft_strrchr(str2, '\0')))
-			ft_print_result("NULL");
-		else
-		{
-			ft_print_result(str);
-			if (str != str2 + 7)
-				ft_print_result("\nReturn value is false");
-		}
-	}
+		check_strrchr(str2, '\0', 7);
 	else if (arg == 7)
 	{
 		char	str3[] = "";
-		if (!(str = ft_strrchr(str3, '\0')))
-			ft_print_result("NULL");
-		else
-		{
-			ft_print_result(str);
-			if (str != str3)
-				ft_print_result("\nReturn value is false");
-		}
+
+		check_strrchr(str3, '\0', 0);
 	}
 	else if (arg == 8)
-	{
-		if (!(str = ft_strrchr(str2 + 2, 'b')))
-			ft_print_result("NULL");
-		else
-			ft_print_result(str);
-	}
+		check_strrchr(str2 + 2, 'b', 0);
 	return (0);
 }

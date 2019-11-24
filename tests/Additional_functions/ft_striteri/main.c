@@ -13,9 +13,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../../../libft.h"
+#include "libft.h"
 
-void	ft_print_result(char const *s)
+static void		ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,7 +25,7 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-void	iter(unsigned int i, char *c)
+static void		iter(unsigned int i, char *c)
 {
 	static int indexArray[11] = {0};
 
@@ -39,7 +39,7 @@ void	iter(unsigned int i, char *c)
 		*c = *c + 32;
 }
 
-int		main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	char	*str;
 
@@ -53,5 +53,6 @@ int		main(int argc, const char *argv[])
 		ft_striteri(str, &iter);
 		ft_print_result(str);
 	}
+	free(str);
 	return (0);
 }

@@ -13,9 +13,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../../../libft.h"
+#include "libft.h"
 
-void	ft_print_result(char const *s)
+static void		ft_print_result(char const *s)
 {
 	int		len;
 
@@ -25,7 +25,7 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-char	mapi(unsigned int i, char c)
+static char		mapi(unsigned int i, char c)
 {
 	static int indexArray[11] = {0};
 
@@ -41,7 +41,7 @@ char	mapi(unsigned int i, char c)
 		return (c);
 }
 
-int		main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	char	*str;
 	char	*strmapi;
@@ -53,12 +53,19 @@ int		main(int argc, const char *argv[])
 	else if (atoi(argv[1]) == 1)
 	{
 		strcpy(str, "LoReM iPsUm");
-		strmapi = ft_strmapi(str, &mapi);
-		ft_print_result(strmapi);
-		if (strmapi == str)
-			ft_print_result("\nA new string was not returned");
-		if (strmapi[11] != '\0')
-			ft_print_result("\nString is not null terminated");
+		if (!(strmapi = ft_strmapi(str, &mapi)))
+			ft_print_result("NULL");
+		else
+		{
+			ft_print_result(strmapi);
+			if (strmapi[11] != '\0')
+				ft_print_result("\nString is not null terminated");
+			if (strmapi == str)
+				ft_print_result("\nA new string was not returned");
+			else
+				free(strmapi);
+		}
 	}
+	free(str);
 	return (0);
 }

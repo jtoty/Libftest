@@ -13,26 +13,29 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../../../libft.h"
+#include "libft.h"
 
-int		main(int argc, const char *argv[])
+static void		check_bzero(void *mem, int c, int len, int n_bzero)
+{
+	memset(mem, c, len);
+	ft_bzero(mem, n_bzero);
+	write(1, mem, len);
+}
+
+int				main(int argc, const char *argv[])
 {
 	void	*mem;
+	int		len;
+	int		arg;
 
 	alarm(5);
-	if (argc == 1 || !(mem = malloc(sizeof(*mem) * 5)))
+	len = 5;
+	if (argc == 1 || !(mem = malloc(sizeof(*mem) * len)))
 		return (0);
-	if (atoi(argv[1]) == 1)
-	{
-		memset(mem, 'e', 5);
-		ft_bzero(mem, 5);
-		write(1, mem, 5);
-	}
-	else if (atoi(argv[1]) == 2)
-	{
-		memset(mem, 'e', 5);
-		ft_bzero(mem, 0);
-		write(1, mem, 5);
-	}
+	if ((arg = atoi(argv[1])) == 1)
+		check_bzero(mem, 'e', len, 5);
+	else if (arg == 2)
+		check_bzero(mem, 'e', len, 0);
+	free(mem);
 	return (0);
 }

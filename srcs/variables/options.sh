@@ -14,7 +14,6 @@
 #                Options variables                #
 ###################################################
 
-DIRECTORY=0
 OPT_NO_LIBRARY=0
 OPT_FULL_MAKEFILE=0
 OPT_NO_SEARCH=0
