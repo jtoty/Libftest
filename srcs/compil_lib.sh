@@ -172,6 +172,10 @@ func_compil_lib()
 			fi
 		else
 			make --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			if [ -z "$(grep -w bonus ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | grep bonus: | cut -d ':' -f 1 | grep -w bonus)" ]
+			then
+				make --no-print-directory -C ${PATH_LIBFT} bonus >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			fi
 			if [ -z "$(grep -w re ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w re)" ]
 			then
 				printf "\033[67G${COLOR_FAIL}missing rule${DEFAULT}"
@@ -188,7 +192,7 @@ func_compil_lib()
 		printf "\n$> ls -la libft.a\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 		ls -la ${PATH_LIBFT}/libft.a >> ${PATH_DEEPTHOUGHT}/deepthought
 		if [ -e ${PATH_LIBFT}/libft.a ]
-		then 
+		then
 			printf "\033[83G${COLOR_OK}found\n\n${DEFAULT}"
 		else
 			printf "\033[83G${COLOR_FAIL}not found\n\n${DEFAULT}"

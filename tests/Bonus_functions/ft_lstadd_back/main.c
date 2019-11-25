@@ -15,7 +15,7 @@
 #include <unistd.h>
 #include <string.h>
 
-static void		ft_print_result(t_list *elem)
+static void			ft_print_result(t_list *elem)
 {
 	int		len;
 
@@ -26,55 +26,100 @@ static void		ft_print_result(t_list *elem)
 	write(1, "\n", 1);
 }
 
-static t_list	*get_lst_new_elem(void const *content, size_t content_size)
+static t_list		*get_lst_new_elem(void *content)
 {
 	t_list	*elem;
 
 	elem = (t_list *)malloc(sizeof(t_list));
 	if (!elem)
 		return (NULL);
-	if (!content)
-	{
-		elem->content = NULL;
-		elem->content_size = 0;
-	}
-	else
-	{
-		if (!(elem->content = ft_memalloc(content_size)))
-		{
-			free(elem);
-			return (NULL);
-		}
-		elem->content = ft_memcpy(elem->content, content, content_size);
-		elem->content_size = content_size;
-	}
+	elem->content = content;
 	elem->next = NULL;
 	return (elem);
 }
 
-int				main(int argc, const char *argv[])
+static void			free_memory_and_return(char **tab, int i)
 {
-	t_list		*begin;
+	while (i >= 0)
+	{
+		free(tab[i]);
+		i--;
+	}
+	free(tab);
+}
+
+static void			free_memory_lst_and_return(t_list *elem)
+{
+	t_list		*tmp;
+
+	while (elem)
+	{
+		tmp = elem->next;
+		free(elem);
+		elem = tmp;
+	}
+}
+
+static char			**get_content_lst(int size)
+{
+	char	**tab;
+	int		i;
+	char	str [] = "abcdef";
+
+	if (!(tab = (char **)malloc(sizeof(*tab) * size + 1)))
+		return (0);
+	tab[size] = NULL;
+	i = 0;
+	while (i < size)
+	{
+		str[0] += i % 25;
+		if (!(tab[i] = strdup(str)))
+		{
+			free_memory_and_return(tab, i - 1);
+			return (NULL);
+		}
+		i++;
+	}
+	return (tab);
+}
+
+static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
+{
+	t_list		*elem;
+
+	if (!(elem = get_lst_new_elem(tab[i])))
+	{
+		free_memory_lst_and_return(begin);
+		free_memory_and_return(tab, 4);
+		return (NULL);
+	}
+	return (elem);
+}
+
+int				 	main(int argc, const char *argv[])
+{
 	t_list		*elem;
 	t_list		*elem2;
 	t_list		*elem3;
 	t_list		*elem4;
+	t_list		*begin;
+	char		**tab;
 
-	char		str [] = "lorem";
-	char		str2 [] = "ipsum";
-	char		str3 [] = "dolor";
-	char		str4 [] = "sit";
-
-	elem = get_lst_new_elem(str, sizeof(str));
-	elem2 = get_lst_new_elem(str2, sizeof(str2));
-	elem3 = get_lst_new_elem(str3, sizeof(str3));
-	elem4 = get_lst_new_elem(str4, sizeof(str4));
-	alarm(5);
-	if (argc == 1 || !elem || !elem2 || !elem3 || !elem4)
+	if (argc == 1 || (!(tab = get_content_lst(4))))
 		return (0);
-	else if (atoi(argv[1]) == 1)
+	elem = NULL;
+	if (!(elem = get_elem_lst(elem, tab, 0)))
+		return (0);
+	if (!(elem2 = get_elem_lst(elem, tab, 1)))
+		return (0);
+	if (!(elem3 = get_elem_lst(elem, tab, 2)))
+		return (0);
+	if (!(elem4 = get_elem_lst(elem, tab, 3)))
+		return (0);
+	alarm(5);
+	begin = NULL;
+	if (atoi(argv[1]) == 1)
 	{
-		begin = NULL;
 		ft_lstadd_back(&begin, elem4);
 		ft_lstadd_back(&begin, elem3);
 		ft_lstadd_back(&begin, elem2);
@@ -85,5 +130,7 @@ int				main(int argc, const char *argv[])
 			begin = begin->next;
 		}
 	}
+	free_memory_and_return(tab, 4);
+	free_memory_lst_and_return(begin);
 	return (0);
 }
