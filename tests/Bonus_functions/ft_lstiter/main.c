@@ -15,14 +15,14 @@
 #include "libft.h"
 #include <string.h>
 
-static void			ft_modify_list_with_d(t_list *elem)
+static void			ft_modify_list_with_d(char *content)
 {
 	int		len;
 
 	len = 0;
-	while (((char *)elem->content)[len])
+	while (content[len])
 	{
-		((char *)elem->content)[len] = 'd';
+		content[len] = 'd';
 		len++;
 	}
 }
