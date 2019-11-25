@@ -66,6 +66,7 @@ int 			main(int argc, const char *argv[])
 	t_list		*elem;
 	int			arg;
 
+
 	elem = NULL;
 	alarm(5);
 	if (argc == 1)
@@ -74,11 +75,7 @@ int 			main(int argc, const char *argv[])
 		elem = check_lstnew("lorem ipsum dolor sit", 0);
 	else if (arg == 2)
 	{
-		int		i;
-
-		i = 42;
-		elem = check_lstnew(&i, 1);
-		free(elem);
+		elem = check_lstnew(&arg, 1);
 	}
 	else if (arg == 3)
 		elem = check_lstnew(NULL, 0);
