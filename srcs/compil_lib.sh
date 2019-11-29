@@ -172,7 +172,7 @@ func_compil_lib()
 			fi
 		else
 			make --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
-			if [ -z "$(grep -w bonus ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | grep bonus: | cut -d ':' -f 1 | grep -w bonus)" ]
+			if [[ -n "$(grep -w bonus ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | grep bonus: | cut -d ':' -f 1 | grep -w bonus)" ]]
 			then
 				make --no-print-directory -C ${PATH_LIBFT} bonus >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			fi

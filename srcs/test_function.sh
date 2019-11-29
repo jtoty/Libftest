@@ -18,7 +18,7 @@ check_turned_in_file()
 	printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
 	printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
 	printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	if [ -e ${PATH_LIBFT}/$1 ]
+	if [[ -n $(nm --defined-only ${PATH_LIBFT}/libft.a | grep $1) ]]
 	then
 		retvalue=1
 		return "$retvalue"
@@ -60,8 +60,7 @@ test_function()
 		then
 		let	"total += 1"
 			printf "${COLOR_FUNC}"
-			func_name=$(echo "$function" | cut -d . -f 1)
-			printf "${func_name}"
+			printf "${function}"
 			check_turned_in_file $function
 			file=$?
 			if [ $file -eq 1 ]

@@ -15,15 +15,15 @@
 ###################################################
 
 Bonus_func=(
-	'ft_lstadd_back.c'	\
-	'ft_lstadd_front.c'	\
-	'ft_lstclear.c'		\
-	'ft_lstdelone.c'	\
-	'ft_lstiter.c'		\
-	'ft_lstlast.c'		\
-	'ft_lstmap.c'		\
-	'ft_lstnew.c'		\
-	'ft_lstsize.c'		\
+	'ft_lstadd_back'	\
+	'ft_lstadd_front'	\
+	'ft_lstclear'		\
+	'ft_lstdelone'		\
+	'ft_lstiter'		\
+	'ft_lstlast'		\
+	'ft_lstmap'			\
+	'ft_lstnew'			\
+	'ft_lstsize'		\
 )
 
 Bonus_func_authorized=(
