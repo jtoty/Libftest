@@ -55,7 +55,7 @@ bash /path/where/you/cloned/grademe.sh
 | Option | Description |
 | --- | --- |
 | `-h`<br />`--help` | Display help and exit |
-| `-d` | Perfoms tests even if header and sources files are in directories |
+| `-d` | Perform tests even if header and sources files are in directories |
 | `-c` | Disable color |
 | `-s` | Disable searching Makefile and author files |
 | `-m` | When compiling library, test all the Makefile's rules (instead of doing only make re and checking if other rules exist). |
