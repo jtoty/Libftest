@@ -15,16 +15,16 @@
 ###################################################
 
 Part2_func=(
-	'ft_itoa.c'			\
-	'ft_putchar_fd.c'	\
-	'ft_putendl_fd.c'	\
-	'ft_putnbr_fd.c'	\
-	'ft_putstr_fd.c'	\
-	'ft_split.c'		\
-	'ft_strjoin.c'		\
-	'ft_strmapi.c'		\
-	'ft_strtrim.c'		\
-	'ft_substr.c'		\
+	'ft_itoa'		\
+	'ft_putchar_fd'	\
+	'ft_putendl_fd'	\
+	'ft_putnbr_fd'	\
+	'ft_putstr_fd'	\
+	'ft_split'		\
+	'ft_strjoin'	\
+	'ft_strmapi'	\
+	'ft_strtrim'	\
+	'ft_substr'		\
 )
 
 Part2_func_authorized=(

@@ -121,6 +121,9 @@ then
 fi
 
 # Check if my_config.sh file exists, otherwise create it
+check_my_config_file()
+{
+
 if [ ! -e ${PATH_TEST}/my_config.sh ]
 then
 	printf "${BOLD}my_config.sh${DEFAULT} file is not found.\n"
@@ -136,7 +139,8 @@ then
 	fi
 	exit
 fi
-
+}
+check_my_config_file
 source ${PATH_TEST}/my_config.sh
 
 copying_files()
@@ -155,37 +159,7 @@ copying_files()
 
 copying_files
 
-# Activate functions that will be tested
-for part in ${tab_all_part[*]}
-do
-	opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-	if [ ${!opt_part} -eq 0 ]
-	then
-		p=0
-		tab_part=$(echo ${part}[*])
-		nb_func=$(echo ${!tab_part} | wc -w)
-		if [ ${part} != "Additional_func" ]
-		then
-			while (( p < ${nb_func} ))
-			do
-				(( ${part}_activation[$p]=1 ))
-				(( p += 1 ))
-			done
-		else
-			(( ${opt_part}=1 ))
-			while (( p < ${nb_func} ))
-			do
-				func_name=$(echo ${part}[$p])
-				if [ -e ${PATH_LIBFT}/${!func_name} ]
-				then
-					(( ${part}_activation[$p]=1 ))
-					(( ${opt_part}=0 ))
-				fi
-				(( p += 1 ))
-			done
-		fi
-	fi
-done
+
 
 init_deepthought()
 {
@@ -229,32 +203,93 @@ then
 	func_compil_lib
 fi
 
+# Print header with the given string in parameter
+print_header()
+{
+	printf "${COLOR_TITLE}"
+	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
+	printf "\n${CHAR_WIDTH}\033[$(( (${TITLE_LENGTH} - ${#1}) / 2 ))G${1}\033[${TITLE_LENGTH}G${CHAR_WIDTH}\n"
+	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
+	printf "\n${DEFAULT}"
+}
+
+if [ -e ${PATH_LIBFT}/libft.a ]
+then
+	LIB_CONTENT=$(nm --defined-only ${PATH_LIBFT}/libft.a)
+else
+	print_header "STARTING TESTS"
+	printf "\n${RED}Tests can't be started. Missing ${BOLD}${PURPLE}libft.a${DEFAULT}${RED} file${DEFAULT}\n\n"
+	printf "A deepthought file has been generated in ${COLOR_DEEPTHOUGHT_PATH}${PATH_DEEPTHOUGHT}\n\n${DEFAULT}"
+	make --no-print-directory -C ${PATH_LIBFT} clean > /dev/null
+	exit;
+fi
+
+# Activate functions that will be tested
+activate_functions()
+{
+	for part in ${tab_all_part[*]}
+	do
+		opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
+		if [ ${!opt_part} -eq 0 ]
+		then
+			p=0
+			tab_part=$(echo ${part}[*])
+			nb_func=$(echo ${!tab_part} | wc -w)
+			if [ ${part} != "Additional_func" ]
+			then
+				while (( p < ${nb_func} ))
+				do
+					(( ${part}_activation[$p]=1 ))
+					(( p += 1 ))
+				done
+			else
+				(( ${opt_part}=1 ))
+				while (( p < ${nb_func} ))
+				do
+					func_name=$(echo ${part}[$p])
+					func_name=${!func_name}
+					if [[ -n $(echo ${LIB_CONTENT} | grep $(echo ${func_name})) ]]
+					then
+						(( ${part}_activation[$p]=1 ))
+						(( ${opt_part}=0 ))
+					fi
+					(( p += 1 ))
+				done
+			fi
+		fi
+	done
+}
+activate_functions
+
 # Activate part if opt_no_part is equal to 0
-for part in ${tab_all_part[*]}
-do
-	opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-	activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-	if [ ${!opt_part} -eq 0 ]
-	then
-		(( ${activate_part}=1 ))
-	fi
-done
+activate_part()
+{
+	for part in ${tab_all_part[*]}
+	do
+		opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
+		activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
+		if [ ${!opt_part} -eq 0 ]
+		then
+			(( ${activate_part}=1 ))
+		fi
+	done
+}
+
 
 # Print starting tests only if at least one part is activated
-for part in ${tab_all_part[*]}
-do
-	activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-	if [ ${!activate_part} -eq 1 ]
-	then
-		text="STARTING TESTS"
-		printf "${COLOR_TITLE}"
-		printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-		printf "\n${CHAR_WIDTH}\033[$(( (${TITLE_LENGTH} - ${#text}) / 2 ))G${text}\033[${TITLE_LENGTH}G${CHAR_WIDTH}\n"
-		printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-		printf "\n${DEFAULT}"
-		break
-	fi
-done
+print_starting_test()
+{
+	for part in ${tab_all_part[*]}
+	do
+		activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
+		if [ ${!activate_part} -eq 1 ]
+		then
+			print_header "STARTING TESTS"
+			break
+		fi
+	done
+}
+print_starting_test
 
 if [ -e ${PATH_LIBFT}/libft.h ]
 then
@@ -264,43 +299,53 @@ fi
 printf "#include \"libft.h\"\n\nint\tmain(void)\n{\n\treturn (0);\n}" > ${PATH_TEST}/main_check_forbidden_function.c
 
 # launch tests
-for part in ${tab_all_part[*]}
-do
-	activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-	if [ ${!activate_part} -eq 1 ]
+launch_tests()
+{
+	for part in ${tab_all_part[*]}
+	do
+		activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
+		if [ ${!activate_part} -eq 1 ]
+		then
+			text="= ${part}tions "
+			printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+			test_function $(echo ${part}[*])
+		fi
+	done
+}
+launch_tests
+rm_files()
+{
+	if [ -e ${PATH_TEST}/a.out ]
 	then
-		text="= ${part}tions "
-		printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
-		printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
-		printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-		test_function $(echo ${part}[*])
+		rm ${PATH_TEST}/a.out
 	fi
-done
 
-if [ -e ${PATH_TEST}/a.out ]
-then
-	rm ${PATH_TEST}/a.out
-fi
+	if [ -e ${PATH_TEST}/libft.h ]
+	then
+		rm ${PATH_TEST}/libft.h
+	fi
 
-if [ -e ${PATH_TEST}/libft.h ]
-then
-	rm ${PATH_TEST}/libft.h
-fi
+	if [ -e ${PATH_TEST}/main_check_forbidden_function.c ]
+	then
+		rm ${PATH_TEST}/main_check_forbidden_function.c
+	fi
 
-if [ -e ${PATH_TEST}/main_check_forbidden_function.c ]
-then
-	rm ${PATH_TEST}/main_check_forbidden_function.c
-fi
-
-if [ -d ${PATH_TEST}/${TMP_TESTS_DIR} ]
-then
-	rm -rf ${PATH_TEST}/${TMP_TESTS_DIR}
-fi
-
-if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] || [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
-then
-	printf "Abort : ${RED}A${DEFAULT} Bus error : ${RED}B${DEFAULT} Segmentation fault : ${RED}S${DEFAULT} Timeout : ${RED}T${DEFAULT} Nothing turned in : ${RED}NTI${DEFAULT}\n"
-	printf "\n"
-fi
+	if [ -d ${PATH_TEST}/${TMP_TESTS_DIR} ]
+	then
+		rm -rf ${PATH_TEST}/${TMP_TESTS_DIR}
+	fi
+}
+rm_files
+print_footer()
+{
+	if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] || [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
+	then
+		printf "Abort : ${RED}A${DEFAULT} Bus error : ${RED}B${DEFAULT} Segmentation fault : ${RED}S${DEFAULT} Timeout : ${RED}T${DEFAULT} Nothing turned in : ${RED}NTI${DEFAULT}\n"
+		printf "\n"
+	fi
+}
+print_footer
 printf "A deepthought file has been generated in ${COLOR_DEEPTHOUGHT_PATH}${PATH_DEEPTHOUGHT}\n\n${DEFAULT}"
 make --no-print-directory -C ${PATH_LIBFT} clean > /dev/null

@@ -20,9 +20,8 @@ compilation()
 	fi
 
 	COMPIL_FLAGS="-Wextra -Wall -Werror"
-	MAIN_FILE="${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/main.c"
-	TEST_FILE="${PATH_LIBFT}/$1"
-	COMPIL_ARGS="${COMPIL_FLAGS} ${MAIN_FILE} ${TEST_FILE} -L${PATH_LIBFT} -lft -I${PATH_LIBFT}"
+	MAIN_FILE="${PATH_TEST}/tests/$(echo ${part}tions)/$1/main.c"
+	COMPIL_ARGS="${COMPIL_FLAGS} ${MAIN_FILE} -L${PATH_LIBFT} -lft -I${PATH_LIBFT}"
 
 	printf "$> clang ${COMPIL_ARGS}\n\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 	clang ${COMPIL_ARGS} 2>>${PATH_DEEPTHOUGHT}/deepthought -o user_exe

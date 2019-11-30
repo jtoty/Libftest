@@ -18,12 +18,9 @@ static function
 
 itoa return si null?
 
-ft_calloc
-ft_substr
-ft_split
-ft_strtrim
-ft_lstadd_back
-ft_lstadd_front
-ft_lstsize
-ft_lstlast
-ft_lstclear
+regarder si make bonus est ok
+virer la function lors de la compil
+pourquoi on copie les fichiers? pas besoin non?
+pareil pour include libft.h mais attention include pour test cheat
+variables en majuscules
+variables globales?
