@@ -37,16 +37,19 @@ static void		ft_print_result(char *s)
 
 static void		check_itoa_base(int arg)
 {
-	ft_print_result(ft_itoa_base(0, arg + 1));
-	ft_print_result(ft_itoa_base(arg, arg + 1));
-	ft_print_result(ft_itoa_base(-arg, arg + 1));
-	ft_print_result(ft_itoa_base(arg + 1, arg + 1));
-	ft_print_result(ft_itoa_base(-(arg + 1), arg + 1));
-	ft_print_result(ft_itoa_base(8124, arg + 1));
-	ft_print_result(ft_itoa_base(-9874, arg + 1));
-	ft_print_result(ft_itoa_base(543000, arg + 1));
-	ft_print_result(ft_itoa_base(-2147483648LL, arg + 1));
-	ft_print_result(ft_itoa_base(2147483647, arg + 1));
+	int		base;
+
+	base = arg + 1;
+	ft_print_result(ft_itoa_base(0, base));
+	ft_print_result(ft_itoa_base(arg, base));
+	ft_print_result(ft_itoa_base(-arg, base));
+	ft_print_result(ft_itoa_base(arg + 1, base));
+	ft_print_result(ft_itoa_base(-(arg + 1), base));
+	ft_print_result(ft_itoa_base(8124, base));
+	ft_print_result(ft_itoa_base(-9874, base));
+	ft_print_result(ft_itoa_base(543000, base));
+	ft_print_result(ft_itoa_base(-2147483648LL, base));
+	ft_print_result(ft_itoa_base(2147483647, base));
 }
 
 int				main(int argc, const char *argv[])
