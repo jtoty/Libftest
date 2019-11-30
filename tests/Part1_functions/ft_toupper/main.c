@@ -13,86 +13,39 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ctype.h>
-#include "../../../libft.h"
-
-int		main(int argc, const char *argv[])
+#include "libft.h"
+static void		check_toupper(int start, int end)
 {
-	int		i;
 	int		c;
+
+	while (start <= end)
+	{
+		c = ft_toupper(start);
+		write(1, &c, 1);
+		start++;
+	}
+}
+
+int				main(int argc, const char *argv[])
+{
 	int		arg;
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-	{
-		i = 0;
-		while (i <= 47)
-		{
-			c = ft_toupper(i);
-			write(1, &c, 1);
-			i++;
-		}
-	}
+		check_toupper(0, 47);
 	else if (arg == 2)
-	{
-		i = '0';
-		while (i <= '9')
-		{
-			c = ft_toupper(i);
-			write(1, &c, 1);
-			i++;
-		}
-	}
+		check_toupper('0', '9');
 	else if (arg == 3)
-	{
-		i = 58;
-		while (i <= 64)
-		{
-			c = ft_toupper(i);
-			write(1, &c, 1);
-			i++;
-		}
-	}
+		check_toupper(58, 64);
 	else if (arg == 4)
-	{
-		i = 'A';
-		while (i <= 'Z')
-		{
-			c = ft_toupper(i);
-			write(1, &c, 1);
-			i++;
-		}
-	}
+		check_toupper('A', 'Z');
 	else if (arg == 5)
-	{
-		i = 91;
-		while (i <= 96)
-		{
-			c = ft_toupper(i);
-			write(1, &c, 1);
-			i++;
-		}
-	}
+		check_toupper(91, 96);
 	else if (arg == 6)
-	{
-		i = 'a';
-		while (i <= 'z')
-		{
-			c = ft_toupper(i);
-			write(1, &c, 1);
-			i++;
-		}
-	}
+		check_toupper('a', 'z');
 	else if (arg == 7)
-	{
-		i = 123;
-		while (i <= 127)
-		{
-			c = ft_toupper(i);
-			write(1, &c, 1);
-			i++;
-		}
-	}
+		check_toupper(123, 127);
 	return (0);
 }

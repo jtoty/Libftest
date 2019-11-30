@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../../../libft.h"
+#include "libft.h"
 
 int		main(int argc, const char *argv[])
 {
@@ -31,6 +31,7 @@ int		main(int argc, const char *argv[])
 		str[9] = '\0';
 		ft_strclr(str);
 		write(1, str, 10);
+		free(str);
 	}
 	return (0);
 }

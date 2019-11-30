@@ -16,7 +16,7 @@ diff_test()
 {
 	printf "\033[${TEST_COL}G"
 	let "k=1"
-	cd ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)
+	cd ${PATH_TEST}/tests/$(echo ${part}tions)/${1}
 	kmax=$(ls -l *.output | wc -l)
 	cd ${PATH_TEST}
 	retvalue=1
@@ -33,12 +33,12 @@ diff_test()
 			text=""
 		fi
 		printf "$> ./user_exe ${text}$k\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-		if [ $(( $k%2 )) -eq 1 ] && ([ $1 == "ft_putchar_fd.c" ] || [ $1 == "ft_putstr_fd.c" ] || [ $1 == "ft_putendl_fd.c" ] || [ $1 == "ft_putnbr_fd.c" ])
+		if [ $(( $k%2 )) -eq 1 ] && ([ $1 == "ft_putchar_fd" ] || [ $1 == "ft_putstr_fd" ] || [ $1 == "ft_putendl_fd" ] || [ $1 == "ft_putnbr_fd" ])
 		then
-			#${PATH_TEST}/user_exe $k > ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k 2>&1
-			${PATH_TEST}/user_exe $k > /dev/null 2> ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k
+			# ${PATH_TEST}/user_exe $k > ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k 2>&1
+			${PATH_TEST}/user_exe $k > /dev/null 2> ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k
 		else
-			${PATH_TEST}/user_exe $k > ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k
+			${PATH_TEST}/user_exe $k > ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k
 		fi
 		SIG=$?
 		if [ $SIG -eq 134 ]
@@ -62,11 +62,11 @@ diff_test()
 			printf "${COLOR_FAIL}T${DEFAULT}"
 			retvalue=0
 		else
-			DIFF=$(diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d  . -f 1)/test${text}$k.output)
+			DIFF=$(diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/test${text}$k.output)
 			printf "$> diff -U 3 user_output_test${text}$k test${text}$k.output\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			if [ "$DIFF" != "" ] || [ ! -e ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ]
+			if [ "$DIFF" != "" ] || [ ! -e ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ]
 			then
-				#diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d  . -f 1)/test${text}$k.output | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
+				#diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/test${text}$k.output | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
 				echo "${DIFF}" | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
 				printf "\nDiff KO :(\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 				retvalue=0
@@ -76,9 +76,9 @@ diff_test()
 				printf "${COLOR_OK}✓${DEFAULT}"
 			fi
 		fi
-		#if [ -e ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k ]
+		#if [ -e ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ]
 		#then
-		#	rm -f ${PATH_TEST}/tests/$(echo ${part}tions)/$(echo $1 | cut -d . -f 1)/user_output_test${text}$k
+		#	rm -f ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k
 		#fi
 		let "k += 1"
 	done

@@ -13,9 +13,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ctype.h>
-#include "../../../libft.h"
+#include "libft.h"
 
-void	ft_print_result(int n)
+static void		ft_print_result(int n)
 {
 	if (n)
 		write(1, "1", 1);
@@ -23,76 +23,35 @@ void	ft_print_result(int n)
 		write(1, "0", 1);
 }
 
-int		main(int argc, const char *argv[])
+static void		check_isalnum(int start, int end)
 {
-	int		i;
+	while (start <= end)
+	{
+		ft_print_result(ft_isalnum(start));
+		start++;
+	}
+}
+
+int				main(int argc, const char *argv[])
+{
 	int		arg;
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-	{
-		i = 0;
-		while (i <= 47)
-		{
-			ft_print_result(ft_isalnum(i));
-			i++;
-		}
-	}
+		check_isalnum(0, 47);
 	else if (arg == 2)
-	{
-		i = '0';
-		while (i <= '9')
-		{
-			ft_print_result(ft_isalnum(i));
-			i++;
-		}
-	}
+		check_isalnum('0', '9');
 	else if (arg == 3)
-	{
-		i = 58;
-		while (i <= 64)
-		{
-			ft_print_result(ft_isalnum(i));
-			i++;
-		}
-	}
+		check_isalnum(58, 64);
 	else if (arg == 4)
-	{
-		i = 'A';
-		while (i <= 'Z')
-		{
-			ft_print_result(ft_isalnum(i));
-			i++;
-		}
-	}
+		check_isalnum('A', 'Z');
 	else if (arg == 5)
-	{
-		i = 91;
-		while (i <= 96)
-		{
-			ft_print_result(ft_isalnum(i));
-			i++;
-		}
-	}
+		check_isalnum(91, 96);
 	else if (arg == 6)
-	{
-		i = 'a';
-		while (i <= 'z')
-		{
-			ft_print_result(ft_isalnum(i));
-			i++;
-		}
-	}
+		check_isalnum('a', 'z');
 	else if (arg == 7)
-	{
-		i = 123;
-		while (i <= 127)
-		{
-			ft_print_result(ft_isalnum(i));
-			i++;
-		}
-	}
+		check_isalnum(123, 127);
 	return (0);
 }

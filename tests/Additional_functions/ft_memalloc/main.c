@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../../../libft.h"
+#include "libft.h"
 
 int		main(int argc, const char *argv[])
 {
@@ -28,6 +28,7 @@ int		main(int argc, const char *argv[])
 			write(1, "NULL", 4);
 		else
 			write(1, str, 30);
+		free(str);
 	}
 	return (0);
 }

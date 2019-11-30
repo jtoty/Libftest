@@ -4,6 +4,7 @@
 
 - ft_atoi
 - ft_bzero
+- ft_calloc
 - ft_isalnum
 - ft_isalpha
 - ft_isascii
@@ -15,57 +16,41 @@
 - ft_memcpy
 - ft_memmove
 - ft_memset
-- ft_strcat
 - ft_strchr
-- ft_strcmp
-- ft_strcpy
 - ft_strdup
 - ft_strlcat
+- ft_strlcpy
 - ft_strlen
-- ft_strncat
 - ft_strncmp
-- ft_strncpy
 - ft_strnstr
 - ft_strrchr
-- ft_strstr
 - ft_tolower
 - ft_toupper
 
 ### Part II
 
 - ft_itoa
-- ft_memalloc
-- ft_memdel
-- ft_putchar
 - ft_putchar_fd
-- ft_putendl
 - ft_putendl_fd
-- ft_putnbr
 - ft_putnbr_fd
-- ft_putstr
 - ft_putstr_fd
-- ft_strclr
-- ft_strdel
-- ft_strequ
-- ft_striter
-- ft_striteri
+- ft_split
 - ft_strjoin
-- ft_strmap
 - ft_strmapi
-- ft_strnequ
-- ft_strnew
-- ft_strsplit
-- ft_strsub
 - ft_strtrim
+- ft_substr
 
 ## Bonus part
 
+- ft_lstadd_back
+- ft_lstadd_front
+- ft_lstclear
+- ft_lstdelone
 - ft_lstiter
+- ft_lstlast
 - ft_lstmap
 - ft_lstnew
-- ft_lstadd
-- ft_lstdel
-- ft_lstdelone
+- ft_lstsize
 
 ## Addtional part
 
@@ -76,7 +61,13 @@
 - ft_isspace
 - ft_isupper
 - ft_isxdigit
-- ft_itoa_base
+- ft_itoa_base	
+- ft_memalloc
+- ft_memdel
+- ft_putchar
+- ft_putendl
+- ft_putnbr
+- ft_putstr
 - ft_str_is_alpha
 - ft_str_is_lowercase
 - ft_str_is_numeric
@@ -85,9 +76,22 @@
 - ft_strcapitalize
 - ft_strcasecmp
 - ft_strcasestr
-- ft_strlcpy
+- ft_strcat
+- ft_strclr
+- ft_strcmp
+- ft_strcpy
+- ft_strdel
+- ft_strequ
+- ft_striter
+- ft_striteri
 - ft_strlowcase
+- ft_strmap
 - ft_strncasecmp
+- ft_strncat
+- ft_strncpy
 - ft_strndup
-- ft_strupcase
+- ft_strnequ
+- ft_strnew
+- ft_strstr
 - ft_strtok
+- ft_strupcase
