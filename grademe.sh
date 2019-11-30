@@ -142,7 +142,7 @@ fi
 
 if [ -e ${PATH_LIBFT}/libft.a ]
 then
-	LIB_CONTENT=$(nm --defined-only ${PATH_LIBFT}/libft.a)
+	LIB_CONTENT=$(nm -g ${PATH_LIBFT}/libft.a)
 	activate_functions
 	activate_part
 	print_starting_test

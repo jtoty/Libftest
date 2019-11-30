@@ -36,7 +36,7 @@ activate_functions()
 				do
 					func_name=$(echo ${part}[$p])
 					func_name=${!func_name}
-					if [[ -n $(echo ${LIB_CONTENT} | grep $(echo ${func_name})) ]]
+					if [[ -n $(echo ${LIB_CONTENT} | grep -w $(echo ${func_name})) ]]
 					then
 						(( ${part}_activation[$p]=1 ))
 						(( ${opt_part}=0 ))

@@ -148,7 +148,7 @@ check_turned_in_functions()
 	printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
 	printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
 	printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	if [[ -n $(echo ${LIB_CONTENT} | grep $(echo ${1})) ]]
+	if [[ -n $(echo ${LIB_CONTENT} | grep -w $(echo ${1})) ]]
 	then
 		retvalue=1
 		return "$retvalue"
