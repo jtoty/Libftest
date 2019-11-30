@@ -64,7 +64,7 @@ diff_test()
 		else
 			DIFF=$(diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/test${text}$k.output)
 			printf "$> diff -U 3 user_output_test${text}$k test${text}$k.output\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			if [ "$DIFF" != "" ] || [ ! -e ${PATH_TEST}/tests/$(echo ${part}tions)/${1})/user_output_test${text}$k ]
+			if [ "$DIFF" != "" ] || [ ! -e ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ]
 			then
 				#diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/test${text}$k.output | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
 				echo "${DIFF}" | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought

@@ -114,6 +114,8 @@ source ${PATH_TEST}/srcs/test_function.sh
 source ${PATH_TEST}/srcs/check_update.sh
 source ${PATH_TEST}/srcs/activation.sh
 source ${PATH_TEST}/srcs/print.sh
+source ${PATH_TEST}/srcs/utils.sh
+
 
 cd ${PATH_TEST}
 
@@ -122,60 +124,12 @@ then
 	func_check_update
 fi
 
-
 check_my_config_file
 source ${PATH_TEST}/my_config.sh
-
-copying_files()
-{
-	if [ -d ${PATH_TEST}/${TMP_TESTS_DIR} ]
-	then
-		rm -rf ${PATH_TEST}/${TMP_TESTS_DIR}
-	fi
-	printf "Copying files...\nPlease wait a moment.\n"
-	mkdir ${PATH_TEST}/${TMP_TESTS_DIR}
-	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/${TMP_TESTS_DIR}
-	#find ${PATH_LIBFT} -type f -name "*.[ch]" -print | xargs cp -t ${PATH_TEST}/dirlibft
-	find ${PATH_LIBFT} -type f -name "*.[ch]" -exec cp {} ${PATH_TEST}/${TMP_TESTS_DIR}  \;
-	PATH_LIBFT=${PATH_TEST}/${TMP_TESTS_DIR}
-}
-
 copying_files
-
-
-
-init_deepthought()
-{
-	if [ -e ${PATH_DEEPTHOUGHT}/deepthought ]
-	then
-		rm -f ${PATH_DEEPTHOUGHT}/deepthought
-	fi
-	text="= Host-specific information "
-	printf "${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "\n$> hostname; uname -msr\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	hostname >> ${PATH_DEEPTHOUGHT}/deepthought
-	uname -msr >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "$> date\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	date >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "$> gcc --version\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	gcc --version >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "$> clang --version\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	clang --version >> ${PATH_DEEPTHOUGHT}/deepthought
-}
-
 clear
 init_deepthought
-
-if [ -e ${PATH_LIBFT}/Makefile ]
-then
-	MAKEFILE_VAR="Makefile"
-elif [ -e ${PATH_LIBFT}/makefile ]
-then
-	MAKEFILE_VAR="makefile"
-else
-	MAKEFILE_VAR="missing_makefile"
-fi
+set_makefile_var
 
 if [ ${OPT_NO_SEARCH} -eq 0 ]
 then
@@ -186,56 +140,24 @@ then
 	func_compil_lib
 fi
 
-
 if [ -e ${PATH_LIBFT}/libft.a ]
 then
 	LIB_CONTENT=$(nm --defined-only ${PATH_LIBFT}/libft.a)
+	activate_functions
+	activate_part
+	print_starting_test
+
+	if [ -e ${PATH_LIBFT}/libft.h ]
+	then
+		cp ${PATH_LIBFT}/libft.h ${PATH_TEST}
+	fi
+
+	printf "#include \"libft.h\"\n\nint\tmain(void)\n{\n\treturn (0);\n}" > ${PATH_TEST}/main_check_forbidden_function.c
+	launch_tests
+	rm_files
+	print_footer
 else
 	print_header "STARTING TESTS"
 	printf "\n${RED}Tests can't be started. Missing ${BOLD}${PURPLE}libft.a${DEFAULT}${RED} file${DEFAULT}\n\n"
-	printf "A deepthought file has been generated in ${COLOR_DEEPTHOUGHT_PATH}${PATH_DEEPTHOUGHT}\n\n${DEFAULT}"
-	make --no-print-directory -C ${PATH_LIBFT} clean > /dev/null
-	exit;
 fi
-
-
-activate_functions
-activate_part
-
-print_starting_test
-
-if [ -e ${PATH_LIBFT}/libft.h ]
-then
-	cp ${PATH_LIBFT}/libft.h ${PATH_TEST}
-fi
-
-printf "#include \"libft.h\"\n\nint\tmain(void)\n{\n\treturn (0);\n}" > ${PATH_TEST}/main_check_forbidden_function.c
-
-launch_tests
-rm_files()
-{
-	if [ -e ${PATH_TEST}/a.out ]
-	then
-		rm ${PATH_TEST}/a.out
-	fi
-
-	if [ -e ${PATH_TEST}/libft.h ]
-	then
-		rm ${PATH_TEST}/libft.h
-	fi
-
-	if [ -e ${PATH_TEST}/main_check_forbidden_function.c ]
-	then
-		rm ${PATH_TEST}/main_check_forbidden_function.c
-	fi
-
-	if [ -d ${PATH_TEST}/${TMP_TESTS_DIR} ]
-	then
-		rm -rf ${PATH_TEST}/${TMP_TESTS_DIR}
-	fi
-}
-rm_files
-
-print_footer
-printf "A deepthought file has been generated in ${COLOR_DEEPTHOUGHT_PATH}${PATH_DEEPTHOUGHT}\n\n${DEFAULT}"
-make --no-print-directory -C ${PATH_LIBFT} clean > /dev/null
+print_deepthought_message_and_clean

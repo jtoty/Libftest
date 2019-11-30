@@ -44,3 +44,9 @@ print_footer()
 		printf "\n"
 	fi
 }
+
+print_deepthought_message_and_clean()
+{
+	printf "A deepthought file has been generated in ${COLOR_DEEPTHOUGHT_PATH}${PATH_DEEPTHOUGHT}\n\n${DEFAULT}"
+	make --no-print-directory -C ${PATH_LIBFT} clean > /dev/null
+}

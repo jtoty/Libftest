@@ -124,7 +124,6 @@ test_function()
 	done
 	printf "\n${COLOR_TOTAL}Total : ${success}/${total}${DEFAULT}\n"
 }
-
 # launch tests
 launch_tests()
 {
