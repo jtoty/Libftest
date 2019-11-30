@@ -115,12 +115,7 @@ check_header()
 
 func_check_file()
 {
-	text="CHECKING FILES"
-	printf "${COLOR_TITLE}"
-	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-	printf "\n${CHAR_WIDTH}\033[$(( (${TITLE_LENGTH} - ${#text}) / 2 ))G${text}\033[${TITLE_LENGTH}G${CHAR_WIDTH}\n"
-	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-	printf "\n\n${DEFAULT}"
+	print_header "CHECKING FILES"
 	check_makefile
 	# check_auteur
 	check_header
@@ -143,5 +138,33 @@ check_my_config_file()
 			exit
 		fi
 		exit
+	fi
+}
+
+
+check_turned_in_functions()
+{
+	text="= $1 "
+	printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
+	printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
+	printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+	if [[ -n $(echo ${LIB_CONTENT} | grep $(echo ${1})) ]]
+	then
+		retvalue=1
+		return "$retvalue"
+	else
+		printf "\033[${NORME_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}"
+		printf "\033[${CHEAT_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}"
+		printf "\033[${COMPIL_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}"
+		printf "\033[${TEST_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}"
+		printf "\033[${RESULT_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}\n"
+		printf "Nothing turned in\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+		retvalue=0
+		return "$retvalue"
 	fi
 }

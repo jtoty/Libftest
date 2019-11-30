@@ -22,6 +22,18 @@ print_header()
 	printf "\n${DEFAULT}"
 }
 
+print_part_header()
+{
+	printf "\n${COLOR_PART}$(echo ${part} | cut -d _ -f 1) functions\n\n"
+	printf "${COLOR_TITLE}"
+	printf "FUNCTION"
+	printf "\033[${NORME_COL}GNORME"
+	printf "\033[${CHEAT_COL}GFORBIDDEN FUNC."
+	printf "\033[${COMPIL_COL}GCOMPIL."
+	printf "\033[${TEST_COL}GTESTS"
+	printf "\033[${RESULT_COL}GRESULT\n${DEFAULT}"
+}
+
 # Print starting tests only if at least one part is activated
 print_starting_test()
 {
