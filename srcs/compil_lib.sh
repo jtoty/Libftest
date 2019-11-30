@@ -107,7 +107,8 @@ func_compil_lib()
 			then
 				printf "\033[34G${COLOR_FAIL}missing rule${DEFAULT}"
 			else
-				if [ ! -e ${PATH_LIBFT}/libft.a ] && [ ! -e ${PATH_LIBFT}/ft_*.o ]
+				LS_OBJ=$(ls -R ${PATH_LIBFT} | grep "\.o$")
+				if [ ! -e ${PATH_LIBFT}/libft.a ] && [[ -z $(echo ${LS_OBJ}) ]]
 				then
 					printf "\033[34G${COLOR_OK}ok${DEFAULT}"
 					touch ${PATH_LIBFT}/libft.a
@@ -158,7 +159,8 @@ func_compil_lib()
 			then
 				printf "\033[67G${COLOR_FAIL}missing rule${DEFAULT}"
 			else
-				if [ ! -e ${PATH_LIBFT}/ft_*.o ]
+				LS_OBJ=$(ls -R ${PATH_LIBFT} | grep "\.o$")
+				if [[ -z $(echo ${LS_OBJ}) ]]
 				then
 					printf "\033[67G${COLOR_OK}ok${DEFAULT}"
 				else

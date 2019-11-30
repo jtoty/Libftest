@@ -55,7 +55,6 @@ bash /path/where/you/cloned/grademe.sh
 | Option | Description |
 | --- | --- |
 | `-h`<br />`--help` | Display help and exit |
-| `-d` | Perform tests even if header and sources files are in directories |
 | `-c` | Disable color |
 | `-s` | Disable searching Makefile and author files |
 | `-m` | When compiling library, test all the Makefile's rules (instead of doing only make re and checking if other rules exist). |
@@ -76,7 +75,7 @@ bash /path/where/you/cloned/grademe.sh
 Add successively all options you want, in the order you want.
 For example :
 ```bash
-bash grademe.sh ft_atoi -f ft_strlen -n -d
+bash grademe.sh ft_atoi -f ft_strlen -n
 ```
 
 ### Supported functions
