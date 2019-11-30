@@ -20,3 +20,7 @@ itoa return si null?
 
 regarder si make bonus est ok
 virer la function lors de la compil
+pourquoi on copie les fichiers? pas besoin non?
+pareil pour include libft.h mais attention include pour test cheat
+variables en majuscules
+variables globales?
