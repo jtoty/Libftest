@@ -3,8 +3,6 @@
 This repository contains script to test your libft project.
 The script will do the following tests :
 
-- Check if the author file exists
-- Check content of the author file
 - Check if libft.h exists
 - Check norme of libft.h
 - Check if the Makefile file exists
@@ -32,6 +30,9 @@ Makefile up to date.
 git clone https://github.com/jtoty/Libftest
 ```
 
+#### Old libft subject
+To test the old libft subject, you have to check on the [old branch](https://github.com/jtoty/Libftest/tree/old-libft).
+
 ### Configuration
 
 If you run the script for the first time, it will automatically create
@@ -42,11 +43,11 @@ deepthought file will be created.
 
 ## Running script
 
-Go to the directory where you cloned and run the script
+Run the script from the directory where you cloned
 ```bash
 bash grademe.sh
 ```
-or simply run the script with the path
+or run the script with the path
 ```bash
 bash /path/where/you/cloned/grademe.sh
 ```
