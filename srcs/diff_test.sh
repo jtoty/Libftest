@@ -33,7 +33,7 @@ diff_test()
 			text=""
 		fi
 		printf "$> ./user_exe ${text}$k\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-		if [ $(( $k%2 )) -eq 1 ] && ([ $1 == "ft_putchar_fd.c" ] || [ $1 == "ft_putstr_fd.c" ] || [ $1 == "ft_putendl_fd.c" ] || [ $1 == "ft_putnbr_fd.c" ])
+		if [ $(( $k%2 )) -eq 1 ] && ([ $1 == "ft_putchar_fd" ] || [ $1 == "ft_putstr_fd" ] || [ $1 == "ft_putendl_fd" ] || [ $1 == "ft_putnbr_fd" ])
 		then
 			# ${PATH_TEST}/user_exe $k > ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k 2>&1
 			${PATH_TEST}/user_exe $k > /dev/null 2> ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k
@@ -64,7 +64,7 @@ diff_test()
 		else
 			DIFF=$(diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/test${text}$k.output)
 			printf "$> diff -U 3 user_output_test${text}$k test${text}$k.output\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			if [ "$DIFF" != "" ] || [ ! -e ${PATH_TEST}/tests/$(echo ${part}tions)/${1})/user_output_test${text}$k ]
+			if [ "$DIFF" != "" ] || [ ! -e ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ]
 			then
 				#diff -U 3 ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/user_output_test${text}$k ${PATH_TEST}/tests/$(echo ${part}tions)/${1}/test${text}$k.output | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought
 				echo "${DIFF}" | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought

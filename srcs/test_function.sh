@@ -12,44 +12,10 @@
 
 #!/bin/bash
 
-check_turned_in_file()
-{
-	text="= $1 "
-	printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
-	printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	if [[ -n $(echo ${LIB_CONTENT} | grep $(echo ${1})) ]]
-	then
-		retvalue=1
-		return "$retvalue"
-	else
-		printf "\033[${NORME_COL}G"
-		printf "${COLOR_FAIL}NTI${DEFAULT}"
-		printf "\033[${CHEAT_COL}G"
-		printf "${COLOR_FAIL}NTI${DEFAULT}"
-		printf "\033[${COMPIL_COL}G"
-		printf "${COLOR_FAIL}NTI${DEFAULT}"
-		printf "\033[${TEST_COL}G"
-		printf "${COLOR_FAIL}NTI${DEFAULT}"
-		printf "\033[${RESULT_COL}G"
-		printf "${COLOR_FAIL}NTI${DEFAULT}\n"
-		printf "Nothing turned in\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-		retvalue=0
-		return "$retvalue"
-	fi
-}
-
 
 test_function()
 {
-	printf "\n${COLOR_PART}$(echo ${part} | cut -d _ -f 1) functions\n\n"
-	printf "${COLOR_TITLE}"
-	printf "FUNCTION"
-	printf "\033[${NORME_COL}GNORME"
-	printf "\033[${CHEAT_COL}GFORBIDDEN FUNC."
-	printf "\033[${COMPIL_COL}GCOMPIL."
-	printf "\033[${TEST_COL}GTESTS"
-	printf "\033[${RESULT_COL}GRESULT\n${DEFAULT}"
+	print_part_header
 
 	let	"i=0"
 	let	"success=0"
@@ -61,7 +27,7 @@ test_function()
 		let	"total += 1"
 			printf "${COLOR_FUNC}"
 			printf "${function}"
-			check_turned_in_file $function
+			check_turned_in_functions $function
 			file=$?
 			if [ $file -eq 1 ]
 			then
@@ -123,4 +89,20 @@ test_function()
 		let	"i += 1"
 	done
 	printf "\n${COLOR_TOTAL}Total : ${success}/${total}${DEFAULT}\n"
+}
+# launch tests
+launch_tests()
+{
+	for part in ${tab_all_part[*]}
+	do
+		activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
+		if [ ${!activate_part} -eq 1 ]
+		then
+			text="= ${part}tions "
+			printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+			test_function $(echo ${part}[*])
+		fi
+	done
 }

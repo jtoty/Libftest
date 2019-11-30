@@ -14,12 +14,7 @@
 
 func_compil_lib()
 {
-	text="COMPILING LIBFT"
-	printf "${COLOR_TITLE}"
-	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-	printf "\n${CHAR_WIDTH}\033[$(( (${TITLE_LENGTH} - ${#text}) / 2 ))G${text}\033[${TITLE_LENGTH}G${CHAR_WIDTH}\n"
-	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-	printf "\n\n${DEFAULT}"
+	print_header "COMPILING LIBFT"
 	if [ -e ${PATH_LIBFT}/libft.a ]
 	then
 		rm -f ${PATH_LIBFT}/libft.a
