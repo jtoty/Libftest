@@ -49,7 +49,7 @@ func_compil_lib()
 
 		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
-			rm -f ${PATH_LIBFT}/ft_*.o
+			find ${PATH_LIBFT} -type f -name "*.o" -exec rm {} \;
 			printf "\n$> make all\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			make --no-print-directory -C ${PATH_LIBFT} all>>${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [ -z "$(grep -w all ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w all)" ]
@@ -75,7 +75,7 @@ func_compil_lib()
 
 		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
-			rm -f ${PATH_LIBFT}/ft_*.o
+			find ${PATH_LIBFT} -type f -name "*.o" -exec rm {} \;
 			printf "\n$> make $(grep -w NAME ${PATH_LIBFT}/Makefile | grep = | cut -d '=' -f 2 | tr -d ' ' | tr -d '\t')\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			make --no-print-directory -C ${PATH_LIBFT} $(grep NAME ${PATH_LIBFT}/${MAKEFILE_VAR} | grep = | cut -d '=' -f 2 | tr -d ' ' | tr -d '\t') >>${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [ -z "$(grep -w '$(NAME)' ${PATH_LIBFT}/${MAKEFILE_VAR} | grep ':' | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w '$(NAME)')" ]
@@ -111,10 +111,10 @@ func_compil_lib()
 				if [ ! -e ${PATH_LIBFT}/libft.a ] && [[ -z $(echo ${LS_OBJ}) ]]
 				then
 					printf "\033[34G${COLOR_OK}ok${DEFAULT}"
-					touch ${PATH_LIBFT}/libft.a
+					# touch ${PATH_LIBFT}/libft.a
 				else
 					printf "\033[34G${COLOR_FAIL}fail${DEFAULT}"
-					rm -f ${PATH_LIBFT}/ft_*.o
+					find ${PATH_LIBFT} -type f -name "*.o" -exec rm {} \;
 					rm -f ${PATH_LIBFT}/libft.a
 				fi
 			fi
@@ -131,6 +131,10 @@ func_compil_lib()
 		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			make --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			if [[ -n "$(grep -w bonus ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | grep bonus: | cut -d ':' -f 1 | grep -w bonus)" ]]
+			then
+				make --no-print-directory -C ${PATH_LIBFT} bonus >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			fi
 			if [ -z "$(grep -w re ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w re)" ]
 			then
 				printf "\033[51G${COLOR_FAIL}missing rule${DEFAULT}"
