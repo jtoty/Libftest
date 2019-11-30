@@ -131,6 +131,10 @@ func_compil_lib()
 		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			make --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			if [[ -n "$(grep -w bonus ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | grep bonus: | cut -d ':' -f 1 | grep -w bonus)" ]]
+			then
+				make --no-print-directory -C ${PATH_LIBFT} bonus >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			fi
 			if [ -z "$(grep -w re ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w re)" ]
 			then
 				printf "\033[51G${COLOR_FAIL}missing rule${DEFAULT}"
