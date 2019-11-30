@@ -112,6 +112,8 @@ source ${PATH_TEST}/srcs/compil_lib.sh
 source ${PATH_TEST}/srcs/diff_test.sh
 source ${PATH_TEST}/srcs/test_function.sh
 source ${PATH_TEST}/srcs/check_update.sh
+source ${PATH_TEST}/srcs/activation.sh
+source ${PATH_TEST}/srcs/print.sh
 
 cd ${PATH_TEST}
 
@@ -120,26 +122,7 @@ then
 	func_check_update
 fi
 
-# Check if my_config.sh file exists, otherwise create it
-check_my_config_file()
-{
 
-if [ ! -e ${PATH_TEST}/my_config.sh ]
-then
-	printf "${BOLD}my_config.sh${DEFAULT} file is not found.\n"
-	printf "Creating file...\n"
-	if [ -e ${PATH_TEST}/srcs/config_template.sh ]
-	then
-		cp ${PATH_TEST}/srcs/config_template.sh ${PATH_TEST}/my_config.sh
-		printf "File created with success in ${BOLD}${PURPLE}${PATH_TEST}\n${DEFAULT}"
-		printf "${RED}${UNDERLINE}Edit my_config.sh file${DEFAULT} with the path of your libft project and launch script.\n"
-	else
-		printf "Can't create my_config.sh file, try to update or clone again the repository and retry.\n"
-		exit
-	fi
-	exit
-fi
-}
 check_my_config_file
 source ${PATH_TEST}/my_config.sh
 
@@ -203,15 +186,6 @@ then
 	func_compil_lib
 fi
 
-# Print header with the given string in parameter
-print_header()
-{
-	printf "${COLOR_TITLE}"
-	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-	printf "\n${CHAR_WIDTH}\033[$(( (${TITLE_LENGTH} - ${#1}) / 2 ))G${1}\033[${TITLE_LENGTH}G${CHAR_WIDTH}\n"
-	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-	printf "\n${DEFAULT}"
-}
 
 if [ -e ${PATH_LIBFT}/libft.a ]
 then
@@ -224,71 +198,10 @@ else
 	exit;
 fi
 
-# Activate functions that will be tested
-activate_functions()
-{
-	for part in ${tab_all_part[*]}
-	do
-		opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-		if [ ${!opt_part} -eq 0 ]
-		then
-			p=0
-			tab_part=$(echo ${part}[*])
-			nb_func=$(echo ${!tab_part} | wc -w)
-			if [ ${part} != "Additional_func" ]
-			then
-				while (( p < ${nb_func} ))
-				do
-					(( ${part}_activation[$p]=1 ))
-					(( p += 1 ))
-				done
-			else
-				(( ${opt_part}=1 ))
-				while (( p < ${nb_func} ))
-				do
-					func_name=$(echo ${part}[$p])
-					func_name=${!func_name}
-					if [[ -n $(echo ${LIB_CONTENT} | grep $(echo ${func_name})) ]]
-					then
-						(( ${part}_activation[$p]=1 ))
-						(( ${opt_part}=0 ))
-					fi
-					(( p += 1 ))
-				done
-			fi
-		fi
-	done
-}
+
 activate_functions
+activate_part
 
-# Activate part if opt_no_part is equal to 0
-activate_part()
-{
-	for part in ${tab_all_part[*]}
-	do
-		opt_part=$(echo OPT_NO_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-		activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-		if [ ${!opt_part} -eq 0 ]
-		then
-			(( ${activate_part}=1 ))
-		fi
-	done
-}
-
-
-# Print starting tests only if at least one part is activated
-print_starting_test()
-{
-	for part in ${tab_all_part[*]}
-	do
-		activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-		if [ ${!activate_part} -eq 1 ]
-		then
-			print_header "STARTING TESTS"
-			break
-		fi
-	done
-}
 print_starting_test
 
 if [ -e ${PATH_LIBFT}/libft.h ]
@@ -298,22 +211,6 @@ fi
 
 printf "#include \"libft.h\"\n\nint\tmain(void)\n{\n\treturn (0);\n}" > ${PATH_TEST}/main_check_forbidden_function.c
 
-# launch tests
-launch_tests()
-{
-	for part in ${tab_all_part[*]}
-	do
-		activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
-		if [ ${!activate_part} -eq 1 ]
-		then
-			text="= ${part}tions "
-			printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
-			printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
-			printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			test_function $(echo ${part}[*])
-		fi
-	done
-}
 launch_tests
 rm_files()
 {
@@ -338,14 +235,7 @@ rm_files()
 	fi
 }
 rm_files
-print_footer()
-{
-	if [ ${ACTIVATE_PART1} -eq 1 ] || [ ${ACTIVATE_PART2} -eq 1 ] || [ ${ACTIVATE_BONUS} -eq 1 ] || [ ${ACTIVATE_ADDITIONAL} -eq 1 ]
-	then
-		printf "Abort : ${RED}A${DEFAULT} Bus error : ${RED}B${DEFAULT} Segmentation fault : ${RED}S${DEFAULT} Timeout : ${RED}T${DEFAULT} Nothing turned in : ${RED}NTI${DEFAULT}\n"
-		printf "\n"
-	fi
-}
+
 print_footer
 printf "A deepthought file has been generated in ${COLOR_DEEPTHOUGHT_PATH}${PATH_DEEPTHOUGHT}\n\n${DEFAULT}"
 make --no-print-directory -C ${PATH_LIBFT} clean > /dev/null

@@ -124,3 +124,20 @@ test_function()
 	done
 	printf "\n${COLOR_TOTAL}Total : ${success}/${total}${DEFAULT}\n"
 }
+
+# launch tests
+launch_tests()
+{
+	for part in ${tab_all_part[*]}
+	do
+		activate_part=$(echo ACTIVATE_${part} | tr '[:lower:]' '[:upper:]' | rev | cut -c 6- | rev)
+		if [ ${!activate_part} -eq 1 ]
+		then
+			text="= ${part}tions "
+			printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
+			printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+			test_function $(echo ${part}[*])
+		fi
+	done
+}
