@@ -154,10 +154,10 @@ then
 
 	printf "#include \"libft.h\"\n\nint\tmain(void)\n{\n\treturn (0);\n}" > ${PATH_TEST}/main_check_forbidden_function.c
 	launch_tests
-	rm_files
 	print_footer
 else
 	print_header "STARTING TESTS"
 	printf "\n${RED}Tests can't be started. Missing ${BOLD}${PURPLE}libft.a${DEFAULT}${RED} file${DEFAULT}\n\n"
+	rm_files
 fi
 print_deepthought_message_and_clean
