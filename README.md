@@ -31,7 +31,7 @@ git clone https://github.com/jtoty/Libftest
 ```
 
 #### Old libft subject
-To test the old libft subject, you have to download from the [old branch](https://github.com/jtoty/Libftest/tree/old-libft).
+To test the old libft subject, you have to go to the branch [old-libft](https://github.com/jtoty/Libftest/tree/old-libft).
 
 ### Configuration
 
