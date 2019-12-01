@@ -29,7 +29,7 @@ Makefile up to date.
 ### Installation
 
 ```bash
-git clone https://github.com/jtoty/Libftest
+git clone -b old-libft https://github.com/jtoty/Libftest
 ```
 
 ### Configuration
