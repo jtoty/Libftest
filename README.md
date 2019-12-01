@@ -31,6 +31,8 @@ Makefile up to date.
 ```bash
 git clone -b old-libft https://github.com/jtoty/Libftest
 ```
+#### New libft subject
+To test the new libft subject, you have to go to the branch [master](https://github.com/jtoty/Libftest/).
 
 ### Configuration
 
