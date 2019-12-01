@@ -12,19 +12,25 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../../../libft.h"
+#include "libft.h"
 
-void	ft_print_result(char const *s)
+static void		ft_print_result(char *s)
 {
 	int		len;
 
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
+	if (!s)
+		write(1, "NULL", 4);
+	else
+	{
+		len = 0;
+		while (s[len])
+			len++;
+		write(1, s, len);
+		free(s);
+	}
 }
 
-int		main(int argc, const char *argv[])
+int				main(int argc, const char *argv[])
 {
 	int		arg;
 

@@ -5,7 +5,7 @@ check_makefile()
 	printf "Makefile"
 	#if [ -e ${PATH_LIBFT}/Makefile ] || [ -e ${PATH_LIBFT}/makefile ]
 	if [ -e ${PATH_LIBFT}/${MAKEFILE_VAR} ]
-	then 
+	then
 		printf "\033[15G-Wall"
 		printf "\033[25G-Wextra"
 		printf "\033[35G-Werror\n"
@@ -40,7 +40,7 @@ check_auteur()
 {
 	printf "\nAuthor file"
 	if [ -e ${PATH_LIBFT}/auteur ] || [ -e ${PATH_LIBFT}/author ]
-	then 
+	then
 		if [ -e ${PATH_LIBFT}/auteur ]
 		then
 			AUTHOR_VAR="auteur"
@@ -79,7 +79,7 @@ check_auteur()
 
 check_header()
 {
-	printf "Header file"
+	printf "\nHeader file"
 	if [ -e ${PATH_LIBFT}/libft.h ]
 	then
 		printf "\033[15GNorme\n"
@@ -115,13 +115,56 @@ check_header()
 
 func_check_file()
 {
-	text="CHECKING FILES"
-	printf "${COLOR_TITLE}"
-	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-	printf "\n${CHAR_WIDTH}\033[$(( (${TITLE_LENGTH} - ${#text}) / 2 ))G${text}\033[${TITLE_LENGTH}G${CHAR_WIDTH}\n"
-	printf "%.s${CHAR_LENGTH}" $(seq 1 ${TITLE_LENGTH})
-	printf "\n\n${DEFAULT}"
+	print_header "CHECKING FILES"
 	check_makefile
-	check_auteur
+	# check_auteur
 	check_header
+}
+
+# Check if my_config.sh file exists, otherwise create it
+check_my_config_file()
+{
+	if [ ! -e ${PATH_TEST}/my_config.sh ]
+	then
+		printf "${BOLD}my_config.sh${DEFAULT} file is not found.\n"
+		printf "Creating file...\n"
+		if [ -e ${PATH_TEST}/srcs/config_template.sh ]
+		then
+			cp ${PATH_TEST}/srcs/config_template.sh ${PATH_TEST}/my_config.sh
+			printf "File created with success in ${BOLD}${PURPLE}${PATH_TEST}\n${DEFAULT}"
+			printf "${RED}${UNDERLINE}Edit my_config.sh file${DEFAULT} with the path of your libft project and launch script.\n"
+		else
+			printf "Can't create my_config.sh file, try to update or clone again the repository and retry.\n"
+			exit
+		fi
+		exit
+	fi
+}
+
+
+check_turned_in_functions()
+{
+	text="= $1 "
+	printf "\n${text}" >> ${PATH_DEEPTHOUGHT}/deepthought
+	printf "%.s=" $(seq 1 $(( 80 - ${#text} ))) >> ${PATH_DEEPTHOUGHT}/deepthought
+	printf "\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+	if [[ -n $(echo ${LIB_CONTENT} | grep -w $(echo ${1})) ]]
+	then
+		retvalue=1
+		return "$retvalue"
+	else
+		printf "\033[${NORME_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}"
+		printf "\033[${CHEAT_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}"
+		printf "\033[${COMPIL_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}"
+		printf "\033[${TEST_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}"
+		printf "\033[${RESULT_COL}G"
+		printf "${COLOR_FAIL}NTI${DEFAULT}\n"
+		printf "Nothing turned in\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+		retvalue=0
+		return "$retvalue"
+	fi
 }
