@@ -22,7 +22,7 @@ copying_files()
 	mkdir ${PATH_TEST}/${TMP_TESTS_DIR}
 	cp -r ${PATH_LIBFT}/* ${PATH_TEST}/${TMP_TESTS_DIR}
 	#find ${PATH_LIBFT} -type f -name "*.[ch]" -print | xargs cp -t ${PATH_TEST}/dirlibft
-	find ${PATH_LIBFT} -type f -name "*.[h]" -exec cp {} ${PATH_TEST}/${TMP_TESTS_DIR}  \;
+	find ${PATH_LIBFT} -type f -name "*.[ch]" -exec cp {} ${PATH_TEST}/${TMP_TESTS_DIR}  \;
 	PATH_LIBFT=${PATH_TEST}/${TMP_TESTS_DIR}
 }
 
