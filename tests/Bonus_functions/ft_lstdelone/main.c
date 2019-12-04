@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 15:15:51 by jtoty             #+#    #+#             */
-/*   Updated: 2017/03/09 15:55:41 by jtoty            ###   ########.fr       */
+/*   Updated: 2019/12/04 21:08:23 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,23 @@
 #include <unistd.h>
 #include <string.h>
 
-static void			ft_print_result(t_list *elem)
+static void			ft_print_result(char *content)
 {
 	int		len;
 
 	len = 0;
-	while (((char *)elem->content)[len])
+	while (content[len])
 		len++;
-	write(1, elem->content, len);
+	write(1, content, len);
 }
+
+
+static int	nb_free_done;
 
 static void		ft_del(void *content)
 {
 	free(content);
+	nb_free_done++;
 }
 
 static t_list		*get_lst_new_elem(void *content)
@@ -100,6 +104,16 @@ static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
 	return (elem);
 }
 
+static void			check_lstdelone(t_list *elem)
+{
+	if (elem)
+		ft_print_result(elem->content);
+	else
+		ft_print_result("NULL");
+	write(1, "\n", 1);
+
+}
+
 int					 main(int argc, const char *argv[])
 {
 	t_list		*elem;
@@ -122,30 +136,20 @@ int					 main(int argc, const char *argv[])
 	if (!(elem4 = get_elem_lst(elem, tab, 3)))
 		return (0);
 	elem3->next = elem4;
+	nb_free_done = 0;
 	alarm(5);
 	if (atoi(argv[1]) == 1)
 	{
 		ft_lstdelone(elem3, &ft_del);
 		elem3 = NULL;
-		if (elem)
-			ft_print_result(elem);
-		else
-			write(1, "NULL", 4);
-		write(1, "\n", 1);
-		if (elem2)
-			ft_print_result(elem2);
-		else
-			write(1, "NULL", 4);
-		write(1, "\n", 1);
-		if (elem3)
-			ft_print_result(elem3);
-		else
-			write(1, "NULL", 4);
-		write(1, "\n", 1);
-		if (elem4)
-			ft_print_result(elem4);
-		else
-			write(1, "NULL", 4);
+		elem2->next = NULL;
+		check_lstdelone(elem);
+		check_lstdelone(elem2);
+		check_lstdelone(elem3);
+		check_lstdelone(elem4);
+		nb_free_done += '0';
+		write(1, "nb_free_done = ", 15);
+		write(1, &nb_free_done, 1);
 		free(tab[3]);
 		free_memory_and_return(tab, 1);
 		free(elem4);

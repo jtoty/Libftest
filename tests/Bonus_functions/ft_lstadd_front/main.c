@@ -15,14 +15,14 @@
 #include <unistd.h>
 #include <string.h>
 
-static void			ft_print_result(t_list *elem)
+static void			ft_print_result(char *content)
 {
 	int		len;
 
 	len = 0;
-	while (((char *)elem->content)[len])
+	while (content[len])
 		len++;
-	write(1, elem->content, len);
+	write(1, content, len);
 	write(1, "\n", 1);
 }
 
@@ -126,7 +126,7 @@ int				 	main(int argc, const char *argv[])
 		ft_lstadd_front(&begin, elem);
 		while (begin)
 		{
-			ft_print_result(begin);
+			ft_print_result(begin->content);
 			begin = begin->next;
 		}
 	}
