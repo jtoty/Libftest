@@ -108,9 +108,9 @@ static void			check_lstclear(t_list *elem)
 	if (elem)
 		ft_print_result(elem->content);
 	else
-		ft_print_result("NULl");
+		ft_print_result("NULL");
 	write(1, "\n", 1);
-	
+
 }
 
 	int				 main(int argc, const char *argv[])
