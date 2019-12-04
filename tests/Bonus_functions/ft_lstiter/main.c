@@ -27,17 +27,6 @@ static void			ft_modify_list_with_d(char *content)
 	}
 }
 
-static void			ft_print_result(char *content)
-{
-	int		len;
-
-	len = 0;
-	while (content[len])
-		len++;
-	write(1, content, len);
-	write(1, "\n", 1);
-}
-
 static void			ft_print_result(t_list *elem)
 {
 	int		len;
