@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 15:15:43 by jtoty             #+#    #+#             */
-/*   Updated: 2019/11/20 15:55:33 by jtoty            ###   ########.fr       */
+/*   Updated: 2019/12/04 21:05:23 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 #include <unistd.h>
 #include <string.h>
 
-static void			ft_print_result(t_list *elem)
+static void			ft_print_result(char *content)
 {
 	int		len;
 
 	len = 0;
-	while (((char *)elem->content)[len])
+	while (content[len])
 		len++;
-	write(1, elem->content, len);
+	write(1, content, len);
 }
 
 static int	nb_free_done;
@@ -103,6 +103,16 @@ static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
 	return (elem);
 }
 
+static void			check_lstclear(t_list *elem)
+{
+	if (elem)
+		ft_print_result(elem->content);
+	else
+		ft_print_result("NULl");
+	write(1, "\n", 1);
+	
+}
+
 	int				 main(int argc, const char *argv[])
 {
 	t_list		*elem;
@@ -130,29 +140,15 @@ static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
 	if (atoi(argv[1]) == 1)
 	{
 		ft_lstclear(&elem3, &ft_delelem);
-		if (elem)
-			ft_print_result(elem);
-		else
-			write(1, "NULL", 4);
-		write(1, "\n", 1);
-		if (elem2)
-			ft_print_result(elem2);
-		else
-			write(1, "NULL", 4);
-		write(1, "\n", 1);
-		if (elem3)
-			ft_print_result(elem3);
-		else
-			write(1, "NULL", 4);
-		write(1, "\n", 1);
-		if (elem4)
-		{
-			write(1, "nb_free_done = ", 15);
-			nb_free_done += '0';
-			write(1, &nb_free_done, 1);
-		}
-		else
-			write(1, "NULL", 4);
+		elem2->next = elem3;
+		elem4 = NULL;
+		check_lstclear(elem);
+		check_lstclear(elem2);
+		check_lstclear(elem3);
+		check_lstclear(elem4);
+		nb_free_done += '0';
+		write(1, "nb_free_done = ", 15);
+		write(1, &nb_free_done, 1);
 		free_memory_and_return(tab, 1);
 	}
 	else
