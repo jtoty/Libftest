@@ -95,6 +95,17 @@ static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
 	return (elem);
 }
 
+static void			check_lstlast(t_list *elem, t_list *begin)
+{
+	if (elem != ft_lstlast(begin))
+		ft_print_result("Last elem was not returned\n");
+	else
+	{
+		ft_print_result(elem->content);
+		write(1, "\n", 1);
+	}
+}
+
 int					 main(int argc, const char *argv[])
 {
 	int			arg;
@@ -120,25 +131,9 @@ int					 main(int argc, const char *argv[])
 	elem3->next = elem4;
 	alarm(5);
 	if ((arg = atoi(argv[1])) == 1)
-	{
-		if (elem4 != ft_lstlast(elem))
-			ft_print_result("Last elem was not returned\n");
-		else
-		{
-			ft_print_result(elem4->content);
-			write(1, "\n", 1);
-		}
-	}
+		check_lstlast(elem4, elem);
 	else if (arg == 2)
-	{
-		if (elem4 != ft_lstlast(elem4))
-			ft_print_result("Last elem was not returned\n");
-		else
-		{
-			ft_print_result(elem4->content);
-			write(1, "\n", 1);
-		}
-	}
+		check_lstlast(elem4, elem4);
 	free_memory_and_return(tab, 4);
 	free_memory_lst_and_return(elem);
 	return (0);
