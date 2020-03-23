@@ -31,7 +31,11 @@ static void		check_memccpy(void *dest, void *src, int c, int n)
 
 	membis = dest;
 	if (!(dest = ft_memccpy(dest, src, c, n)))
+	{
 		ft_print_result("NULL");
+		write(1, "\n", 1);
+		ft_print_result(membis);
+	}
 	else
 	{
 		ft_print_result(dest);
