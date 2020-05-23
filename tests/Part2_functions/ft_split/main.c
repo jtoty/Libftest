@@ -29,7 +29,7 @@ static void			ft_print_tabstr(char **tabstr)
 	int		i;
 
 	i = 0;
-	while (tabstr[i] != '\0')
+	while (tabstr[i] != NULL)
 	{
 		ft_print_result(tabstr[i]);
 		write(1, "\n", 1);
