@@ -61,5 +61,19 @@ int				main(int argc, const char *argv[])
 		check_strnstr("lorem ipsum dolor sit amet", "dolor", 15);
 	else if (arg == 10)
 		check_strnstr("lorem ipsum dolor sit amet", "dolor", 0);
+	else if (arg == 11)
+		check_strnstr("kkkorea", "kko", 42);
+	else if (arg == 12)
+		check_strnstr("kkorea", "kko", 42);
+	else if (arg == 13)
+		check_strnstr("kkorea", "ko", 42);
+	else if (arg == 14)
+		check_strnstr("kkorea", "cco", 42);	
+	else if (arg == 15)
+		check_strnstr("hhhello from 42Seoul", "hhello", 42);
+	else if (arg == 16)
+		check_strnstr("hhello from 42Seoul", "llo", 42);
+	else if (arg == 17)
+		check_strnstr("hhello from 42Seoul", "lorem", 42);
 	return (0);
 }
