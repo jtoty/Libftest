@@ -49,7 +49,7 @@ static t_list	*check_lstnew(void *content, int is_nb)
 			if (is_nb)
 				ft_print_result2(*(int *)(elem->content));
 			else
-				ft_print_result(elem->content);
+				ft_print_result((char *)elem->content);
 			write(1, "\n", 1);
 		}
 		if (!(elem->next))

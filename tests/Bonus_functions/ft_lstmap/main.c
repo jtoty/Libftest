@@ -15,17 +15,6 @@
 #include <unistd.h>
 #include <string.h>
 
-// static void			ft_print_result(t_list *elem)
-// {
-// 	int		len;
-//
-// 	len = 0;
-// 	while (((char *)elem->content)[len])
-// 		len++;
-// 	write(1, elem->content, len);
-// 	write(1, "\n", 1);
-// }
-
 static t_list		*get_lst_new_elem(void *content)
 {
 	t_list	*elem;
@@ -143,10 +132,10 @@ int				 	main(int argc, const char *argv[])
 	alarm(5);
 	if (atoi(argv[1]) == 1)
 	{
-		printf("elem content = %s\n", elem->content);
-		printf("elem content = %s\n", elem2->content);
-		printf("elem content = %s\n", elem3->content);
-		printf("elem content = %s\n\n", elem4->content);
+		printf("elem content = %s\n", (char *)elem->content);
+		printf("elem content = %s\n", (char *)elem2->content);
+		printf("elem content = %s\n", (char *)elem3->content);
+		printf("elem content = %s\n\n", (char *)elem4->content);
 		if (!(list = ft_lstmap(elem, (void *)&ft_mapelem, (void *)&ft_delelem)))
 		{
 			free(tab[3]);
@@ -158,12 +147,11 @@ int				 	main(int argc, const char *argv[])
 		if (list == elem)
 			write(1, "A new list is not returned\n", 27);
 		tmp = list;
-		printf("tmp = %s elem = %s\n", tmp->content, elem->content);
+		printf("tmp = %s elem = %s\n", (char *)tmp->content, (char *)elem->content);
 
 		while (tmp)
 		{
-			printf("tmp = %s\n", tmp->content);
-			// ft_print_result();
+			printf("tmp = %s\n", (char *)tmp->content);
 			tmp = tmp->next;
 		}
 		free_memory_lst_and_return(list);
