@@ -106,7 +106,7 @@ static t_list		*get_elem_lst(t_list *begin, char **tab, int i)
 static void			check_lstclear(t_list *elem)
 {
 	if (elem)
-		ft_print_result(elem->content);
+		ft_print_result((char *)elem->content);
 	else
 		ft_print_result("NULL");
 	write(1, "\n", 1);
