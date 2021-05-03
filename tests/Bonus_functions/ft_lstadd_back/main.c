@@ -126,7 +126,7 @@ int				 	main(int argc, const char *argv[])
 		ft_lstadd_back(&begin, elem);
 		while (begin)
 		{
-			ft_print_result(begin->content);
+			ft_print_result((char *)begin->content);
 			begin = begin->next;
 		}
 	}

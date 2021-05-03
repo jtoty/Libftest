@@ -101,7 +101,7 @@ static void			check_lstlast(t_list *elem, t_list *begin)
 		ft_print_result("Last elem was not returned\n");
 	else
 	{
-		ft_print_result(elem->content);
+		ft_print_result((char *)elem->content);
 		write(1, "\n", 1);
 	}
 }

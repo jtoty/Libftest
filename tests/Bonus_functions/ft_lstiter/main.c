@@ -35,7 +35,7 @@ static void			ft_print_result(t_list *elem)
 	while (elem)
 	{
 		len = 0;
-		content = elem->content;
+		content = (char *)elem->content;
 		while (content[len])
 			len++;
 		write(1, content, len);
