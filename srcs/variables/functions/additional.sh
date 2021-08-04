@@ -26,11 +26,12 @@ Additional_func=(
 	'ft_isxdigit'			\
 	'ft_itoa_base	'		\
 	'ft_memalloc'			\
-	'ft_memdel'				\
+	'ft_memccpy'			\
+	'ft_memdel'			\
 	'ft_putchar'			\
 	'ft_putendl'			\
-	'ft_putnbr'				\
-	'ft_putstr'				\
+	'ft_putnbr'			\
+	'ft_putstr'			\
 	'ft_str_is_alpha'		\
 	'ft_str_is_lowercase'	\
 	'ft_str_is_numeric'		\
@@ -46,7 +47,6 @@ Additional_func=(
 	'ft_strdel'				\
 	'ft_strequ'				\
 	'ft_striter'			\
-	'ft_striteri'			\
 	'ft_strlowcase'			\
 	'ft_strmap'				\
 	'ft_strncasecmp'		\
@@ -69,6 +69,7 @@ Additional_func_authorized=(
 	'0'	\
 	'0'	\
 	'1'	\
+	'0'	\
 	'1'	\
 	'2'	\
 	'4'	\
@@ -88,7 +89,6 @@ Additional_func_authorized=(
 	'0'	\
 	'0'	\
 	'2'	\
-	'0'	\
 	'0'	\
 	'0'	\
 	'0'	\
