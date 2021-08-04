@@ -51,7 +51,7 @@ func_compil_lib()
 		then
 			find ${PATH_LIBFT} -type f -name "*.o" -exec rm {} \;
 			printf "\n$> make all\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			make --no-print-directory -C ${PATH_LIBFT} all>>${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			${USE_MAKE} --no-print-directory -C ${PATH_LIBFT} all>>${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [ -z "$(grep -w all ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w all)" ]
 			then
 				printf "${COLOR_FAIL}missing rule${DEFAULT}"
@@ -77,7 +77,7 @@ func_compil_lib()
 		then
 			find ${PATH_LIBFT} -type f -name "*.o" -exec rm {} \;
 			printf "\n$> make $(grep -w NAME ${PATH_LIBFT}/Makefile | grep = | cut -d '=' -f 2 | tr -d ' ' | tr -d '\t')\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			make --no-print-directory -C ${PATH_LIBFT} $(grep NAME ${PATH_LIBFT}/${MAKEFILE_VAR} | grep = | cut -d '=' -f 2 | tr -d ' ' | tr -d '\t') >>${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			${USE_MAKE} --no-print-directory -C ${PATH_LIBFT} $(grep NAME ${PATH_LIBFT}/${MAKEFILE_VAR} | grep = | cut -d '=' -f 2 | tr -d ' ' | tr -d '\t') >>${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [ -z "$(grep -w '$(NAME)' ${PATH_LIBFT}/${MAKEFILE_VAR} | grep ':' | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w '$(NAME)')" ]
 			then
 				printf "\033[17G${COLOR_FAIL}missing rule${DEFAULT}"
@@ -102,7 +102,7 @@ func_compil_lib()
 		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			printf "\n$> make fclean\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			make --no-print-directory -C ${PATH_LIBFT} fclean >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			${USE_MAKE} --no-print-directory -C ${PATH_LIBFT} fclean >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [ -z "$(grep -w fclean ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w fclean)" ]
 			then
 				printf "\033[34G${COLOR_FAIL}missing rule${DEFAULT}"
@@ -130,10 +130,10 @@ func_compil_lib()
 		printf "\n$> make re\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
-			make --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			${USE_MAKE} --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [[ -n "$(grep -w bonus ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | grep bonus: | cut -d ':' -f 1 | grep -w bonus)" ]]
 			then
-				make --no-print-directory -C ${PATH_LIBFT} bonus >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+				${USE_MAKE} --no-print-directory -C ${PATH_LIBFT} bonus >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			fi
 			if [ -z "$(grep -w re ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w re)" ]
 			then
@@ -158,7 +158,7 @@ func_compil_lib()
 		if [ ${OPT_FULL_MAKEFILE} -eq 1 ]
 		then
 			printf "\n$> make clean\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-			make --no-print-directory -C ${PATH_LIBFT} clean >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			${USE_MAKE} --no-print-directory -C ${PATH_LIBFT} clean >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [ -z "$(grep -w clean ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w clean)" ]
 			then
 				printf "\033[67G${COLOR_FAIL}missing rule${DEFAULT}"
@@ -172,10 +172,10 @@ func_compil_lib()
 				fi
 			fi
 		else
-			make --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+			${USE_MAKE} --no-print-directory -C ${PATH_LIBFT} re >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			if [[ -n "$(grep -w bonus ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | grep bonus: | cut -d ':' -f 1 | grep -w bonus)" ]]
 			then
-				make --no-print-directory -C ${PATH_LIBFT} bonus >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
+				${USE_MAKE} --no-print-directory -C ${PATH_LIBFT} bonus >> ${PATH_DEEPTHOUGHT}/deepthought 2>&1
 			fi
 			if [ -z "$(grep -w re ${PATH_LIBFT}/${MAKEFILE_VAR} | tr -d ' ' | tr -d '\t' | cut -d ':' -f 1 | grep -w re)" ]
 			then
