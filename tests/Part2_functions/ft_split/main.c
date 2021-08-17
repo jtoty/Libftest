@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:34:58 by jtoty             #+#    #+#             */
-/*   Updated: 2017/03/09 15:54:23 by jtoty            ###   ########.fr       */
+/*   Updated: 2021/08/17 22:03:39 by jbelinda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void			ft_print_tabstr(char **tabstr)
 	{
 		ft_print_result(tabstr[i]);
 		write(1, "\n", 1);
-		free(tabstr[i]);
+//		free(tabstr[i]);
 		i++;
 	}
 	free(tabstr);
