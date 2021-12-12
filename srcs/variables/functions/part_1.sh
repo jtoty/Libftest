@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # **************************************************************************** #
 #                                                                              #
@@ -25,7 +25,6 @@ Part1_func=(
 	'ft_isascii'	\
 	'ft_isdigit'	\
 	'ft_isprint'	\
-	'ft_memccpy'	\
 	'ft_memchr'		\
 	'ft_memcmp'		\
 	'ft_memcpy'		\
@@ -58,7 +57,6 @@ Part1_func_authorized=(
 	'0'	\
 	'0'	\
 	'0'	\
-	'0'	\
 	'1'	\
 	'0'	\
 	'0'	\
@@ -71,7 +69,6 @@ Part1_func_authorized=(
 )
 
 Part1_func_activation=(
-	'0'	\
 	'0'	\
 	'0'	\
 	'0'	\

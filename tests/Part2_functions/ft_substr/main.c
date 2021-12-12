@@ -54,5 +54,7 @@ int				main(int argc, const char *argv[])
 		check_substr(str, 7, 0);
 	else if (arg == 4)
 		check_substr(str, 0, 0);
+	else if (arg == 5)
+		check_substr(str, 40, 1);
 	return (0);
 }

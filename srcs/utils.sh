@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # **************************************************************************** #
 #                                                                              #
@@ -37,6 +37,23 @@ set_makefile_var()
 	else
 		MAKEFILE_VAR="missing_makefile"
 	fi
+	case $(uname -s) in
+		FreeBSD)
+			USE_MAKE=gmake
+			;;
+		*)
+			USE_MAKE=make
+			;;
+	esac
+
+	if which ${USE_MAKE} > /dev/null
+	then
+		:
+	else
+		printf "${GREEN}make${DEFAULT} utility ${RED}not found${DEFAULT}, exit\n"
+		exit 2
+	fi
+
 }
 
 init_deepthought()

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # **************************************************************************** #
 #                                                                              #
@@ -25,6 +25,7 @@ Part2_func=(
 	'ft_split'		\
 	'ft_strjoin'	\
 	'ft_strmapi'	\
+	'ft_striteri'	\
 	'ft_strtrim'	\
 	'ft_substr'		\
 )
@@ -40,9 +41,11 @@ Part2_func_authorized=(
 	'1'	\
 	'1'	\
 	'1'	\
+	'1'	\
 )
 
 Part2_func_activation=(
+	'0'	\
 	'0'	\
 	'0'	\
 	'0'	\
